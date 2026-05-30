@@ -40,7 +40,7 @@
 | D2 | MVP 스코프 | 메타데이터 + Vision 캡션/임베딩 | 얼굴 인식은 자체 안 함 |
 | D3 | Vision 처리 위치 | 전부 로컬 (M4 Pro 64GB) | bootstrap 환경으로 충분 |
 | D4 | 사진 Source of Truth | iCloud/Photos Library 그대로, EDDR은 참조 | EDDR은 파생 데이터만 소유 |
-| D5 | 답변 LLM | Claude API | 한국어 품질·tool use |
+| D5 | 답변 LLM | ChatGPT API | 한국어 품질·tool use |
 | D6 | Privacy 경계 | 텍스트(메타+캡션)만 API로, **이미지는 절대 전송 안 함** | 정밀 좌표·PII는 미전송 (ADR-0001) |
 | D7 | UI 형태 | 로컬 Gradio 채팅 웹 UI | 채팅 + 사진 그리드 |
 | D8 | 인덱싱 사이클 | 1차 batch 후 점진적 업데이트 | content hash dedup |
