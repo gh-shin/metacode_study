@@ -1,2 +1,4 @@
 .env
 .metacode_study/
+.egg-info/
+*.egg-info/
