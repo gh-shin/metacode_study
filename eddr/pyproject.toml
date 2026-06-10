@@ -1,0 +1,59 @@
+[project]
+name = "eddr"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "blake3>=1.0.8",
+    "chromadb>=1.5.9",
+    "numpy>=2",
+    "ollama>=0.6.2",
+    "osxphotos>=0.75.9",
+    "pandas>=2,<3",
+    "pillow>=12.2.0",
+    "pillow-heif>=1.3.0",
+    "pyarrow>=24",
+]
+
+[project.scripts]
+eddr = "eddr.cli:entrypoint"
+
+[dependency-groups]
+dev = [
+    "nbconvert>=7.17.1",
+    "pytest>=9.0.3",
+    "ruff>=0.15",
+]
+eda = [
+    "pandas>=2,<3",  # 3.0 to_string 호환 이슈 회피 (03 세션)
+    "pyarrow>=24",
+    "numpy>=2",
+    "ollama>=0.6.2",
+    "imagehash>=4.3.2",   # 02/03 EDA dHash near-dup (이전 ad-hoc → uv sync로 유실되던 회귀 고정)
+    "matplotlib>=3.10",   # 02/03 EDA 분포 플롯
+    "ipykernel>=7.2",     # eddr-eda 커널 런타임(.venv) — uv sync 가지치기 방지
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "UP", "B"]
+
+# prompt.py는 모델 입력 프롬프트 문자열이라 라인을 끊으면 렌더링이 바뀜 → E501 예외
+[tool.ruff.lint.per-file-ignores]
+"src/eddr/vision/prompt.py" = ["E501"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[build-system]
+requires = ["setuptools>=80", "wheel"]
+build-backend = "setuptools.build_meta"
