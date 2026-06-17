@@ -2,3 +2,11 @@
 .metacode_study/
 .egg-info/
 *.egg-info/
+
+graphify-out/
+screenshots/
+*.pyc
+__pycache__/
+data/
+
+node_modules/

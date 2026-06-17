@@ -7,6 +7,8 @@ requires-python = ">=3.12"
 dependencies = [
     "blake3>=1.0.8",
     "chromadb>=1.5.9",
+    "fastapi>=0.115",  # 웹 API 서버 (ADR-0008)
+    "imagehash>=4.3.2",  # dedup dHash — EDA(02·03) 산출 dhash와 동일 포맷 유지
     "numpy>=2",
     "ollama>=0.6.2",
     "osxphotos>=0.75.9",
@@ -14,6 +16,8 @@ dependencies = [
     "pillow>=12.2.0",
     "pillow-heif>=1.3.0",
     "pyarrow>=24",
+    "pyyaml>=6",  # 골든셋(docs/golden_set.yaml) 로드
+    "uvicorn>=0.34",  # serve-api ASGI 서버 (ADR-0008)
 ]
 
 [project.scripts]
@@ -21,6 +25,7 @@ eddr = "eddr.cli:entrypoint"
 
 [dependency-groups]
 dev = [
+    "httpx>=0.27",  # fastapi.testclient 전송층 (tests/server)
     "nbconvert>=7.17.1",
     "pytest>=9.0.3",
     "ruff>=0.15",
@@ -45,11 +50,22 @@ target-version = "py312"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "I", "UP", "B"]
+# E/W=pycodestyle(PEP8) · N=pep8-naming · D=pydocstyle(google, 한국어 docstring 배치 검사)
+select = ["E", "F", "W", "I", "UP", "B", "N", "C4", "SIM", "RUF", "D"]
+# D403: 첫 단어 대문자화 — 한국어 docstring엔 대문자 개념이 없어 구조적 오탐
+ignore = ["D403"]
+# ×(곱셈 기호)는 "k×5 over-fetch" 같은 의도된 표기 — confusable 오탐 허용
+allowed-confusables = ["×"]
 
-# prompt.py는 모델 입력 프롬프트 문자열이라 라인을 끊으면 렌더링이 바뀜 → E501 예외
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
 [tool.ruff.lint.per-file-ignores]
+# prompt.py는 모델 입력 프롬프트 문자열이라 라인을 끊으면 렌더링이 바뀜 → E501 예외
 "src/eddr/vision/prompt.py" = ["E501"]
+# 테스트·벤치 스크립트는 함수 docstring 강제 제외(모듈 docstring 관례는 유지)
+"tests/*" = ["D"]
+"scripts/*" = ["D"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

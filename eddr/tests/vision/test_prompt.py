@@ -1,5 +1,9 @@
 from eddr.db.repository import PhotoRecord
-from eddr.vision.prompt import build_caption_prompt, find_sensitive_metadata_leaks
+from eddr.vision.prompt import (
+    build_caption_prompt,
+    build_prompt_for_photo,
+    find_sensitive_metadata_leaks,
+)
 
 
 def test_metadata_prompt_includes_full_local_metadata_and_privacy_output_rules():
@@ -54,6 +58,22 @@ def test_metadata_prompt_omits_missing_values_without_stringifying_none():
     assert "None" not in prompt
 
 
+def test_food_guard_prompt_preserves_keyword_contract_and_rejects_unsupported_noodles():
+    photo = PhotoRecord(
+        id="local:food",
+        source="local",
+        source_uri="/photos/food.jpg",
+        image_path="/photos/food.jpg",
+    )
+
+    prompt = build_prompt_for_photo(photo, "p3_hybrid_food_guard")
+
+    assert "Search keywords:" in prompt
+    assert 'Use "noodles" only when actual noodle strands are visible' in prompt
+    assert "bean sprouts" in prompt
+    assert "Do not invent exact dish names" in prompt
+
+
 def test_sensitive_metadata_leak_detector_flags_paths_and_exact_coordinates():
     photo = PhotoRecord(
         id="local:abc",
@@ -72,6 +92,47 @@ def test_sensitive_metadata_leak_detector_flags_paths_and_exact_coordinates():
     assert leaks == ["image_path", "source_uri", "latitude", "longitude", "home_path"]
 
 
+def test_p4_grounded_prompt_contains_grounding_rules_and_keyword_contract():
+    photo = PhotoRecord(
+        id="local:grounded",
+        source="local",
+        source_uri="/photos/grounded.jpg",
+        image_path="/photos/grounded.jpg",
+    )
+
+    prompt = build_prompt_for_photo(photo, "p4_grounded")
+
+    assert "Grounding rules:" in prompt
+    assert "Search keywords:" in prompt
+    assert "Do not invent specific proper names" in prompt
+    assert "use the more general term" in prompt
+
+
+def test_p4_grounded_prompt_name_is_registered_in_prompt_names():
+    from eddr.vision.prompt import PROMPT_NAMES
+
+    assert "p4_grounded" in PROMPT_NAMES
+
+
+def test_p4_grounded_prompt_has_no_metadata_hints():
+    """p4_grounded는 p3_hybrid 베이스 — 메타데이터 힌트 섹션이 없어야 한다."""
+    photo = PhotoRecord(
+        id="local:grounded",
+        source="local",
+        source_uri="/photos/grounded.jpg",
+        image_path="/photos/grounded.jpg",
+        latitude=37.5,
+        longitude=127.0,
+    )
+
+    prompt = build_prompt_for_photo(photo, "p4_grounded")
+
+    # 메타데이터 힌트 섹션(v2 베이스)은 포함되지 않아야 함
+    assert "latitude:" not in prompt
+    assert "longitude:" not in prompt
+    assert "Use this local-only metadata" not in prompt
+
+
 def test_sensitive_metadata_leak_detector_allows_safe_context():
     photo = PhotoRecord(
         id="local:abc",
@@ -88,3 +149,43 @@ def test_sensitive_metadata_leak_detector_allows_safe_context():
     )
 
     assert leaks == []
+
+
+def test_p5_grounded_prompt_contains_grounding_rules_and_keyword_contract():
+    photo = PhotoRecord(
+        id="local:grounded5",
+        source="local",
+        source_uri="/photos/grounded5.jpg",
+        image_path="/photos/grounded5.jpg",
+    )
+
+    prompt = build_prompt_for_photo(photo, "p5_grounded")
+
+    assert "Grounding rules:" in prompt
+    assert "Search keywords:" in prompt
+    assert "Name things as specifically as the visible evidence allows" in prompt
+    assert "Note the medium or framing" in prompt
+
+
+def test_p5_grounded_prompt_name_is_registered_in_prompt_names():
+    from eddr.vision.prompt import PROMPT_NAMES
+
+    assert "p5_grounded" in PROMPT_NAMES
+
+
+def test_p5_grounded_prompt_has_no_metadata_hints():
+    """p5_grounded는 메타데이터 힌트 없는 베이스여야 한다."""
+    photo = PhotoRecord(
+        id="local:grounded5",
+        source="local",
+        source_uri="/photos/grounded5.jpg",
+        image_path="/photos/grounded5.jpg",
+        latitude=37.5,
+        longitude=127.0,
+    )
+
+    prompt = build_prompt_for_photo(photo, "p5_grounded")
+
+    assert "latitude:" not in prompt
+    assert "longitude:" not in prompt
+    assert "Use this local-only metadata" not in prompt

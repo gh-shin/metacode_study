@@ -1,0 +1,556 @@
+{
+  "query": "국수",
+  "keywords": [
+    "noodles",
+    "noodle",
+    "food"
+  ],
+  "keyword_stats": {
+    "noodles": {
+      "keyword": "noodles",
+      "document_count": 123
+    },
+    "noodle": {
+      "keyword": "noodle",
+      "document_count": 123
+    },
+    "food": {
+      "keyword": "food",
+      "document_count": 1066
+    }
+  },
+  "hits": [
+    {
+      "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+      "rank": 1,
+      "fused_score": 0.03252247488101534,
+      "vector_rank": 2,
+      "vector_distance": 1.0813372135162354,
+      "vector_score": 0.016129032258064516,
+      "lexical_rank": 1,
+      "lexical_score": 0.01639344262295082,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a bowl of savory noodles submerged in a rich brown broth. The dish features light-colored noodles mixed with yellow-green vegetables, and a metal spoon rests partially in the food.",
+      "caption_keywords": [
+        "Noodle soup",
+        "Asian food",
+        "savory noodles",
+        "broth",
+        "close-up food",
+        "vermicelli",
+        "bowl food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:884029F1-03D4-4384-A99E-92173C54AC73",
+      "rank": 2,
+      "fused_score": 0.03149801587301587,
+      "vector_rank": 4,
+      "vector_distance": 1.0925397872924805,
+      "vector_score": 0.015625,
+      "lexical_rank": 3,
+      "lexical_score": 0.015873015873015872,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up photograph of a savory noodle dish served in a dark bowl. The dish features light-colored noodles submerged in broth, topped with dark ingredients and fresh green onion garnish.",
+      "caption_keywords": [
+        "Noodle soup",
+        "Asian food",
+        "bowl of noodles",
+        "savory broth",
+        "dark mushrooms",
+        "green onions",
+        "food close-up",
+        "Asian cuisine."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:22489640-DC61-4A68-A73A-E53AFCB44798",
+      "rank": 3,
+      "fused_score": 0.030798389007344232,
+      "vector_rank": 3,
+      "vector_distance": 1.088779091835022,
+      "vector_score": 0.015873015873015872,
+      "lexical_rank": 7,
+      "lexical_score": 0.014925373134328358,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a light-colored noodle soup served in a white bowl, featuring thin white noodles submerged in broth. The dish is garnished with pieces of cooked green vegetables and reddish-orange chunky ingredients floating in the liquid.",
+      "caption_keywords": [
+        "Noodle soup",
+        "Asian food",
+        "bowl of noodles",
+        "broth",
+        "vegetable garnish",
+        "food photography",
+        "vermicelli"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:DFAF7C70-5F7B-453B-870C-9435EAA87968",
+      "rank": 4,
+      "fused_score": 0.03028233151183971,
+      "vector_rank": 1,
+      "vector_distance": 1.0707414150238037,
+      "vector_score": 0.01639344262295082,
+      "lexical_rank": 12,
+      "lexical_score": 0.013888888888888888,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a large serving of thin, wavy noodles submerged in a light brown broth in a reflective metal bowl. The dish is garnished with yellow strips and white pieces, and sprinkled with sesame seeds.",
+      "caption_keywords": [
+        "Noodle soup",
+        "Asian noodles",
+        "broth",
+        "stainless steel bowl",
+        "garnished food",
+        "sesame seeds",
+        "noodle dish"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:C873DF6B-2B13-4415-8ED5-6F5ED2FA0C8B",
+      "rank": 5,
+      "fused_score": 0.028083267871170464,
+      "vector_rank": 7,
+      "vector_distance": 1.1227829456329346,
+      "vector_score": 0.014925373134328358,
+      "lexical_rank": 16,
+      "lexical_score": 0.013157894736842105,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up photograph of a bowl of light-colored noodles submerged in a light broth. The dish is topped with a large, smooth white item and a piece of dark brown meat resting among the noodles.",
+      "caption_keywords": [
+        "Noodles",
+        "soup",
+        "food photography",
+        "egg",
+        "meat",
+        "broth",
+        "Asian cuisine",
+        "bowl food",
+        "close-up."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:CBC6E3CA-71B8-4AE0-BB83-CAD3872A5F3A",
+      "rank": 6,
+      "fused_score": 0.027972027972027972,
+      "vector_rank": 6,
+      "vector_distance": 1.115545392036438,
+      "vector_score": 0.015151515151515152,
+      "lexical_rank": 18,
+      "lexical_score": 0.01282051282051282,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up, overhead shot of a savory noodle dish served in a white bowl. The thin, translucent noodles are submerged in a light broth, and the dish is topped with a dark, rich piece of cooked meat or tofu.",
+      "caption_keywords": [
+        "Noodles",
+        "Asian food",
+        "soup",
+        "savory dish",
+        "food photography",
+        "bowl",
+        "meat topping",
+        "vermicelli"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:AAF531F0-0989-4DED-948F-10EB2863F74E",
+      "rank": 7,
+      "fused_score": 0.026631393298059962,
+      "vector_rank": 10,
+      "vector_distance": 1.1623443365097046,
+      "vector_score": 0.014285714285714285,
+      "lexical_rank": 21,
+      "lexical_score": 0.012345679012345678,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a bowl of noodles served with various toppings, including a large piece of brown fried food and fresh green onions. The meal is resting in a white bowl and is accompanied by a wooden spoon.",
+      "caption_keywords": [
+        "Asian noodles",
+        "fried meat",
+        "bowl meal",
+        "chopsticks",
+        "food close-up",
+        "savory dish",
+        "noodle bowl"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:82609F66-AFEE-42F3-B576-01403B25516A",
+      "rank": 8,
+      "fused_score": 0.026438310608579978,
+      "vector_rank": 37,
+      "vector_distance": 1.2118844985961914,
+      "vector_score": 0.010309278350515464,
+      "lexical_rank": 2,
+      "lexical_score": 0.016129032258064516,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of yellow noodles submerged in a thick, rich, orange-red sauce, likely a curry or savory stew. The focus is entirely on the texture and color of the noodles and the vibrant sauce they are cooked in.",
+      "caption_keywords": [
+        "Noodles",
+        "curry",
+        "stew",
+        "savory food",
+        "yellow noodles",
+        "food close-up",
+        "spicy food",
+        "Asian cuisine."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:75195C46-71B6-4582-AF23-C7DB9C8B6CAE",
+      "rank": 9,
+      "fused_score": 0.026171741361614778,
+      "vector_rank": 14,
+      "vector_distance": 1.1676781177520752,
+      "vector_score": 0.013513513513513514,
+      "lexical_rank": 19,
+      "lexical_score": 0.012658227848101266,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up photo of a bowl of savory Asian noodle soup, featuring light broth, noodles, chunks of meat, and generous amounts of fresh green onions. The dish is served on a metal tray with surrounding utensils and a small side dish.",
+      "caption_keywords": [
+        "Asian noodle soup",
+        "meat and noodles",
+        "green onions",
+        "bowl meal",
+        "food photography",
+        "metal tray",
+        "savory broth."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:40C349CF-3E11-4077-96C5-2CE84C36EB21",
+      "rank": 10,
+      "fused_score": 0.026120660599932594,
+      "vector_rank": 26,
+      "vector_distance": 1.1927151679992676,
+      "vector_score": 0.011627906976744186,
+      "lexical_rank": 9,
+      "lexical_score": 0.014492753623188406,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up overhead shot of a savory noodle dish served in a reflective metal bowl. The food features noodles, green vegetables, and is generously topped with a pile of crispy, bright yellow fried strands.",
+      "caption_keywords": [
+        "Food photography",
+        "noodles",
+        "yellow fried strands",
+        "Asian cuisine",
+        "bowl dish",
+        "close-up food."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:EB8271A3-08EE-4924-A697-ED0F0C83BEBF",
+      "rank": 11,
+      "fused_score": 0.025694893341952164,
+      "vector_rank": 31,
+      "vector_distance": 1.2052068710327148,
+      "vector_score": 0.01098901098901099,
+      "lexical_rank": 8,
+      "lexical_score": 0.014705882352941176,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "A close-up shot features a steaming bowl of light-colored noodles generously topped with bright orange carrot slices, green broccoli, and dark mushrooms. The dish appears to be a savory Asian noodle preparation.",
+      "caption_keywords": [
+        "Noodle dish",
+        "Asian food",
+        "Carrot and broccoli",
+        "Mushroom",
+        "Steaming food",
+        "Close-up food photography",
+        "Vermicelli"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:8DDD7F01-AE00-4E45-AEBB-B5A166388A8D",
+      "rank": 12,
+      "fused_score": 0.025052505250525055,
+      "vector_rank": 41,
+      "vector_distance": 1.2224547863006592,
+      "vector_score": 0.009900990099009901,
+      "lexical_rank": 6,
+      "lexical_score": 0.015151515151515152,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "Hands are holding small clear containers over a large pan filled with a reddish-orange noodle dish. The focus is on the food and the action of serving or preparing to eat the meal.",
+      "caption_keywords": [
+        "Food photography",
+        "noodles",
+        "takeout",
+        "Asian food",
+        "meat noodles",
+        "serving food",
+        "close up",
+        "takeout containers",
+        "dinner."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:B49E3B7E-A176-4262-8243-05CDF09B6F97",
+      "rank": 13,
+      "fused_score": 0.02488425925925926,
+      "vector_rank": 48,
+      "vector_distance": 1.2368874549865723,
+      "vector_score": 0.009259259259259259,
+      "lexical_rank": 4,
+      "lexical_score": 0.015625,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a sizzling dish served in a black skillet, filled with a savory, reddish-brown sauce, noodles, and vegetables. The food appears to be a spicy stir-fry or noodle dish, resting on a bright yellow surface in what looks like a casual dining setting.",
+      "caption_keywords": [
+        "Noodle stir-fry",
+        "glass noodles",
+        "spicy food",
+        "skillet meal",
+        "Korean food",
+        "food photography",
+        "restaurant food",
+        "sizzling dish."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:68EE17DC-CA19-471B-8F19-A42DC07226EC",
+      "rank": 14,
+      "fused_score": 0.024809741248097414,
+      "vector_rank": 30,
+      "vector_distance": 1.2013325691223145,
+      "vector_score": 0.011111111111111112,
+      "lexical_rank": 13,
+      "lexical_score": 0.0136986301369863,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "A close-up shot features dark brown noodles submerged in a rich, dark sauce within a metal bowl. The dish is garnished with a white element and thin slices of green vegetable, suggesting an Asian noodle dish.",
+      "caption_keywords": [
+        "Noodles",
+        "Asian food",
+        "dark sauce",
+        "bowl meal",
+        "food photography",
+        "stir-fry",
+        "tofu",
+        "cucumber garnish"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:6F9829EA-CA09-4BB2-AB4F-F7C623935921",
+      "rank": 15,
+      "fused_score": 0.024610822831727205,
+      "vector_rank": 35,
+      "vector_distance": 1.2099095582962036,
+      "vector_score": 0.010526315789473684,
+      "lexical_rank": 11,
+      "lexical_score": 0.014084507042253521,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "A close-up shot features a bowl of savory broth containing noodles, slices of meat, a whole boiled egg, and green vegetables. The food is served in a wide, dark bowl, emphasizing the rich, light-colored soup.",
+      "caption_keywords": [
+        "Food photography",
+        "Asian noodle soup",
+        "savory broth",
+        "egg noodles",
+        "meat and egg soup",
+        "close-up food shot",
+        "comfort food."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:6B095DA1-8330-4EFE-9B72-59ACDB21643F",
+      "rank": 16,
+      "fused_score": 0.024448419797257006,
+      "vector_rank": 18,
+      "vector_distance": 1.1728062629699707,
+      "vector_score": 0.01282051282051282,
+      "lexical_rank": 26,
+      "lexical_score": 0.011627906976744186,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up photograph of a large bowl of light-colored noodles served in a broth, topped with shredded ingredients and green onions. Several smaller side dishes containing vegetables and other ingredients are arranged around the main bowl on a wooden surface.",
+      "caption_keywords": [
+        "Asian noodles",
+        "soba",
+        "ramen",
+        "food photography",
+        "noodle bowl",
+        "side dishes",
+        "broth",
+        "wooden table",
+        "lunch food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "local:0e10a6588cd4d598ca924e5071a8a5c9ad312f90422e7f3ae17fd3d5f16538fe",
+      "rank": 17,
+      "fused_score": 0.02423417290673928,
+      "vector_rank": 53,
+      "vector_distance": 1.2502273321151733,
+      "vector_score": 0.008849557522123894,
+      "lexical_rank": 5,
+      "lexical_score": 0.015384615384615385,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a large serving of very dark, glossy noodles piled on a white plate. Several clear glass objects are visible underneath and around the food in the background.",
+      "caption_keywords": [
+        "Dark noodles",
+        "black pasta dish",
+        "glossy food",
+        "plate",
+        "Asian food",
+        "seafood noodles",
+        "food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:C65630C8-0789-40C8-BB85-7D3C556B151A",
+      "rank": 18,
+      "fused_score": 0.023796791443850267,
+      "vector_rank": 8,
+      "vector_distance": 1.1346943378448486,
+      "vector_score": 0.014705882352941176,
+      "lexical_rank": 50,
+      "lexical_score": 0.00909090909090909,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of noodles submerged in a light broth, topped with a thick slice of brown meat and some bright green garnish. The meal is contained within a large, round, gray bowl.",
+      "caption_keywords": [
+        "Noodles",
+        "soup",
+        "broth",
+        "meat",
+        "garnish",
+        "Asian food",
+        "bowl meal",
+        "food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "local:80f3b6c8f1a74763f8c81095ec0d06422dd7980cdd0c5883ee44e902beb8e285",
+      "rank": 19,
+      "fused_score": 0.02379324490633119,
+      "vector_rank": 11,
+      "vector_distance": 1.163224220275879,
+      "vector_score": 0.014084507042253521,
+      "lexical_rank": 43,
+      "lexical_score": 0.009708737864077669,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a large mound of dark, glossy noodles piled on a white plate. The food appears heavily coated in a rich, dark sauce, suggesting an Asian-style dish.",
+      "caption_keywords": [
+        "Dark noodles",
+        "glossy pasta",
+        "savory dish",
+        "food close-up",
+        "Asian food",
+        "dark sauce",
+        "plated meal",
+        "vermicelli."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:F68F9208-0DD3-4E45-9F21-E7F8378067E1",
+      "rank": 20,
+      "fused_score": 0.023739701159056,
+      "vector_rank": 33,
+      "vector_distance": 1.206279993057251,
+      "vector_score": 0.010752688172043012,
+      "lexical_rank": 17,
+      "lexical_score": 0.012987012987012988,
+      "matched_keywords": [
+        "noodles",
+        "noodle",
+        "food"
+      ],
+      "caption": "A close-up shot features a large, round metal bowl filled with clear glass noodles in broth, garnished with green vegetables, and several small plates of dumplings are visible on the left. The food is set on a dark wooden surface, suggesting an Asian meal setting.",
+      "caption_keywords": [
+        "Glass noodles",
+        "noodle soup",
+        "dumplings",
+        "Asian food",
+        "close-up food photography",
+        "wooden table",
+        "broth"
+      ],
+      "bucket": "unlabeled"
+    }
+  ]
+}

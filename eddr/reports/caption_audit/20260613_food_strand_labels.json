@@ -1,0 +1,92 @@
+{
+  "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "wrong_object_sprouts_as_noodles"
+  },
+  "photos_library:B49E3B7E-A176-4262-8243-05CDF09B6F97": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "wrong_object_sprouts_as_noodles"
+  },
+  "google_takeout:dcfc5107634cb328ce5be480a282b67376a442221cc3399f766e6e0cd2a8b81c": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "ricecake_or_fishcake_as_noodles"
+  },
+  "google_takeout:2725af21d4d6177853d01cff740ab4bcdd260658ca812572c1d41ed4d787173c": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "shredded_garnish_as_noodles"
+  },
+  "photos_library:918C796C-C2A7-4D8B-A5E2-721B335548FD": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "shredded_daikon_as_vermicelli"
+  },
+  "photos_library:74A6F142-7D6E-43C1-A8D7-798678B30B1D": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "shredded_daikon_as_noodles"
+  },
+  "google_takeout:0bad0955b5530470a6e309192633caddda4d537f06f8263f834f437b43b85823": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "product_text_false_positive"
+  },
+  "photos_library:41B493AE-DA20-47D1-9E08-A8063B650F6C": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "text_poster_only"
+  },
+  "photos_library:4C388076-304F-4312-B7F4-FAEB2FA78324": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "menu_text_only"
+  },
+  "photos_library:F6D478C5-7593-4A75-A300-FE76C130B1A5": {
+    "visual_target": false,
+    "caption_claims_target": true,
+    "review_label": "product_packaging_only"
+  },
+  "photos_library:8341DE03-EEA5-4C5E-8576-7CEC7AC07CD9": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing_hedged"
+  },
+  "photos_library:22A9902C-4951-4345-9BF5-8124EAC8519E": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing_hedged"
+  },
+  "photos_library:3289758F-826E-4FCC-9954-4EAC4FBB0A96": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing_hedged"
+  },
+  "photos_library:1E269100-63CE-469F-ABCF-3474FAD9258E": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing_duplicate"
+  },
+  "photos_library:C873DF6B-2B13-4415-8ED5-6F5ED2FA0C8B": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing"
+  },
+  "photos_library:C65630C8-0789-40C8-BB85-7D3C556B151A": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing_duplicate"
+  },
+  "photos_library:FF7E5213-D40C-425F-90BD-A5331EAB0634": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing"
+  },
+  "photos_library:F68F9208-0DD3-4E45-9F21-E7F8378067E1": {
+    "visual_target": true,
+    "caption_claims_target": false,
+    "review_label": "exact_dish_missing"
+  }
+}
