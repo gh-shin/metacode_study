@@ -1,0 +1,233 @@
+# EDDR RAG quality evaluation questions.
+# Source: user-selected docs/golden_set.yaml questions, re-shaped for the RAG quality assignment.
+# The extra fields are ignored by eddr golden; match is consumed by src/eddr/query/golden.py.
+version: 2
+assignment: rag_quality_evaluation
+selected_by: user
+selected_at: "2026-06-11"
+pass_threshold: 8
+
+questions:
+  - id: G01
+    category: multi_document_semantic
+    assignment_type: 여러 문서를 종합해야 하는 질문
+    difficulty: medium
+    origin: Q001
+    question: "이탈리아 여행 사진 중 돌로미티나 산악 풍경을 찾아줘"
+    answer_type: photo_list
+    expected_signal: "이탈리아 trip 범위 안에서 mountain, alpine, peak 성격의 캡션 사진이 상위에 노출되어야 한다."
+    expect: "이탈리아 trip 기간 사진 위주로 산악 풍경이 상위에 와야 한다."
+    reference:
+      trip: "trip_20190629_01 · 2019-06-29~07-12"
+      caption_pool: "trip 내 mountain/alpine/peak 캡션 104장"
+      sample_positive_photo_ids:
+        - "photos_library:10F0537E-EA00-4D19-98A0-BCD510EA1762"
+        - "photos_library:0B9802E9-E6ED-4CCF-A160-A24FA223A555"
+        - "photos_library:1F0BD890-C3A8-4F6E-B2B9-C93FE33D5022"
+        - "photos_library:BCA2BCF6-0BF9-4C05-B6A6-493B456A6E83"
+    match:
+      photo_ids_any:
+        - "photos_library:10F0537E-EA00-4D19-98A0-BCD510EA1762"
+        - "photos_library:0B9802E9-E6ED-4CCF-A160-A24FA223A555"
+        - "photos_library:1F0BD890-C3A8-4F6E-B2B9-C93FE33D5022"
+        - "photos_library:BCA2BCF6-0BF9-4C05-B6A6-493B456A6E83"
+      caption_contains_any:
+        words: ["mountain", "alpine", "peak"]
+        top_k: 20
+
+  - id: G02
+    category: multi_document_semantic
+    assignment_type: 여러 문서를 종합해야 하는 질문
+    difficulty: hard
+    origin: Q004
+    question: "아이슬란드 여행에서 차량 이동이나 도로가 나온 사진을 찾아줘"
+    answer_type: photo_list
+    expected_signal: "아이슬란드 여러 trip에서 road, car, vehicle, driving 장면을 넓게 회수해야 한다."
+    expect: "아이슬란드 trip 사진 중 도로·차량 장면이 상위에 와야 한다."
+    reference:
+      trips: "trip_20210218_01 · trip_20220917_01 · trip_20250924_01"
+      caption_pool: "아이슬란드 trip 내 road/car/vehicle/driving 캡션 130장"
+      sample_positive_photo_ids:
+        - "photos_library:95C84580-FE83-439C-9120-EF2CBD31D3E5"
+        - "local:ce552ff61ee3e9d5b58832a8aa61fd154cad9327e7f2f1449a1fca6934b7698d"
+        - "photos_library:6D03C700-3C42-42F4-976E-ADCA540123E7"
+        - "photos_library:31FB7FBF-C514-45AE-88F3-2C988CD43D26"
+    match:
+      photo_ids_any:
+        - "photos_library:95C84580-FE83-439C-9120-EF2CBD31D3E5"
+        - "local:ce552ff61ee3e9d5b58832a8aa61fd154cad9327e7f2f1449a1fca6934b7698d"
+        - "photos_library:6D03C700-3C42-42F4-976E-ADCA540123E7"
+        - "photos_library:31FB7FBF-C514-45AE-88F3-2C988CD43D26"
+      caption_contains_any:
+        words: ["road", "car", "vehicle", "driving"]
+        top_k: 20
+
+  - id: G03
+    category: conditional_location_semantic
+    assignment_type: 조건 비교가 필요한 질문
+    difficulty: hard
+    origin: Q005
+    question: "몽골에서 별이나 은하수가 나온 사진 찾아줘"
+    answer_type: photo_list
+    expected_signal: "은하수 사진 중 국내 운여해변 distractor를 피하고 몽골 trip 결과를 우선해야 한다."
+    expect: "몽골 trip 기간의 밤하늘·은하수 사진이 상위에 와야 한다."
+    reference:
+      trip: "trip_20180713_01 · 2018-07-13~21"
+      caption_pool: "trip 내 milky way/starry/night sky/stars 캡션 19장"
+      distractor: "운여해변 2015-12 은하수 19장"
+      sample_positive_photo_ids:
+        - "local:f52551cc730b86a6c80d15b93e9f8edc436505b812f7d3bc016341f48f4fe372"
+        - "local:5d014746f9905871a9e7e58fe885d2f3196898ceeaec23ea3ea47e361fb716c3"
+        - "photos_library:4C3DFA08-1D4F-4221-8BDC-CB2EE6132C25"
+        - "local:ecf2b8d53e55f1b0374eeebb4444ebde1685162bf7e3fe8c115ab1ff139d8ce6"
+    match:
+      photo_ids_any:
+        - "local:f52551cc730b86a6c80d15b93e9f8edc436505b812f7d3bc016341f48f4fe372"
+        - "local:5d014746f9905871a9e7e58fe885d2f3196898ceeaec23ea3ea47e361fb716c3"
+        - "photos_library:4C3DFA08-1D4F-4221-8BDC-CB2EE6132C25"
+        - "local:ecf2b8d53e55f1b0374eeebb4444ebde1685162bf7e3fe8c115ab1ff139d8ce6"
+      caption_contains_any:
+        words: ["milky way", "starry", "night sky", "stars"]
+        top_k: 20
+
+  - id: G04
+    category: simple_fact
+    assignment_type: 단순 사실 조회
+    difficulty: medium
+    origin: Q009
+    question: "부산 1박2일 여행 사진은 언제 찍힌 것들이야?"
+    answer_type: fact
+    expected_signal: "부산 1박2일 trip의 날짜 lane이 상위에 노출되어야 한다."
+    expect: "2018-12-29~30 또는 2025-04-04~05 부산 trip 날짜가 확인되어야 한다."
+    reference:
+      trips: "trip_20181229_01(2018-12-29~30) · trip_20250404_01(2025-04-04~05)"
+    match:
+      date_lane_top:
+        date: "2018-12-29"
+        within: 3
+
+  - id: G05
+    category: natural_language_semantic
+    assignment_type: 사용자가 실제로 물어볼 법한 자연어 질문
+    difficulty: medium
+    origin: Q010
+    question: "겹벚꽃이나 봄꽃이 크게 나온 사진 찾아줘"
+    answer_type: photo_list
+    expected_signal: "꽃 클로즈업 사진을 찾되 특정 연도를 과추출하지 않아야 한다."
+    expect: "봄꽃이 크게 나온 사진이 상위에 와야 한다."
+    reference:
+      folders: "20190501_철산 · 20190505_개심사"
+      caption_pool: "blossom/flower/cherry 캡션 21장"
+    match:
+      caption_contains_any:
+        words: ["blossom", "flower", "cherry"]
+        top_k: 20
+
+  - id: G06
+    category: data_gap_semantic
+    assignment_type: 여러 문서를 종합해야 하는 질문
+    difficulty: hard
+    origin: Q025
+    question: "개심사에서 절 건물과 꽃이 함께 나온 사진 찾아줘"
+    answer_type: photo_list
+    expected_signal: "GPS와 지명 캡션이 부족한 데이터 부재 케이스에서 temple/flower 후보를 찾아야 한다."
+    expect: "개심사 폴더 사진이 포함되거나, 못 찾을 때 데이터 한계를 드러내야 한다."
+    reference:
+      folder: "20190505_개심사 16장 · GPS 0"
+      sample_positive_photo_ids:
+        - "local:50e7467a7e39ac5cbb8967f0689c0b9e7d46a1a87c6ccf7860a94c371de9f2fd"
+        - "local:7b83574de25b244e03c69fba706820794b62e47a463390c8d5ed4f5513678d27"
+        - "local:4b37d6f7f93fa136edbe29e68717c24e6f57a45afad6331c2f3651fafd7b5d69"
+        - "local:8e133cad09118ded08de835ec321db7abdafea8c4a6591ac448a3ac3eb8f3e77"
+    match:
+      photo_ids_any:
+        - "local:50e7467a7e39ac5cbb8967f0689c0b9e7d46a1a87c6ccf7860a94c371de9f2fd"
+        - "local:7b83574de25b244e03c69fba706820794b62e47a463390c8d5ed4f5513678d27"
+        - "local:4b37d6f7f93fa136edbe29e68717c24e6f57a45afad6331c2f3651fafd7b5d69"
+        - "local:8e133cad09118ded08de835ec321db7abdafea8c4a6591ac448a3ac3eb8f3e77"
+
+  - id: G07
+    category: conditional_location_semantic
+    assignment_type: 조건 비교가 필요한 질문
+    difficulty: medium
+    origin: Q031
+    question: "제주에서 검은 바위 해변이나 현무암 해안이 나온 사진 찾아줘"
+    answer_type: photo_list
+    expected_signal: "제주 장소 조건과 basalt/black rock 장면 조건을 함께 만족해야 한다."
+    expect: "제주시·서귀포시 사진 중 검은 바위·현무암 해안 장면이 상위에 와야 한다."
+    reference:
+      caption_pool: "제주/서귀포 geocode + volcanic/basalt/black rock/rocky 캡션 82장"
+      sample_positive_photo_ids:
+        - "photos_library:885EDD8D-D20B-41E3-A3F7-1999A998EAF6"
+        - "photos_library:52ECFB8C-8949-4FFD-9F9A-51B3E820DADD"
+        - "photos_library:EE0D86A8-F15F-4EA1-A8AE-F8C0E42FBA3B"
+        - "photos_library:27DE9A83-1E3F-436E-B6B4-81DD6D742FD6"
+    match:
+      photo_ids_any:
+        - "photos_library:885EDD8D-D20B-41E3-A3F7-1999A998EAF6"
+        - "photos_library:52ECFB8C-8949-4FFD-9F9A-51B3E820DADD"
+        - "photos_library:EE0D86A8-F15F-4EA1-A8AE-F8C0E42FBA3B"
+        - "photos_library:27DE9A83-1E3F-436E-B6B4-81DD6D742FD6"
+      caption_contains_any:
+        words: ["volcanic", "basalt", "black rock", "rocky"]
+        top_k: 20
+
+  - id: G08
+    category: simple_fact
+    assignment_type: 단순 사실 조회
+    difficulty: easy
+    origin: user-new
+    question: "내가 이탈리아를 언제 갔더라?"
+    answer_type: fact
+    expected_signal: "이탈리아 trip 시작 날짜 lane이 상위에 노출되어야 한다."
+    expect: "2019년 6월 말~7월 초를 제시하면 통과."
+    reference:
+      trip: "trip_20190629_01 · 2019-06-29~07-12"
+    match:
+      date_lane_top:
+        date: "2019-06-29"
+        within: 3
+
+  - id: G09
+    category: natural_language_semantic
+    assignment_type: 사용자가 실제로 물어볼 법한 자연어 질문
+    difficulty: hard
+    origin: user-new
+    question: "용산에서 뭘 먹었었는지 보여줘"
+    answer_type: photo_list
+    expected_signal: "서울 용산구 음식 사진을 찾고 평창 용산리 동음이의 잡음을 줄여야 한다."
+    expect: "용산구 음식 사진이 상위에 와야 한다."
+    reference:
+      pool: "서울 용산구 food/meal/restaurant/dish 캡션 27장"
+      homonym: "평창 대관령면 용산리 18장"
+      sample_positive_photo_ids:
+        - "photos_library:A8130F8C-43CC-4AA9-BCEF-72177B50023A"
+        - "photos_library:7B7D8AA0-5BDA-43AB-835B-771CB4394E0C"
+        - "photos_library:9900EA90-5D80-457D-9E69-5C6B2E022F30"
+        - "photos_library:396F7B56-BB33-4EEE-AE65-1926029E9898"
+    match:
+      photo_ids_any:
+        - "photos_library:A8130F8C-43CC-4AA9-BCEF-72177B50023A"
+        - "photos_library:7B7D8AA0-5BDA-43AB-835B-771CB4394E0C"
+        - "photos_library:9900EA90-5D80-457D-9E69-5C6B2E022F30"
+        - "photos_library:396F7B56-BB33-4EEE-AE65-1926029E9898"
+      caption_contains_any:
+        words: ["food", "meal", "restaurant", "dish"]
+        top_k: 20
+
+  - id: G10
+    category: broad_semantic
+    assignment_type: 사용자가 실제로 물어볼 법한 자연어 질문
+    difficulty: easy
+    origin: user-new
+    question: "은하수 사진들 찾아줘"
+    answer_type: photo_list
+    expected_signal: "장소 조건 없이 전체 라이브러리에서 milky way 사진을 폭넓게 회수해야 한다."
+    expect: "은하수 사진이 상위에 넓게 반환되어야 한다."
+    reference:
+      caption_pool: "milky way 캡션 36장"
+      no_gps: "36장 중 34장 GPS 없음"
+    match:
+      caption_contains_any:
+        words: ["milky way"]
+        top_k: 20

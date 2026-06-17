@@ -1,0 +1,160 @@
+# EDDR 골든셋 v1 — ⑧ 회귀 검증 기준 (PLAN D13·D23)
+#
+# 선별: 사용자 직접(2026-06-11, 모바일 회신) — 후보 풀 docs/GOLDEN_QUERY_CANDIDATES.md의
+#   Q001·Q004·Q005·Q009·Q010·Q025·Q031(7문항) + 사용자 신규 3문항(G08~G10).
+# 분포: R1 2 · R3 7 · 복합 1. R2(누구랑)는 ADR-0004 person 질의 폐기에 따라 0문항
+#   — 사용자 선별로 기존 "R1 5 / R2 3 / R3 2" 분포 계획을 대체 확정.
+# expect/reference: 실DB(data/eddr.sqlite, 2026-06-11) 추출 ground truth 기반 초안.
+#   최종 확정은 사용자 — 검토 후 confirmed: pending을 확정 날짜로 교체한다.
+# 채점: 사람 채점이 최종. auto_check는 보조 신호(ok=명백 실패 없음, warn=확인 필요)일
+#   뿐 통과 판정이 아니다. Done = 10문항 중 8개 이상 사람 채점 통과.
+
+version: 1
+selected_by: user
+selected_at: "2026-06-11"
+confirmed: pending
+pass_threshold: 8
+
+questions:
+  - id: G01
+    origin: Q001
+    range: R3
+    question: "이탈리아 여행 사진 중 돌로미티나 산악 풍경을 찾아줘"
+    answer_type: photo_list
+    expect: >-
+      이탈리아 trip(2019-06-29~07-12) 기간 사진 위주로 산악 풍경이 상위에 와야 한다.
+      '돌로미티' 지명 자체는 캡션에 없을 수 있으므로 산악 장면이면 인정.
+    reference:
+      trip: "trip_20190629_01 · 2019-06-29~07-12 · 278장 배정 (폴더 2019_이탈리아 435장)"
+      caption_pool: "trip 내 mountain/alpine/peak 캡션 104장"
+    auto_check:
+      photos_returned: true
+
+  - id: G02
+    origin: Q004
+    range: R3
+    question: "아이슬란드 여행에서 차량 이동이나 도로가 나온 사진을 찾아줘"
+    answer_type: photo_list
+    expect: >-
+      아이슬란드 trip 사진 중 도로·차량 장면. 아이슬란드 trip은 3개(2021-02·2022-09·
+      2025-09) — 어느 trip이든 무방.
+    reference:
+      trips: "trip_20210218_01(15장) · trip_20220917_01(530장) · trip_20250924_01(384장)"
+      caption_pool: "아이슬란드 trip 내 road/car/vehicle/driving 캡션 130장"
+    auto_check:
+      photos_returned: true
+
+  - id: G03
+    origin: Q005
+    range: R3
+    question: "몽골에서 별이나 은하수가 나온 사진 찾아줘"
+    answer_type: photo_list
+    expect: >-
+      몽골 trip(2018-07-13~21) 기간의 밤하늘 사진. 핵심 채점 포인트: 은하수 최대
+      군집은 국내 운여해변(2015-12, 19장)이므로 몽골 한정 필터를 걸었는지 확인.
+    reference:
+      trip: "trip_20180713_01 · 2018-07-13~21 · 448장"
+      caption_pool: "trip 내 milky way/starry/night sky/stars 캡션 19장"
+      distractor: "운여해변 2015-12 은하수 19장 (몽골 아님 — 섞이면 감점)"
+    auto_check:
+      photos_returned: true
+
+  - id: G04
+    origin: Q009
+    range: R1
+    question: "부산 1박2일 여행 사진은 언제 찍힌 것들이야?"
+    answer_type: fact
+    expect: >-
+      2018-12-29~30을 정확히 제시하면 통과. 부산 1박2일 trip은 2025-04-04~05에도
+      1개 더 있음 — 둘 다 언급하면 가점, 2025만 답하면 부분 정답(사용자 판단).
+    reference:
+      trips: "trip_20181229_01(2018-12-29~30, 39장) · trip_20250404_01(2025-04-04~05, 22장)"
+      folder: "181229_30_busan 폴더(local) 25장 — 2018-12-29 14:43 ~ 12-30 15:53"
+    auto_check:
+      answer_contains_any: ["2018", "2025"]
+
+  - id: G05
+    origin: Q010
+    range: R3
+    question: "겹벚꽃이나 봄꽃이 크게 나온 사진 찾아줘"
+    answer_type: photo_list
+    expect: >-
+      봄꽃이 크게(클로즈업) 나온 사진 위주. 전체 라이브러리 대상이므로 출처 폴더
+      외의 봄꽃 사진도 정답 가능.
+    reference:
+      folders: "20190501_철산(23장)·20190505_개심사(16장) — blossom/flower/cherry 캡션 21장"
+      caveat: "두 폴더 GPS 0장 · EXIF는 2018-05(폴더명 2019와 1년 불일치) — 장면 채점이라 무관"
+    auto_check:
+      photos_returned: true
+
+  - id: G06
+    origin: Q025
+    range: R3
+    question: "개심사에서 절 건물과 꽃이 함께 나온 사진 찾아줘"
+    answer_type: photo_list
+    expect: >-
+      절(한국 전통 건축)과 꽃이 함께 나온 장면. 고난도 — 개심사 폴더는 GPS·geocode가
+      전혀 없어 지명 필터 불가, 순수 semantic만 가능. 개심사 폴더 사진이 포함되면 통과,
+      못 찾을 때 추측 없이 한계를 밝히는지도 관찰.
+    reference:
+      folder: "20190505_개심사 16장(EXIF 2018-05-05) — GPS 0 · 캡션에 temple 직접 언급 미확인"
+    auto_check:
+      photos_returned: true
+
+  - id: G07
+    origin: Q031
+    range: R3
+    question: "제주에서 검은 바위 해변이나 현무암 해안이 나온 사진 찾아줘"
+    answer_type: photo_list
+    expect: >-
+      제주(제주시·서귀포시) 사진 중 검은 바위·현무암 해안 장면. 지명+장면 복합 질의 —
+      semantic 검색에 cities 필터(제주)를 결합했는지가 채점 포인트.
+    reference:
+      caption_pool: "제주/서귀포 geocode + volcanic/basalt/black rock/rocky 캡션 82장"
+    auto_check:
+      photos_returned: true
+
+  - id: G08
+    origin: user-new
+    range: R1
+    question: "내가 이탈리아를 언제 갔더라?"
+    answer_type: fact
+    expect: >-
+      2019년 6월 말~7월 초(6-29~7-12)를 제시하면 통과. 연도+월이 맞으면 인정,
+      ±1일 오차는 타임존 정책 미확정(TODO) 감안.
+    reference:
+      trip: "trip_20190629_01 · 2019-06-29 ~ 07-12(UTC naive) · 278장"
+    auto_check:
+      answer_contains_all: ["2019"]
+
+  - id: G09
+    origin: user-new
+    range: complex
+    question: "용산에서 뭘 먹었었는지 보여줘"
+    answer_type: photo_list
+    expect: >-
+      서울 용산구에서 찍힌 음식 사진 제시 + 무엇을 먹었는지 캡션 기반 한국어 설명.
+      동음이의 주의: 평창 대관령면 '용산리' 18장이 cities LIKE 매칭에 섞일 수 있음 —
+      혼입 시 구분 언급 기대.
+    reference:
+      pool: >-
+        서울 용산구 노출 171장(영상 포함 291) 중 food/meal/restaurant/dish 캡션 27장
+        — 최초 기재 115는 '%eat%' substring 과대매칭 수치라 정정(2026-06-11 벤치 재검증)
+      homonym: "평창 대관령면 용산리 18장(노출 17장)"
+    auto_check:
+      photos_returned: true
+
+  - id: G10
+    origin: user-new
+    range: R3
+    question: "은하수 사진들 찾아줘"
+    answer_type: photo_list
+    expect: >-
+      은하수 사진을 폭넓게 반환. 채점 포인트: 은하수 사진 36장 중 34장이 GPS 없음 —
+      has_location=false 사진을 "위치 정보 없음"으로 구분해 언급하는지(시스템 프롬프트
+      준수) 확인.
+    reference:
+      caption_pool: "milky way 캡션 36장 — 최대 군집 운여해변 2015-12(19장), 그 외 몽골 등"
+      no_gps: "36장 중 34장 GPS 없음"
+    auto_check:
+      photos_returned: true

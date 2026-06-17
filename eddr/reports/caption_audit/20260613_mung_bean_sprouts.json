@@ -1,0 +1,527 @@
+{
+  "query": "숙주볶음",
+  "keywords": [
+    "mung bean sprouts",
+    "bean sprouts",
+    "sprouts",
+    "food"
+  ],
+  "keyword_stats": {
+    "mung bean sprouts": {
+      "keyword": "mung bean sprouts",
+      "document_count": 0
+    },
+    "bean sprouts": {
+      "keyword": "bean sprouts",
+      "document_count": 6
+    },
+    "sprouts": {
+      "keyword": "sprouts",
+      "document_count": 6
+    },
+    "food": {
+      "keyword": "food",
+      "document_count": 1066
+    }
+  },
+  "hits": [
+    {
+      "photo_id": "photos_library:0EF790BF-9480-4D4D-A2E3-BB3AA98892CF",
+      "rank": 1,
+      "fused_score": 0.030303030303030304,
+      "vector_rank": 6,
+      "vector_distance": 1.3007454872131348,
+      "vector_score": 0.015151515151515152,
+      "lexical_rank": 6,
+      "lexical_score": 0.015151515151515152,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a hearty bowl of savory Asian soup, featuring slices of meat, bean sprouts, and a perfectly cooked fried egg in a rich broth. The dish is presented in a white bowl and includes visible Korean text around the rim.",
+      "caption_keywords": [
+        "Korean soup",
+        "meat and egg",
+        "bean sprouts",
+        "savory stew",
+        "bowl food",
+        "close-up food photography",
+        "Korean cuisine"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:A473EA10-2024-4480-993D-35F3DFE65834",
+      "rank": 2,
+      "fused_score": 0.029418126757516764,
+      "vector_rank": 7,
+      "vector_distance": 1.3054428100585938,
+      "vector_score": 0.014925373134328358,
+      "lexical_rank": 9,
+      "lexical_score": 0.014492753623188406,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a vibrant, glossy red dish, likely a spicy Korean food, presented on a plate. Several pieces of the food are held up by wooden chopsticks, emphasizing the texture and rich sauce.",
+      "caption_keywords": [
+        "Tteokbokki",
+        "spicy food",
+        "Korean food",
+        "red sauce",
+        "food photography",
+        "chopsticks",
+        "close-up",
+        "street food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:9B58DE1B-4DD6-434A-AF4D-0D54869029C4",
+      "rank": 3,
+      "fused_score": 0.0264957264957265,
+      "vector_rank": 5,
+      "vector_distance": 1.2962234020233154,
+      "vector_score": 0.015384615384615385,
+      "lexical_rank": 30,
+      "lexical_score": 0.011111111111111112,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a rectangular box filled with a reddish-orange, saucy food, likely a prepared dish or stew, which is lined with aluminum foil. A pair of chopsticks rests on top of the food within the box.",
+      "caption_keywords": [
+        "Food box",
+        "saucy dish",
+        "aluminum foil",
+        "chopsticks",
+        "Korean food packaging",
+        "prepared meal",
+        "tabletop food."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:69E02B0E-F4FD-459B-89C8-5344EA5D6780",
+      "rank": 4,
+      "fused_score": 0.026234567901234566,
+      "vector_rank": 21,
+      "vector_distance": 1.3406873941421509,
+      "vector_score": 0.012345679012345678,
+      "lexical_rank": 12,
+      "lexical_score": 0.013888888888888888,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A bowl of golden fried snacks is displayed on a brown surface, next to a piece of sauced, rolled food resting on a white plate. The food is heavily coated in a bright orange sauce and appears to be a type of street food.",
+      "caption_keywords": [
+        "Fried snacks",
+        "Korean street food",
+        "sauced food",
+        "tteokbokki",
+        "fried potatoes",
+        "food photography",
+        "bowl",
+        "white plate",
+        "orange sauce."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:B49E3B7E-A176-4262-8243-05CDF09B6F97",
+      "rank": 5,
+      "fused_score": 0.024796803967488637,
+      "vector_rank": 1,
+      "vector_distance": 1.2648231983184814,
+      "vector_score": 0.01639344262295082,
+      "lexical_rank": 59,
+      "lexical_score": 0.008403361344537815,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a sizzling dish served in a black skillet, filled with a savory, reddish-brown sauce, noodles, and vegetables. The food appears to be a spicy stir-fry or noodle dish, resting on a bright yellow surface in what looks like a casual dining setting.",
+      "caption_keywords": [
+        "Noodle stir-fry",
+        "glass noodles",
+        "spicy food",
+        "skillet meal",
+        "Korean food",
+        "food photography",
+        "restaurant food",
+        "sizzling dish."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "google_takeout:497f92788af7bd947cfafcc9fa00eca4c5ed81d5c5af6a89f2938eb15c891ec3",
+      "rank": 6,
+      "fused_score": 0.023323276862381063,
+      "vector_rank": 2,
+      "vector_distance": 1.2662315368652344,
+      "vector_score": 0.016129032258064516,
+      "lexical_rank": 79,
+      "lexical_score": 0.007194244604316547,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up photo of a meal setting featuring cooked meat in a white bowl, accompanied by packaged food items and a round white object on a plate. Visible text suggests the food is Korean, and chopsticks rest in the bowl.",
+      "caption_keywords": [
+        "Korean food",
+        "meat bowl",
+        "Komju",
+        "사슴갈비",
+        "Komju packaging",
+        "chopsticks",
+        "food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:88F84221-89B1-4B85-8C93-8D06D6422141",
+      "rank": 7,
+      "fused_score": 0.022857889237199582,
+      "vector_rank": 27,
+      "vector_distance": 1.3539564609527588,
+      "vector_score": 0.011494252873563218,
+      "lexical_rank": 28,
+      "lexical_score": 0.011363636363636364,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is an overhead shot of a meal arranged on a colorful, patterned blanket, featuring various snacks and food items wrapped in aluminum foil and served in small containers. The food includes crispy fried items, rolled snacks, and white side dishes.",
+      "caption_keywords": [
+        "Food picnic",
+        "foil wrapped snacks",
+        "fried food",
+        "patterned blanket",
+        "overhead view",
+        "Korean food",
+        "takeaway meal."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:41B493AE-DA20-47D1-9E08-A8063B650F6C",
+      "rank": 8,
+      "fused_score": 0.022705196697425933,
+      "vector_rank": 56,
+      "vector_distance": 1.3900423049926758,
+      "vector_score": 0.008620689655172414,
+      "lexical_rank": 11,
+      "lexical_score": 0.014084507042253521,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a photograph of a savory bowl of Korean food, likely noodles or a stew, garnished with fresh green vegetables, presented attractively. The image is heavily annotated with Korean text, referencing \"Jeonbuk Pyeongyang Noodles\" and dates, suggesting it is promotional material for a specific regional food.",
+      "caption_keywords": [
+        "Korean food",
+        "Pyeongyang noodles",
+        "Jeonbuk food",
+        "food photography",
+        "bowl",
+        "chopsticks",
+        "Korean cuisine",
+        "regional food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:5694C019-B8C2-44C1-8D1B-800576955A73",
+      "rank": 9,
+      "fused_score": 0.019969278033794162,
+      "vector_rank": 64,
+      "vector_distance": 1.397345781326294,
+      "vector_score": 0.008064516129032258,
+      "lexical_rank": 24,
+      "lexical_score": 0.011904761904761904,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a top-down photograph featuring two distinct food items presented on white paper on a wooden surface. On the left is a neat stack of dark, wrapped food, and on the right is a pile of reddish-orange, textured ingredients.",
+      "caption_keywords": [
+        "Food photography",
+        "Korean food",
+        "seaweed",
+        "seasoned vegetables",
+        "wooden table",
+        "meal setting",
+        "food pairing"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:72C5A392-F820-4A99-BB35-EA16619041B5",
+      "rank": 10,
+      "fused_score": 0.018722018722018723,
+      "vector_rank": 3,
+      "vector_distance": 1.280503511428833,
+      "vector_score": 0.015873015873015872,
+      "lexical_rank": 291,
+      "lexical_score": 0.002849002849002849,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up overhead view of a meal served on a large, round, black metal skillet resting on a metal trivet. Surrounding the skillet are several small metal bowls filled with various side dishes, including vegetables, reddish food, and light-colored ingredients.",
+      "caption_keywords": [
+        "Korean food",
+        "skillet meal",
+        "side dishes",
+        "döggal",
+        "table food",
+        "metal bowls",
+        "ingredients"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:0B82A3E6-3EC9-491F-8C4F-32DB657D4531",
+      "rank": 11,
+      "fused_score": 0.017962137365122442,
+      "vector_rank": 17,
+      "vector_distance": 1.3286198377609253,
+      "vector_score": 0.012987012987012988,
+      "lexical_rank": 141,
+      "lexical_score": 0.004975124378109453,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a meal served in a large, round brass bowl, featuring sliced meat topped with a spicy seasoning and garnished with cucumber strips. The food is set on a woven table, with a bottle of Korean food product visible in the background.",
+      "caption_keywords": [
+        "Korean food",
+        "spicy meat dish",
+        "cucumber topping",
+        "brass bowl",
+        "table setting",
+        "Korean bottle",
+        "in-house dining",
+        "food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:30A395A9-8DFE-4111-AE4B-C90ADD0D62D4",
+      "rank": 12,
+      "fused_score": 0.017847222222222223,
+      "vector_rank": 4,
+      "vector_distance": 1.2888180017471313,
+      "vector_score": 0.015625,
+      "lexical_rank": 390,
+      "lexical_score": 0.0022222222222222222,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up, overhead view of a communal meal set on a wooden table, featuring several round metal bowls filled with various Korean dishes, including spicy stew, fried ingredients, and a fried egg. The scene captures a casual, shared dining experience with visible hands pointing at the food.",
+      "caption_keywords": [
+        "Korean food",
+        "shared meal",
+        "tabletop photography",
+        "spicy stew",
+        "fried food",
+        "restaurant dining",
+        "metal bowls",
+        "banchan"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:C7B0E252-20B8-477D-AC56-34D1412537F3",
+      "rank": 13,
+      "fused_score": 0.01751487111698612,
+      "vector_rank": 8,
+      "vector_distance": 1.3085339069366455,
+      "vector_score": 0.014705882352941176,
+      "lexical_rank": 296,
+      "lexical_score": 0.0028089887640449437,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A large plate of seasoned rice is displayed on a wooden table, surrounded by several small white bowls containing various side dishes and sauces. The meal is presented in a casual setting with scattered utensils and Korean text visible in the background.",
+      "caption_keywords": [
+        "Korean food",
+        "fried rice",
+        "bibimbap",
+        "side dishes",
+        "wooden table",
+        "meal",
+        "Asian food",
+        "food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:9CEBA576-EAC8-4B6E-B7AE-36B57A02FF79",
+      "rank": 14,
+      "fused_score": 0.016959511077158134,
+      "vector_rank": 10,
+      "vector_distance": 1.311102032661438,
+      "vector_score": 0.014285714285714285,
+      "lexical_rank": 314,
+      "lexical_score": 0.00267379679144385,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a meal served in a restaurant setting, featuring a large pot of simmering seafood stew, side dishes, and several small bowls. A person is seated at a wooden table, holding chopsticks and looking down at the food.",
+      "caption_keywords": [
+        "Korean food",
+        "seafood stew",
+        "restaurant meal",
+        "wooden table",
+        "chopsticks",
+        "side dishes",
+        "food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:6887BB3B-16D3-4CCA-A375-C35224AB4EDD",
+      "rank": 15,
+      "fused_score": 0.01639344262295082,
+      "vector_rank": null,
+      "vector_distance": null,
+      "vector_score": 0.0,
+      "lexical_rank": 1,
+      "lexical_score": 0.01639344262295082,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "A close-up shot features thinly sliced cooked meat and fresh bean sprouts arranged on a black platter. The food rests on a red surface, suggesting a casual dining setting.",
+      "caption_keywords": [
+        "Sliced beef",
+        "bean sprouts",
+        "platter",
+        "Asian food",
+        "grilled meat",
+        "food photography",
+        "BBQ"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "google_takeout:37512d27d31778af8ba89905720516908774ec417eee80f3c093a0603cb1ca42",
+      "rank": 16,
+      "fused_score": 0.016290726817042606,
+      "vector_rank": 24,
+      "vector_distance": 1.3495893478393555,
+      "vector_score": 0.011904761904761904,
+      "lexical_rank": 168,
+      "lexical_score": 0.0043859649122807015,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up photo of a piece of golden-brown fried food resting on a yellow paper label. The label features Korean and English text, including the brand name \"SUNG DANG\" and the year \"since1956.\"",
+      "caption_keywords": [
+        "SUNG DANG",
+        "득심당",
+        "송상등",
+        "fried fish",
+        "food packaging",
+        "vintage food label",
+        "since1956"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:F49ACF52-2B81-4212-8D87-9E2E5B1F2847",
+      "rank": 17,
+      "fused_score": 0.016156462585034014,
+      "vector_rank": 12,
+      "vector_distance": 1.320328950881958,
+      "vector_score": 0.013888888888888888,
+      "lexical_rank": 381,
+      "lexical_score": 0.0022675736961451248,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a platter featuring several pieces of light-colored flatbread or pancakes arranged around a mound of spicy, reddish vegetables, likely kimchi or a similar side dish. A small white dipping sauce is placed in the center of the platter among the food.",
+      "caption_keywords": [
+        "Flatbread",
+        "pancakes",
+        "kimchi",
+        "savory food",
+        "side dish",
+        "dipping sauce",
+        "casual meal",
+        "Asian food",
+        "platter"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "google_takeout:6d11c84819c0bedc41e43eb0e3d25fbc2991a1618858bf406588da36cd17879e",
+      "rank": 18,
+      "fused_score": 0.016129032258064516,
+      "vector_rank": null,
+      "vector_distance": null,
+      "vector_score": 0.0,
+      "lexical_rank": 2,
+      "lexical_score": 0.016129032258064516,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "A bowl of rich, reddish-brown soup is topped with long strips of bean sprouts and mixed vegetables, resting on a rustic wooden surface. The photo features a close-up view of the appetizing food presentation.",
+      "caption_keywords": [
+        "Food photography",
+        "soup",
+        "bean sprouts",
+        "curry",
+        "rustic wood background",
+        "homemade food",
+        "savory dish"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:BEC4E6F2-598D-4B27-872F-906AF06DC485",
+      "rank": 19,
+      "fused_score": 0.016112907968244633,
+      "vector_rank": 35,
+      "vector_distance": 1.364051342010498,
+      "vector_score": 0.010526315789473684,
+      "lexical_rank": 119,
+      "lexical_score": 0.00558659217877095,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This image features a dark blue sign with white and red Korean text, likely a menu or promotional display for a Korean food item. The sign prominently features the text \"Since 1969\" and references a dish, suggesting it is a historical or traditional food marker.",
+      "caption_keywords": [
+        "Korean Food",
+        "Choinaezip Budae Jjigae",
+        "Spicy Sausage",
+        "Since 1969",
+        "Korean Menu",
+        "Hangul text",
+        "Food sign"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:F4F6774E-550F-4274-A5AE-01B0CEBABC2B",
+      "rank": 20,
+      "fused_score": 0.015873015873015872,
+      "vector_rank": null,
+      "vector_distance": null,
+      "vector_score": 0.0,
+      "lexical_rank": 3,
+      "lexical_score": 0.015873015873015872,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "This photo captures a close-up view of a meal consisting of sliced beef and bean sprouts arranged on a black platter. The food is set against a vibrant red background, suggesting a dining setting.",
+      "caption_keywords": [
+        "Sliced beef",
+        "bean sprouts",
+        "stir-fry",
+        "meat platter",
+        "food photography",
+        "red background",
+        "Asian food."
+      ],
+      "bucket": "unlabeled"
+    }
+  ]
+}

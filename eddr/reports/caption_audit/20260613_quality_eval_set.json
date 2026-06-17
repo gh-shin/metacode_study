@@ -1,0 +1,214 @@
+{
+  "generated": "2026-06-13",
+  "note": "범용 캡션 품질 평가셋 — 유형 층화",
+  "photos": [
+    {
+      "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+      "source": "photos_library",
+      "type": "food",
+      "current_caption": "This is a close-up shot of a bowl of savory noodles submerged in a rich brown broth. The dish features light-colored noodles mixed with yellow-green vegetables, and a metal spoon rests partially in the food.\n\nSearch keywords: Noodle soup, Asian food, savory noodles, broth, close-up food, vermicelli, bowl food",
+      "image_path": "data/photos_export/48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD.JPG",
+      "note": "오캡션 회귀 케이스 — 콩나물을 noodle로 오인 (wrong_object_sprouts_as_noodles)"
+    },
+    {
+      "photo_id": "photos_library:B49E3B7E-A176-4262-8243-05CDF09B6F97",
+      "source": "photos_library",
+      "type": "food",
+      "current_caption": "This is a close-up shot of a sizzling dish served in a black skillet, filled with a savory, reddish-brown sauce, noodles, and vegetables. The food appears to be a spicy stir-fry or noodle dish, resting on a bright yellow surface in what looks like a casual dining setting.\n\n**Search keywords:** Noodle stir-fry, glass noodles, spicy food, skillet meal, Korean food, food photography, restaurant food, sizzling dish.",
+      "image_path": "data/photos_export/B49E3B7E-A176-4262-8243-05CDF09B6F97.JPG",
+      "note": "오캡션 회귀 케이스 — 콩나물을 noodle로 오인 (wrong_object_sprouts_as_noodles)"
+    },
+    {
+      "photo_id": "google_takeout:dcfc5107634cb328ce5be480a282b67376a442221cc3399f766e6e0cd2a8b81c",
+      "source": "google_takeout",
+      "type": "food",
+      "current_caption": "This is a close-up shot of a vibrant, thick reddish-orange sauce dish, likely a spicy noodle or stir-fry, served in a dark cooking pan. Visible ingredients include light-colored strips and bright green vegetable pieces mixed into the glossy sauce.\n\nSearch keywords: Spicy noodles, Asian food, stir-fry, hot food, sauce, cooking, close up, pan food",
+      "image_path": "data/google_photos/staged/dcfc5107634cb328ce5be480a282b67376a442221cc3399f766e6e0cd2a8b81c.jpg",
+      "note": "오캡션 회귀 케이스 — 떡/어묵을 noodle로 오인 (ricecake_or_fishcake_as_noodles)"
+    },
+    {
+      "photo_id": "google_takeout:57fef138157cbfecb96ab9f356f03eb5c597484a5f590570af7227e28bbab503",
+      "source": "google_takeout",
+      "type": "food",
+      "current_caption": "A close-up shot features thinly sliced raw salmon sashimi served on a black plate, garnished with shredded vegetables and bright orange roe. The dish is presented on a wooden table, highlighting the fresh colors and textures of the seafood.\n\nSearch keywords: raw salmon, sashimi, fish roe, seafood platter, gourmet food, plating, sashimi dish, wooden table",
+      "image_path": "data/google_photos/staged/57fef138157cbfecb96ab9f356f03eb5c597484a5f590570af7227e28bbab503.jpg",
+      "note": "정상 음식 — 연어 사시미, 명확한 seafood 묘사"
+    },
+    {
+      "photo_id": "google_takeout:d79b88f2c9cc2c6252ed3905f7301c2785706f96331930042ca2f084587d0d99",
+      "source": "google_takeout",
+      "type": "food",
+      "current_caption": "A pile of raw meat cuts is arranged on a metal grill grate, surrounded by small bowls containing seasoning or sauce. The setup is positioned above glowing red embers, suggesting a rustic food preparation scene.\n\nSearch keywords: Raw meat, grilling, pork, food preparation, grill, embers, seasoning, cooking",
+      "image_path": "data/google_photos/staged/d79b88f2c9cc2c6252ed3905f7301c2785706f96331930042ca2f084587d0d99.jpg",
+      "note": "정상 음식 — 구이, 명확한 meat·grill 묘사"
+    },
+    {
+      "photo_id": "google_takeout:23de9cfda7cda89636fbf9b345299cb24ba3b31a5688622363797a6a37e5b3fb",
+      "source": "google_takeout",
+      "type": "food",
+      "current_caption": "This is a close-up shot of a savory meal served in a dark, round skillet. The dish features fluffy white rice generously mixed with pieces of richly cooked, reddish-brown meat.\n\nSearch keywords: Food photography, skillet meal, seasoned rice, cooked meat, savory dish, skillet cooking, rice and meat.",
+      "image_path": "data/google_photos/staged/23de9cfda7cda89636fbf9b345299cb24ba3b31a5688622363797a6a37e5b3fb.jpg",
+      "note": "정상 음식 — 볶음밥·고기 스킬릿, 명확한 rice·meat 묘사"
+    },
+    {
+      "photo_id": "google_takeout:e351d77f75ee9e1a5b39b54cd2ee7921c2ebc6156fcb08be7b423ff007b23735",
+      "source": "google_takeout",
+      "type": "people",
+      "current_caption": "This is a close-up portrait of a person with long, dark hair, looking directly at the camera with a soft, relaxed expression. The background is softly blurred with shades of green and red, suggesting an outdoor setting among foliage.\n\n**Search keywords:** Portrait, outdoor selfie, natural light, blurred background, woman with long hair, nature, close-up, casual photo",
+      "image_path": "data/google_photos/staged/e351d77f75ee9e1a5b39b54cd2ee7921c2ebc6156fcb08be7b423ff007b23735.jpg",
+      "note": "일반 — 여성 인물 클로즈업 포트레이트"
+    },
+    {
+      "photo_id": "google_takeout:75f841b5ec2d43850b8c373b21f73b0598e0d2a84a2f41c5b7d02f0e3a4dd48b",
+      "source": "google_takeout",
+      "type": "people",
+      "current_caption": "This is a close-up selfie taken from a high angle, focusing on the person's face, hair, and glasses, with a scenic, green, rolling landscape visible in the background. The setting appears to be outdoors, likely during daylight, with hills and faint structures visible near the horizon.\n\nSearch keywords: Landscape selfie, green hills, outdoor portrait, high angle photo, rolling hills, nature background, sunglasses, outdoor scenery, windmills.",
+      "image_path": "data/google_photos/staged/75f841b5ec2d43850b8c373b21f73b0598e0d2a84a2f41c5b7d02f0e3a4dd48b.jpg",
+      "note": "일반 — 셀피, 배경 언덕 풍경 포함"
+    },
+    {
+      "photo_id": "google_takeout:64d7b8552dca236e76dd8bc8fc6fe064b63c2cbfd15f8069bf0d6b55b2e7525f",
+      "source": "google_takeout",
+      "type": "people",
+      "current_caption": "This is a close-up photo of two young men posing together in low light. One man on the left is wearing glasses and a dark shirt, while the man on the right is wearing a patterned collared shirt and making a peace sign.\n\nSearch keywords: two young men, close-up portrait, friends posing, casual photo, glasses, peace sign, low light, selfie style",
+      "image_path": "data/google_photos/staged/64d7b8552dca236e76dd8bc8fc6fe064b63c2cbfd15f8069bf0d6b55b2e7525f.jpg",
+      "note": "일반 — 두 남성 저조도 포즈 사진"
+    },
+    {
+      "photo_id": "google_takeout:486af8b00810b9b6a0a2b9d3b961e8579e26dd619e7b60213fc56f8da5edd089",
+      "source": "google_takeout",
+      "type": "people",
+      "current_caption": "This is an outdoor group portrait of five young adults posing in a grassy field with a long stone wall visible in the background under bright sunlight. The scene features natural light and a wide, open landscape.\n\n**Search keywords:** Group photo, outdoor portrait, stone wall background, grassy field, sunny day, landscape, friends, summer, travel photo",
+      "image_path": "data/google_photos/staged/486af8b00810b9b6a0a2b9d3b961e8579e26dd619e7b60213fc56f8da5edd089.jpg",
+      "note": "일반 — 야외 그룹 단체 사진"
+    },
+    {
+      "photo_id": "google_takeout:4302f6e493e09870b7c92484f66ac85aa561df222c42710a98f2cbc242e96cc8",
+      "source": "google_takeout",
+      "type": "people",
+      "current_caption": "A dark horse with white markings is standing in a clearing surrounded by tall, bare trees in a forest setting. A person is standing behind the horse, overlooking the open, dry landscape.\n\n**Search keywords:** Horse, rider, forest, woods, outdoor, nature, clearing, bare trees, landscape, wilderness, trail",
+      "image_path": "data/google_photos/staged/4302f6e493e09870b7c92484f66ac85aa561df222c42710a98f2cbc242e96cc8.jpg",
+      "note": "일반 — 말과 인물, 숲속 장면"
+    },
+    {
+      "photo_id": "google_takeout:bef87651c41d8ba9fa3d0ddd21f6bd8609c1922f3289361fe3ac9588e0f2d212",
+      "source": "google_takeout",
+      "type": "landscape",
+      "current_caption": "This photograph captures a rugged line of dark rocks stretching across the foreground, meeting a calm expanse of deep blue water. A small figure can be seen standing near the rocks in the distance, emphasizing the vastness of the seascape.\n\n**Search keywords:** Rocks, coastline, seascape, dark water, ocean landscape, jetty, nature, horizon, rocky shore",
+      "image_path": "data/google_photos/staged/bef87651c41d8ba9fa3d0ddd21f6bd8609c1922f3289361fe3ac9588e0f2d212.jpg",
+      "note": "일반 — 해안가 바위·바다 풍경"
+    },
+    {
+      "photo_id": "google_takeout:9942042197dd1809d7e8ca4c15180e79ae9ce5960ac2b8d3962da6ede8f1cbb8",
+      "source": "google_takeout",
+      "type": "landscape",
+      "current_caption": "This photograph captures a lush, green hillside densely covered with vegetation, partially obscured by heavy atmospheric mist. Multiple layers of mountains recede into the distance, creating a deeply layered and ethereal landscape under soft, diffused light.\n\n**Search keywords:** Misty mountains, foggy landscape, green wilderness, layered hills, atmospheric fog, lush foliage, mountainous vista, ethereal nature.",
+      "image_path": "data/google_photos/staged/9942042197dd1809d7e8ca4c15180e79ae9ce5960ac2b8d3962da6ede8f1cbb8.jpg",
+      "note": "일반 — 안개 낀 산 중첩 풍경"
+    },
+    {
+      "photo_id": "google_takeout:37164744cef8704c6585ef3c4c2ee3c90f5082c384ca6b09f36e32842f1c9ae3",
+      "source": "google_takeout",
+      "type": "landscape",
+      "current_caption": "This is an elevated view of a sprawling urban landscape, showing a foreground of lush trees and a busy road leading up to a dense city skyline. Several tall, modern office buildings dominate the background, suggesting a metropolitan area.\n\nSearch keywords: Cityscape, skyline, urban view, highway, park, trees, high-rise buildings, office buildings, East Asia, road view.",
+      "image_path": "data/google_photos/staged/37164744cef8704c6585ef3c4c2ee3c90f5082c384ca6b09f36e32842f1c9ae3.jpg",
+      "note": "일반 — 도시 스카이라인 부감 풍경"
+    },
+    {
+      "photo_id": "google_takeout:6789a58aef9611284e96dd51f90379eb5e6e026da6d557dd677fefacabf73010",
+      "source": "google_takeout",
+      "type": "landscape",
+      "current_caption": "This is a landscape photograph showing a long stretch of road flanked by trees, silhouetted against a soft, cloudy sky, likely during sunrise or sunset. Streetlights line the road in the foreground, emphasizing the open, rural, or highway setting.\n\nSearch keywords: Road, Highway, Sunset, Sunrise, Silhouette, Trees, Streetlights, Cloudy Sky, Landscape, Asphalt",
+      "image_path": "data/google_photos/staged/6789a58aef9611284e96dd51f90379eb5e6e026da6d557dd677fefacabf73010.jpg",
+      "note": "일반 — 일몰/일출 도로 실루엣 풍경"
+    },
+    {
+      "photo_id": "google_takeout:a845ce2334f103fc142adefed09fab059371f77f55221b830fa1ac99618a750b",
+      "source": "google_takeout",
+      "type": "landscape",
+      "current_caption": "This is a view looking out from an elevated, modern walkway or bridge structure, framed by dark architectural beams and railings. Two figures are visible walking along the path, overlooking a vast expanse of blue sky and a distant cityscape below.\n\n**Search keywords:**\nBridge view, city skyline, elevated walkway, architectural lines, outdoor path, silhouette, urban landscape, railing, daylight",
+      "image_path": "data/google_photos/staged/a845ce2334f103fc142adefed09fab059371f77f55221b830fa1ac99618a750b.jpg",
+      "note": "일반 — 고가 보행로에서 본 도시 전망"
+    },
+    {
+      "photo_id": "google_takeout:9a2995ba41d18552a356388528500d10d577391ad713384796f5189d152c93de",
+      "source": "google_takeout",
+      "type": "document",
+      "current_caption": "This is a screenshot of a data grid or spreadsheet displayed on a computer screen, showing rows and columns of information. The table contains a mix of numbers and Korean text, likely relating to codes or data entry.\n\n**Search keywords:** Data grid, spreadsheet, Korean text, table, data entry, interface, CD_041_S, NM 041_S",
+      "image_path": "data/google_photos/staged/9a2995ba41d18552a356388528500d10d577391ad713384796f5189d152c93de.jpg",
+      "note": "일반 — 스프레드시트/데이터 그리드 스크린샷"
+    },
+    {
+      "photo_id": "google_takeout:939e3252caf4b533f4bd27c85a9756340bddc10e263fcf5543007c21426c3647",
+      "source": "google_takeout",
+      "type": "document",
+      "current_caption": "This image is a dense display of Korean text and numerical sequences, appearing to be file metadata, a heavily annotated document, or a screenshot of digital information. The visible text includes references to Microsoft Windows and Google, suggesting a digital or web context.\n\n**Search keywords:** Korean text, file metadata, screenshot, Microsoft Windows, Google, numerical data, document, digital information",
+      "image_path": "data/google_photos/staged/939e3252caf4b533f4bd27c85a9756340bddc10e263fcf5543007c21426c3647.jpg",
+      "note": "일반 — 한국어 텍스트·파일 메타데이터 스크린샷"
+    },
+    {
+      "photo_id": "google_takeout:4ac85ef2116f71c53e2fe3c20d0febeda63ec55256028e69a921fda2b8651d50",
+      "source": "google_takeout",
+      "type": "document",
+      "current_caption": "This photo shows the screen of a laptop displaying the loading sequence for a Linux operating system. The central display features the text \"CentOS 6\" along with a spinning loading icon.\n\n**Search keywords:** CentOS 6, laptop screen, operating system boot, Linux, LG laptop, CentOS 6 wallpaper",
+      "image_path": "data/google_photos/staged/4ac85ef2116f71c53e2fe3c20d0febeda63ec55256028e69a921fda2b8651d50.jpg",
+      "note": "일반 — 노트북 화면(OS 부팅 화면) 스크린"
+    },
+    {
+      "photo_id": "google_takeout:ba02232c8cc8dfcf9226aa2ad450d8ffb6e8ffed806cf4e1458e08de519d6cd9",
+      "source": "google_takeout",
+      "type": "document",
+      "current_caption": "This is a screenshot of a Korean webpage, likely related to a service request or customer support system for a company named \"DOOT TO DOOT Service.\" The page displays various fields for submitting information, including dates, contact numbers, and specific request details.\n\n**Search keywords:**\nDOOT TO DOOT service, A/S center, customer service form, Korean webpage screenshot, service request",
+      "image_path": "data/google_photos/staged/ba02232c8cc8dfcf9226aa2ad450d8ffb6e8ffed806cf4e1458e08de519d6cd9.jpg",
+      "note": "일반 — 한국어 웹페이지 고객서비스 양식 스크린샷"
+    },
+    {
+      "photo_id": "google_takeout:6f774034007c2992dd319c7c61704fabe9da4c658da3c88c415310de7d295b8b",
+      "source": "google_takeout",
+      "type": "document",
+      "current_caption": "This is a screenshot of a text-based command-line interface, displaying technical system output and file references. The screen shows various strings related to Java version and file operations, suggesting a system debugging or process display.\n\n**Search keywords:**\nTerminal screenshot, command line interface, Java version 1.6.0.0, system output, file path, system log, text interface",
+      "image_path": "data/google_photos/staged/6f774034007c2992dd319c7c61704fabe9da4c658da3c88c415310de7d295b8b.jpg",
+      "note": "일반 — 터미널 CLI 출력 스크린샷"
+    },
+    {
+      "photo_id": "google_takeout:a4ec0f2963f80dff422489ae8dcac2d639c04800ba966a9bf18aa11700fbf2a9",
+      "source": "google_takeout",
+      "type": "store_product",
+      "current_caption": "This photo captures a narrow street scene lined with storefronts under an overcast sky, dominated by a large, dark, striped fabric awning overhead. In the foreground, red outdoor furniture and a man walking down the street are visible between the buildings.\n\nSearch keywords: Street scene, South Korea, alleyway, storefronts, striped awning, outdoor furniture, urban, street photography, Korean text",
+      "image_path": "data/google_photos/staged/a4ec0f2963f80dff422489ae8dcac2d639c04800ba966a9bf18aa11700fbf2a9.jpg",
+      "note": "일반 — 골목 상점가 거리 사진"
+    },
+    {
+      "photo_id": "google_takeout:fce1145afaba440a3cf1bd06b0b2c1248ca7273a0603e79e61da5f1e4c1c3b73",
+      "source": "google_takeout",
+      "type": "store_product",
+      "current_caption": "This photo shows a collection of packaged goods, primarily boxes featuring close-up portraits of men's hairstyles, resting on a piece of brown corrugated cardboard. The items appear to be products from a brand named \"reskin.\"\n\n**Search keywords:** reskin, men's hairstyles, product packaging, photo boxes, cardboard, portrait, fashion photography, male models",
+      "image_path": "data/google_photos/staged/fce1145afaba440a3cf1bd06b0b2c1248ca7273a0603e79e61da5f1e4c1c3b73.jpg",
+      "note": "일반 — 제품 패키지 박스 묶음(reskin 브랜드)"
+    },
+    {
+      "photo_id": "google_takeout:dc2922554ebf62df7300c63c3700c336fd1a4a08c70576bd417a1d49dd19e852",
+      "source": "google_takeout",
+      "type": "store_product",
+      "current_caption": "This is a close-up shot featuring a green glass bottle of Jingo beer prominently displayed in the foreground, along with two white cups in the background. A person wearing a dark shirt is partially visible behind the bottles, suggesting a product or event setting.\n\n**Search keywords:** Jingo beer, green bottle, beer product photography, white cups, beverage display, 360ml bottle, Chinese label",
+      "image_path": "data/google_photos/staged/dc2922554ebf62df7300c63c3700c336fd1a4a08c70576bd417a1d49dd19e852.jpg",
+      "note": "일반 — 맥주 병 제품 클로즈업"
+    },
+    {
+      "photo_id": "google_takeout:8690facea665488d4c73566d70955471423e75b29b027fa197403ecccee030cc",
+      "source": "google_takeout",
+      "type": "store_product",
+      "current_caption": "This photograph shows a collection of various glass bottles, mostly filled with liquids, stored within a white plastic container. The bottles are arranged in two main groups: a vertical column on the left and a cluster on the right.\n\n**Search keywords:** Bottles, glass containers, wine bottles, liquid storage, food items, labels, white plastic box, storage.",
+      "image_path": "data/google_photos/staged/8690facea665488d4c73566d70955471423e75b29b027fa197403ecccee030cc.jpg",
+      "note": "일반 — 유리병 라벨·패키지 모음"
+    },
+    {
+      "photo_id": "google_takeout:05a3819da51c6f08bc75f0ceb771f53303e89cf2f765120abe0b76ef1fc22006",
+      "source": "google_takeout",
+      "type": "store_product",
+      "current_caption": "This photo captures a close-up view of various packaged cream pastries and snack foods displayed on a retail shelf. The foreground is dominated by bags of \"Sfogliie cream\" and other branded items, suggesting a grocery or convenience store setting.\n\nSearch keywords: Sfogliie cream, pastries, cream snacks, grocery shelf, food packaging, Italian snacks, Deuka, Valtalia",
+      "image_path": "data/google_photos/staged/05a3819da51c6f08bc75f0ceb771f53303e89cf2f765120abe0b76ef1fc22006.jpg",
+      "note": "일반 — 소매 진열대 과자·스낵 패키지"
+    }
+  ]
+}

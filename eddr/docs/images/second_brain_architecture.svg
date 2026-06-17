@@ -1,0 +1,134 @@
+<svg viewBox="0 0 740 520" xmlns="http://www.w3.org/2000/svg" role="img" style="font-family: system-ui, -apple-system, sans-serif;">
+  <title>EDDR Second-Brain 3-Layer Architecture</title>
+  <desc>Karpathy LLM Wiki 패턴을 EDDR에 적용한 3계층 아키텍처: Schema Layer, Wiki Layer, Source Layer와 3가지 Operation(Ingest, Query, Lint)</desc>
+  <style>
+    .layer-label { font-size: 11px; font-weight: 700; fill: #1a1a1a; letter-spacing: 0.5px; }
+    .box { rx: 6; stroke-width: 1.5; }
+    .box-text { font-size: 10.5px; fill: #1a1a1a; }
+    .box-sub { font-size: 9px; fill: #666; }
+    .arrow { stroke: #ccc; stroke-width: 1.2; fill: none; marker-end: url(#arrowhead); }
+    .op-badge { rx: 10; }
+    .op-text { font-size: 9px; font-weight: 700; fill: white; }
+    .section-bg { rx: 8; fill: #f8f8f8; stroke: #ddd; stroke-width: 1; }
+    .legend-text { font-size: 9px; fill: #666; }
+  </style>
+  <defs>
+    <marker id="arrowhead" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 Z" fill="#999" />
+    </marker>
+  </defs>
+
+  <!-- Layer 1: Schema (Top) -->
+  <rect x="20" y="15" width="700" height="110" class="section-bg" fill="#fef9ef" stroke="#e8d5a0" />
+  <text x="40" y="38" class="layer-label" fill="#b8860b">SCHEMA LAYER — 에이전트 진입점</text>
+
+  <rect x="40" y="50" width="130" height="60" class="box" fill="#fff8e1" stroke="#e8d5a0" />
+  <text x="105" y="72" class="box-text" text-anchor="middle" font-weight="600">CLAUDE.md</text>
+  <text x="105" y="86" class="box-sub" text-anchor="middle">포인터 전용 (~30행)</text>
+  <text x="105" y="98" class="box-sub" text-anchor="middle">불변규칙 + SoT 링크</text>
+
+  <rect x="195" y="50" width="130" height="60" class="box" fill="#fff8e1" stroke="#e8d5a0" />
+  <text x="260" y="72" class="box-text" text-anchor="middle" font-weight="600">WIKI_INDEX.md</text>
+  <text x="260" y="86" class="box-sub" text-anchor="middle">전체 wiki 목차</text>
+  <text x="260" y="98" class="box-sub" text-anchor="middle">1-line summary + 링크</text>
+
+  <rect x="350" y="50" width="130" height="60" class="box" fill="#fff8e1" stroke="#e8d5a0" />
+  <text x="415" y="72" class="box-text" text-anchor="middle" font-weight="600">CONTEXT.md</text>
+  <text x="415" y="86" class="box-sub" text-anchor="middle">도메인 용어집</text>
+  <text x="415" y="98" class="box-sub" text-anchor="middle">항상 context 로드</text>
+
+  <rect x="505" y="50" width="130" height="60" class="box" fill="#fff8e1" stroke="#e8d5a0" />
+  <text x="570" y="72" class="box-text" text-anchor="middle" font-weight="600">AGENTS.md</text>
+  <text x="570" y="86" class="box-sub" text-anchor="middle">워크플로우 규칙</text>
+  <text x="570" y="98" class="box-sub" text-anchor="middle">wiki 읽기/쓰기 프로토콜</text>
+
+  <!-- Layer 2: Wiki (Middle) -->
+  <rect x="20" y="145" width="700" height="160" class="section-bg" fill="#f0f7ff" stroke="#a0c4e8" />
+  <text x="40" y="168" class="layer-label" fill="#2563eb">WIKI LAYER — LLM이 소유·갱신하는 컴파일된 지식</text>
+
+  <rect x="40" y="180" width="100" height="55" class="box" fill="#e8f0fe" stroke="#a0c4e8" />
+  <text x="90" y="200" class="box-text" text-anchor="middle" font-weight="600">decisions/</text>
+  <text x="90" y="214" class="box-sub" text-anchor="middle">결정 요약 페이지</text>
+  <text x="90" y="226" class="box-sub" text-anchor="middle">D1-D23 컴파일</text>
+
+  <rect x="155" y="180" width="100" height="55" class="box" fill="#e8f0fe" stroke="#a0c4e8" />
+  <text x="205" y="200" class="box-text" text-anchor="middle" font-weight="600">architecture/</text>
+  <text x="205" y="214" class="box-sub" text-anchor="middle">스키마·파이프라인</text>
+  <text x="205" y="226" class="box-sub" text-anchor="middle">컴포넌트별 요약</text>
+
+  <rect x="270" y="180" width="100" height="55" class="box" fill="#e8f0fe" stroke="#a0c4e8" />
+  <text x="320" y="200" class="box-text" text-anchor="middle" font-weight="600">models/</text>
+  <text x="320" y="214" class="box-sub" text-anchor="middle">기술 선택 근거</text>
+  <text x="320" y="226" class="box-sub" text-anchor="middle">벤치마크 요약</text>
+
+  <rect x="385" y="180" width="100" height="55" class="box" fill="#e8f0fe" stroke="#a0c4e8" />
+  <text x="435" y="200" class="box-text" text-anchor="middle" font-weight="600">impl-log/</text>
+  <text x="435" y="214" class="box-sub" text-anchor="middle">구현 진행 기록</text>
+  <text x="435" y="226" class="box-sub" text-anchor="middle">이슈·해결·학습</text>
+
+  <rect x="500" y="180" width="100" height="55" class="box" fill="#e8f0fe" stroke="#a0c4e8" />
+  <text x="550" y="200" class="box-text" text-anchor="middle" font-weight="600">data-profile/</text>
+  <text x="550" y="214" class="box-sub" text-anchor="middle">EDA 결과 요약</text>
+  <text x="550" y="226" class="box-sub" text-anchor="middle">실측 수치 정리</text>
+
+  <rect x="615" y="180" width="100" height="55" class="box" fill="#e8f0fe" stroke="#a0c4e8" />
+  <text x="665" y="200" class="box-text" text-anchor="middle" font-weight="600">research/</text>
+  <text x="665" y="214" class="box-sub" text-anchor="middle">외부 논문·벤치</text>
+  <text x="665" y="226" class="box-sub" text-anchor="middle">기술 비교 정리</text>
+
+  <!-- Lifecycle badges -->
+  <rect x="40" y="250" width="44" height="16" class="op-badge" fill="#22c55e" />
+  <text x="62" y="261" class="op-text" text-anchor="middle">fresh</text>
+  <rect x="92" y="250" width="52" height="16" class="op-badge" fill="#eab308" />
+  <text x="118" y="261" class="op-text" text-anchor="middle">verified</text>
+  <rect x="152" y="250" width="40" height="16" class="op-badge" fill="#ef4444" />
+  <text x="172" y="261" class="op-text" text-anchor="middle">stale</text>
+  <text x="200" y="261" class="legend-text"> ← 각 wiki page에 lifecycle metadata 부여</text>
+
+  <!-- Layer 3: Source (Bottom) -->
+  <rect x="20" y="325" width="700" height="95" class="section-bg" fill="#f0fdf4" stroke="#86efac" />
+  <text x="40" y="348" class="layer-label" fill="#16a34a">SOURCE LAYER — 불변 원본 (LLM 읽기 전용)</text>
+
+  <rect x="40" y="358" width="130" height="48" class="box" fill="#dcfce7" stroke="#86efac" />
+  <text x="105" y="378" class="box-text" text-anchor="middle" font-weight="600">docs/PLAN.md</text>
+  <text x="105" y="392" class="box-sub" text-anchor="middle">MVP 설계서 원본</text>
+
+  <rect x="195" y="358" width="130" height="48" class="box" fill="#dcfce7" stroke="#86efac" />
+  <text x="260" y="378" class="box-text" text-anchor="middle" font-weight="600">docs/adr/</text>
+  <text x="260" y="392" class="box-sub" text-anchor="middle">ADR 0001-0004</text>
+
+  <rect x="350" y="358" width="130" height="48" class="box" fill="#dcfce7" stroke="#86efac" />
+  <text x="415" y="378" class="box-text" text-anchor="middle" font-weight="600">docs/SOLUTION_*</text>
+  <text x="415" y="392" class="box-sub" text-anchor="middle">기술 검증 원본</text>
+
+  <rect x="505" y="358" width="130" height="48" class="box" fill="#dcfce7" stroke="#86efac" />
+  <text x="570" y="378" class="box-text" text-anchor="middle" font-weight="600">notebooks/ data/</text>
+  <text x="570" y="392" class="box-sub" text-anchor="middle">EDA 노트북·데이터</text>
+
+  <!-- Operations -->
+  <rect x="20" y="440" width="700" height="70" class="section-bg" fill="#faf5ff" stroke="#c084fc" />
+  <text x="40" y="463" class="layer-label" fill="#9333ea">OPERATIONS — 에이전트가 수행하는 wiki 유지 동작</text>
+
+  <rect x="40" y="472" width="70" height="24" class="op-badge" fill="#8b5cf6" />
+  <text x="75" y="488" class="op-text" text-anchor="middle">INGEST</text>
+  <text x="120" y="488" class="legend-text">새 source → wiki page 생성/갱신</text>
+
+  <rect x="285" y="472" width="65" height="24" class="op-badge" fill="#6366f1" />
+  <text x="318" y="488" class="op-text" text-anchor="middle">QUERY</text>
+  <text x="360" y="488" class="legend-text">index → drill-down → 작업 수행</text>
+
+  <rect x="520" y="472" width="55" height="24" class="op-badge" fill="#a855f7" />
+  <text x="548" y="488" class="op-text" text-anchor="middle">LINT</text>
+  <text x="585" y="488" class="legend-text">source↔wiki 일관성 검증</text>
+
+  <!-- Arrows: Schema → Wiki -->
+  <path d="M105 110 L105 130 L90 180" class="arrow" />
+  <path d="M260 110 L260 130 L205 180" class="arrow" />
+  <path d="M260 110 L260 130 L320 180" class="arrow" />
+
+  <!-- Arrows: Source → Wiki (dashed = ingest) -->
+  <path d="M105 358 L105 340 L90 235" class="arrow" stroke-dasharray="4,3" />
+  <path d="M260 358 L260 340 L205 235" class="arrow" stroke-dasharray="4,3" />
+  <path d="M415 358 L415 340 L435 235" class="arrow" stroke-dasharray="4,3" />
+  <path d="M570 358 L570 340 L550 235" class="arrow" stroke-dasharray="4,3" />
+</svg>

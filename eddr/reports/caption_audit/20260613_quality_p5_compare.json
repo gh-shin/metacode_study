@@ -1,0 +1,262 @@
+[
+  {
+    "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+    "type": "food",
+    "truth_note": "오캡션 회귀 케이스 — 콩나물을 noodle로 오인 (wrong_object_sprouts_as_noodles)",
+    "image_path": "data/photos_export/48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD.JPG",
+    "C2_qwen8b_p3": "A close-up of a dark bowl filled with steaming rice soup, featuring bean sprouts, yellow mung bean sprouts, sliced green onions, and a rich brown broth, with a spoon partially submerged. The scene conveys a fresh, appetizing casual meal.  \nSearch keywords: rice soup, bean sprouts, mung bean sprouts, green onions, broth, spoon, bowl, meal, casual dining",
+    "C2b_qwen8b_p5": "A close-up of a dark bowl contains a light brown broth with white rice, long white bean sprouts, yellow bean sprouts, sliced green onions, and small red chili pieces, with a metal spoon lifting some of the food.  \n\nSearch keywords: soup, rice, bean sprouts, green onions, chili peppers, metal spoon, dark bowl",
+    "C3_gemma31b_p4": "A spoon lifts white rice, bean sprouts, and sliced green onions from a light brown broth in a dark bowl. The liquid contains small red specks and more green onion rings.\n\nSearch keywords: food, meal, broth, soup, bowl, rice, bean sprouts, green onion, spoon, light brown liquid, dark bowl",
+    "C3b_gemma31b_p5": "A silver spoon lifts white rice, bean sprouts, and sliced green onions from a brown broth in a black bowl. Small red specks are visible within the liquid.\n\nSearch keywords: food, soup, white rice, bean sprouts, green onions, brown broth, silver spoon, black bowl"
+  },
+  {
+    "photo_id": "photos_library:B49E3B7E-A176-4262-8243-05CDF09B6F97",
+    "type": "food",
+    "truth_note": "오캡션 회귀 케이스 — 콩나물을 noodle로 오인 (wrong_object_sprouts_as_noodles)",
+    "image_path": "data/photos_export/B49E3B7E-A176-4262-8243-05CDF09B6F97.JPG",
+    "C2_qwen8b_p3": "The photo shows a close-up of a cast-iron skillet filled with a vibrant, spicy Korean dish featuring bean sprouts, yellow beans (likely soybeans), and marinated meat in a rich red sauce, served at an outdoor market or street food stall. Visible surroundings include a bright yellow chair, a red plastic seat, and a metal container with Korean text, creating a casual, bustling dining atmosphere.  \n\nSearch keywords: Korean street food, cast-iron skillet meal, spicy meat and bean sprouts, market stall setting, Korean text on container, soybeans and bean sprouts.",
+    "C2b_qwen8b_p5": "A black oval pan holds a savory dish with glossy red sauce, bean sprouts (white stems with yellow tips), pieces of meat, and small yellow elements, resting on a metal surface near a yellow metal structure and a red plastic chair. In the background, a container displays visible Korean text.  \n\nSearch keywords: black oval pan, red sauce, bean sprouts, yellow tips, pieces of meat, small yellow elements, metal surface, yellow metal structure, red plastic chair, Korean text container",
+    "C3_gemma31b_p4": "A black pan contains a mixture of cooked meat and pale sprouts with yellow tips in a thick reddish-brown sauce. The pan sits on an orange surface next to a yellow metal frame and a silver can with Korean text.\n\nSearch keywords: black pan, reddish-brown sauce, cooked meat, sprouts, orange table, yellow metal frame, silver can, Korean text",
+    "C3b_gemma31b_p5": "A black frying pan contains a reddish-brown cooked dish made with strips of meat and bean sprouts. The pan sits on an orange surface near a yellow metal structure and a bottle with Korean writing.\n\nSearch keywords: black frying pan, meat, bean sprouts, red sauce, Korean text, yellow frame, orange surface, food"
+  },
+  {
+    "photo_id": "google_takeout:dcfc5107634cb328ce5be480a282b67376a442221cc3399f766e6e0cd2a8b81c",
+    "type": "food",
+    "truth_note": "오캡션 회귀 케이스 — 떡/어묵을 noodle로 오인 (ricecake_or_fishcake_as_noodles)",
+    "image_path": "data/google_photos/staged/dcfc5107634cb328ce5be480a282b67376a442221cc3399f766e6e0cd2a8b81c.jpg",
+    "C2_qwen8b_p3": "A steaming pot of spicy Korean-style stew features layers of meat slices, tofu, green peppers, and onion rings in a bubbling, reddish broth. The vibrant ingredients and rising steam create a warm, appetizing scene.  \n\nSearch keywords: Korean hot pot, spicy stew, steaming broth, meat slices, tofu, green vegetables, bubbling pot",
+    "C2b_qwen8b_p5": "A bubbling pot contains slices of pork belly, bean sprouts, green vegetables, and a reddish-orange spicy broth, all cooking in a metal pan.  \nSearch keywords: bubbling pot, pork belly slices, bean sprouts, green vegetables, reddish-orange broth, metal cooking pan",
+    "C3_gemma31b_p4": "A close-up shot shows a bubbling, reddish-orange stew in a dark pan. The stew contains flat, pale-yellow slices, thin white shredded pieces, and bits of green vegetables.\n\nSearch keywords: reddish-orange stew, boiling, bubbles, flat slices, shredded vegetables, green vegetables, dark pan, close-up",
+    "C3b_gemma31b_p5": "A close-up shot shows an orange-red stew bubbling in a black pan. The dish contains wide, flat light-colored strips and chopped pieces of green onion.\n\nSearch keywords: food, stew, orange-red broth, boiling, wide strips, green onion, black pan, cooking"
+  },
+  {
+    "photo_id": "google_takeout:57fef138157cbfecb96ab9f356f03eb5c597484a5f590570af7227e28bbab503",
+    "type": "food",
+    "truth_note": "정상 음식 — 연어 사시미, 명확한 seafood 묘사",
+    "image_path": "data/google_photos/staged/57fef138157cbfecb96ab9f356f03eb5c597484a5f590570af7227e28bbab503.jpg",
+    "C2_qwen8b_p3": "A black plate displays fresh salmon sashimi topped with bright orange fish roe, accompanied by wasabi, shredded white radish, and vibrant microgreens, while a person holds chopsticks near a wooden table in a restaurant setting. The scene captures an appetizing seafood dish with vivid colors and fresh garnishes.  \nSearch keywords: salmon sashimi, fish roe, wasabi, daikon radish, microgreens, chopsticks, restaurant dish, wooden table",
+    "C2b_qwen8b_p5": "A black bowl holds stacked raw salmon slices topped with bright orange fish roe, surrounded by fresh green microgreens, a dollop of green wasabi, and shredded white vegetables, all placed on a wooden table with a person holding chopsticks and a glass of light-colored drink visible in the background.  \n\nSearch keywords: salmon sashimi, fish roe, microgreens, wasabi, shredded white vegetables, black bowl, wooden table, chopsticks, glass of drink",
+    "C3_gemma31b_p4": "A black bowl contains a mound of orange-pink fish slices topped with small orange spheres and resting on white ice. Beside the fish are a dollop of light green paste, green sprouts, and shredded white pieces, all placed on a wooden table with a person holding chopsticks in the background.\n\nSearch keywords: food, meal, black bowl, orange-pink fish, orange spheres, light green paste, green sprouts, shredded white vegetables, white ice, wooden table, chopsticks.",
+    "C3b_gemma31b_p5": "A black bowl contains a mound of orange salmon slices topped with bright orange fish roe, served with wasabi, shredded white radish, and green sprouts. In the background, a person is using chopsticks at a wooden table.\n\nSearch keywords: salmon, sashimi, fish roe, wasabi, shredded radish, sprouts, black bowl, chopsticks, wooden table, food"
+  },
+  {
+    "photo_id": "google_takeout:d79b88f2c9cc2c6252ed3905f7301c2785706f96331930042ca2f084587d0d99",
+    "type": "food",
+    "truth_note": "정상 음식 — 구이, 명확한 meat·grill 묘사",
+    "image_path": "data/google_photos/staged/d79b88f2c9cc2c6252ed3905f7301c2785706f96331930042ca2f084587d0d99.jpg",
+    "C2_qwen8b_p3": "Raw pork chunks rest on a metal grill above glowing red coals, surrounded by small bowls of red sauce and a spice mixture on a stainless steel countertop. The scene captures a vibrant, ready-to-cook barbecue setup with fresh ingredients and visible grilling elements.  \n\nSearch keywords: raw pork, metal grill, glowing coals, red sauce, spice mixture, barbecue preparation, stainless steel countertop",
+    "C2b_qwen8b_p5": "Close-up of raw pork belly chunks on a metal grill over glowing charcoal coals, with small white bowls holding red and light-colored sauces arranged nearby.  \nSearch keywords: raw pork belly, grill, charcoal, sauce bowls, cooking.",
+    "C3_gemma31b_p4": "Chunks of raw pink and white meat sit on a metal grill above glowing red embers. Three small white bowls containing red sauce and white powder are in the background.\n\nSearch keywords: raw meat, pink meat, metal grill, red embers, charcoal, red sauce, white bowls, barbecue",
+    "C3b_gemma31b_p5": "Pieces of raw, cubed pork with visible white fat are placed on a metal grill over glowing red coals. Small white bowls containing red and white dipping sauces are seen in the background.\n\nSearch keywords: raw pork, meat cubes, metal grill, charcoal, glowing embers, dipping sauces, white bowls"
+  },
+  {
+    "photo_id": "google_takeout:23de9cfda7cda89636fbf9b345299cb24ba3b31a5688622363797a6a37e5b3fb",
+    "type": "food",
+    "truth_note": "정상 음식 — 볶음밥·고기 스킬릿, 명확한 rice·meat 묘사",
+    "image_path": "data/google_photos/staged/23de9cfda7cda89636fbf9b345299cb24ba3b31a5688622363797a6a37e5b3fb.jpg",
+    "C2_qwen8b_p3": "A close-up shot of a hot stone pot filled with shredded roasted chicken featuring glossy, caramelized skin and steaming white rice, arranged in a sizzling cast-iron dish. The meal appears freshly prepared, with golden-brown chicken pieces mixed with rice, creating an appetizing and warm dining scene.  \n\nSearch keywords: roasted chicken, stone pot rice, shredded chicken, sizzling dish, restaurant meal.",
+    "C2b_qwen8b_p5": "A dark cast iron skillet holds a serving of tender, shredded roasted chicken with a glossy, browned exterior, accompanied by fluffy white rice beneath it; steam rises from the hot dish.  \n\nSearch keywords: roasted chicken, white rice, cast iron skillet, glossy chicken, steam, shredded chicken",
+    "C3_gemma31b_p4": "Reddish-brown glazed and shredded meat is served on a bed of white rice in a dark, shallow pan.\n\nSearch keywords: food, meal, cooked meat, glazed meat, white rice, dark pan, chicken.",
+    "C3b_gemma31b_p5": "Pieces of roasted chicken with browned skin and white meat are served on top of a bed of white rice in a dark, textured bowl. The dish is positioned on a dark surface with edges of other small white plates visible.\n\nSearch keywords: food, roasted chicken, white rice, black bowl, meal"
+  },
+  {
+    "photo_id": "google_takeout:e351d77f75ee9e1a5b39b54cd2ee7921c2ebc6156fcb08be7b423ff007b23735",
+    "type": "people",
+    "truth_note": "일반 — 여성 인물 클로즈업 포트레이트",
+    "image_path": "data/google_photos/staged/e351d77f75ee9e1a5b39b54cd2ee7921c2ebc6156fcb08be7b423ff007b23735.jpg",
+    "C2_qwen8b_p3": "The photo shows a person with shoulder-length dark hair wearing a white top, standing near a window with a softly blurred outdoor backdrop of green foliage and red flowers, creating a calm, natural atmosphere.  \n\nSearch keywords: outdoor portrait, shoulder-length hair, white top, window background, garden greenery, red flowers, soft natural lighting.",
+    "C2b_qwen8b_p5": "An image displayed on a computer monitor features a person with short brown hair wearing a white top, positioned against a blurred background of green foliage and red flowers. The monitor shows Adobe Photoshop interface elements, including vertical rulers and file name text on the left side.  \n\nSearch keywords: computer screen photo, short brown hair, white top, blurred outdoor background, green plants, red flowers, Adobe Photoshop interface",
+    "C3_gemma31b_p4": "A person with brown hair and a smile wears a white garment in a blurred outdoor setting with green foliage. The photo is displayed on a computer screen, surrounded by a photo editing software interface.\n\nSearch keywords: person, brown hair, smile, white top, blurred background, greenery, computer screen, photo editing software.",
+    "C3b_gemma31b_p5": "A photo of a computer screen displaying a rotated image of a woman with brown hair and a white top smiling. She is positioned against a blurred background of green foliage and small red flowers, and the image is framed by a photo editing software interface.\n\nSearch keywords: computer screen, monitor, photo editing software, woman, brown hair, white top, smiling, blurred background, green foliage, red flowers, rotated image."
+  },
+  {
+    "photo_id": "google_takeout:75f841b5ec2d43850b8c373b21f73b0598e0d2a84a2f41c5b7d02f0e3a4dd48b",
+    "type": "people",
+    "truth_note": "일반 — 셀피, 배경 언덕 풍경 포함",
+    "image_path": "data/google_photos/staged/75f841b5ec2d43850b8c373b21f73b0598e0d2a84a2f41c5b7d02f0e3a4dd48b.jpg",
+    "C2_qwen8b_p3": "A person wearing glasses and a light blue shirt captures a selfie from an elevated position, overlooking a reservoir with wind turbines along the shoreline and surrounding hilly terrain. The landscape features mixed green and brown hills under a bright sky, with \"KON\" visible on the cap.  \n\nSearch keywords: selfie, reservoir, wind turbines, hilly landscape, glasses, light blue shirt, outdoor scenery, KON cap",
+    "C2b_qwen8b_p5": "The photo depicts an upside-down view of a person with curly dark hair wearing black-framed glasses and a light blue shirt with partially visible text on the collar, positioned against a backdrop of a large body of water bordered by hilly terrain with mixed green and brown vegetation and several white wind turbines near the water’s edge. Bright daylight illuminates the outdoor scene.  \n\nSearch keywords: upside-down photo, person with curly dark hair, black-framed glasses, light blue shirt (partial text \"KON\"), large body of water, hilly terrain with mixed green and brown vegetation, white wind turbines, daytime outdoor landscape",
+    "C3_gemma31b_p4": "An upside-down close-up photo of a man with curly brown hair and black-rimmed glasses. He is positioned in front of a grassy hillside with several white wind turbines in the distance under a bright sky.\n\nSearch keywords: man, curly hair, glasses, purple shirt, upside-down, hillside, wind turbines, outdoors",
+    "C3b_gemma31b_p5": "This upside-down close-up photo shows a man with dark wavy hair and black-rimmed glasses. He is positioned against a backdrop of a pale sky and green hills with several white wind turbines in the distance.\n\nSearch keywords: man, black glasses, wavy hair, upside-down photo, wind turbines, hills, sky, selfie"
+  },
+  {
+    "photo_id": "google_takeout:64d7b8552dca236e76dd8bc8fc6fe064b63c2cbfd15f8069bf0d6b55b2e7525f",
+    "type": "people",
+    "truth_note": "일반 — 두 남성 저조도 포즈 사진",
+    "image_path": "data/google_photos/staged/64d7b8552dca236e76dd8bc8fc6fe064b63c2cbfd15f8069bf0d6b55b2e7525f.jpg",
+    "C2_qwen8b_p3": "Two people pose closely for a selfie indoors, each making a peace sign; one holds a phone while the other wears a light blue shirt with a colorful floral collar. The background is dark and indistinct.  \nSearch keywords: selfie, two people, peace sign, phone, light blue shirt, floral collar, dark background",
+    "C2b_qwen8b_p5": "Two people are posing closely together in a selfie, both making peace signs with their hands. The person on the left wears dark clothing and glasses, while the person on the right wears a light blue shirt with a colorful floral collar.  \n\nSearch keywords: people, selfie, peace sign, glasses, light blue shirt, floral collar, dark background",
+    "C3_gemma31b_p4": "A man wearing black-rimmed glasses and a black shirt and a woman with brown hair wearing a white top with a floral collar and a red bow pose for a close-up photo. The woman is making a peace sign with her hand.\n\nSearch keywords: man, woman, glasses, black shirt, white top, floral collar, red bow, peace sign, close-up.",
+    "C3b_gemma31b_p5": "A man with black hair and black-rimmed glasses wearing a black shirt is posing for a selfie next to a woman. The woman has brown hair and is wearing a white top with a colorful floral collar, and she is making a peace sign with her hand.\n\nSearch keywords: selfie, man, woman, glasses, black shirt, white top, floral collar, peace sign, brown hair, black hair"
+  },
+  {
+    "photo_id": "google_takeout:486af8b00810b9b6a0a2b9d3b961e8579e26dd619e7b60213fc56f8da5edd089",
+    "type": "people",
+    "truth_note": "일반 — 야외 그룹 단체 사진",
+    "image_path": "data/google_photos/staged/486af8b00810b9b6a0a2b9d3b961e8579e26dd619e7b60213fc56f8da5edd089.jpg",
+    "C2_qwen8b_p3": "Six individuals pose together on a sunny grassy field with a clear blue sky, some standing and one sitting, against a backdrop of distant traditional structures. Their casual outdoor attire includes jackets, hats, and sneakers, with the sun creating lens flares on the left side of the image.  \n\nSearch keywords: group photo, sunny field, casual outdoor clothing, lens flares, traditional structures, cheerful mood",
+    "C2b_qwen8b_p5": "Six people pose together on a grassy field under a clear blue sky, with the sun shining brightly on the left and creating visible lens flares; they wear casual outdoor clothing like jackets, hats, and sneakers, with one person seated on the ground and others standing.  \n\nSearch keywords: group photo, outdoor group, grassy field, sunny day, clear blue sky, lens flares, casual outdoor attire (jackets, hats, sneakers), standing and seated individuals, distant building with repeated small structures.",
+    "C3_gemma31b_p4": "Six people wearing casual outdoor clothing and various hats pose together on a grassy, rocky field under a clear blue sky. The sun creates a bright lens flare on the left, and a low white wall with small white structures is visible in the far background.\n\nSearch keywords: people, group photo, outdoors, daytime, clear blue sky, sun flare, hats, wide-brimmed hats, caps, jackets, grassy field, stony ground, white wall, white structures",
+    "C3b_gemma31b_p5": "Six people are posing together in a grassy open field under a clear blue sky with a bright sun flare on the left. They are wearing casual outdoor clothing, including jackets and hats, with five standing and one person sitting on the ground.\n\nSearch keywords: group of people, outdoors, grassy field, blue sky, sun flare, red jacket, straw hats, white sneakers, caps, casual wear."
+  },
+  {
+    "photo_id": "google_takeout:4302f6e493e09870b7c92484f66ac85aa561df222c42710a98f2cbc242e96cc8",
+    "type": "people",
+    "truth_note": "일반 — 말과 인물, 숲속 장면",
+    "image_path": "data/google_photos/staged/4302f6e493e09870b7c92484f66ac85aa561df222c42710a98f2cbc242e96cc8.jpg",
+    "C2_qwen8b_p3": "A person rides a dark horse with white markings through a sparse forest of tall, leafless trees under a bright blue sky with scattered clouds, while the dry, rocky ground is dotted with fallen tree trunks and sparse vegetation.  \n\nSearch keywords: horse riding, forest trail, tall leafless trees, dry rocky ground, blue sky, saddle pad, cool season.",
+    "C2b_qwen8b_p5": "A person rides a dark horse with white markings across a dry, rocky forest floor surrounded by tall, slender trees with few leaves under a bright blue sky with scattered clouds. The landscape features sparse grass, scattered rocks, and cut tree stumps.  \n\nSearch keywords: person riding horse, tall leafless trees, dry grassy ground, blue sky with clouds, dark horse with white markings, rider wearing dark clothing and cap, rocky terrain",
+    "C3_gemma31b_p4": "A person in a black jacket rides a dark brown horse through a forest of tall, leafless trees. The ground consists of brown soil, rocks, and sparse patches of grass under a blue sky with white clouds.\n\nSearch keywords: person, horse, dark brown horse, black jacket, forest, leafless trees, tall trees, blue sky, clouds, rocky ground, saddle, green saddle blanket",
+    "C3b_gemma31b_p5": "A person in dark clothing rides a dark brown horse with white markings through a forest of tall, leafless trees. The ground is covered in dirt and sparse grass under a blue sky with white clouds.\n\nSearch keywords: horse riding, forest, leafless trees, dark brown horse, blue sky, outdoors, nature"
+  },
+  {
+    "photo_id": "google_takeout:bef87651c41d8ba9fa3d0ddd21f6bd8609c1922f3289361fe3ac9588e0f2d212",
+    "type": "landscape",
+    "truth_note": "일반 — 해안가 바위·바다 풍경",
+    "image_path": "data/google_photos/staged/bef87651c41d8ba9fa3d0ddd21f6bd8609c1922f3289361fe3ac9588e0f2d212.jpg",
+    "C2_qwen8b_p3": "A person in a white shirt stands on a dark concrete breakwater overlooking a calm, deep blue sea, with a distant rocky outcrop visible on the horizon. The serene coastal scene features large cylindrical concrete structures in the foreground and soft light enhancing the tranquil mood.  \n\nSearch keywords: concrete breakwater, sea, person, rocky outcrop, calm ocean, coastal landscape, serene mood, concrete structures, ocean horizon.",
+    "C2b_qwen8b_p5": "The photo shows a coastal scene with large concrete tetrapods forming a breakwater along the shore, a person in a white shirt standing on them facing the calm, dark blue ocean, and distant rocky outcrops visible in the water under an overcast sky.  \n\nSearch keywords: coastal scene, concrete tetrapods, ocean, person in white shirt, rocky outcrops, breakwater",
+    "C3_gemma31b_p4": "A person wearing a white shirt sits atop a pile of grey concrete tetrapods along a coastline. The deep blue sea extends to the horizon under a clear, pale sky.\n\nSearch keywords: ocean, sea, coast, breakwater, concrete blocks, tetrapods, person, white shirt, blue water, grey.",
+    "C3b_gemma31b_p5": "A person wearing a white shirt sits among a pile of grey concrete tetrapods by the blue ocean. In the distance, a few dark rocks emerge from the water under a pale sky.\n\nSearch keywords: ocean, sea, concrete tetrapods, breakwater, person in white, coast, grey blocks, water"
+  },
+  {
+    "photo_id": "google_takeout:9942042197dd1809d7e8ca4c15180e79ae9ce5960ac2b8d3962da6ede8f1cbb8",
+    "type": "landscape",
+    "truth_note": "일반 — 안개 낀 산 중첩 풍경",
+    "image_path": "data/google_photos/staged/9942042197dd1809d7e8ca4c15180e79ae9ce5960ac2b8d3962da6ede8f1cbb8.jpg",
+    "C2_qwen8b_p3": "A misty mountain landscape with layered hills partially shrouded in fog, foregrounded by dense green vegetation and wild plants, under a pale sky with soft clouds hinting at dawn or dusk, evokes a serene and ethereal mood.  \n\nSearch keywords: misty mountains, foggy hills, green vegetation, dawn landscape, atmospheric fog",
+    "C2b_qwen8b_p5": "The image shows a misty mountain landscape with dense green vegetation in the foreground, including bushes with small pink flowers, while layered hills fade into the fog under an overcast sky with subtle pink tones near the horizon.  \n\nSearch keywords: misty mountain landscape, green vegetation, pink flowers, hazy mountains, overcast sky, pink horizon",
+    "C3_gemma31b_p4": "A thick layer of fog settles over a series of rolling mountain ridges under a pale sky. The foreground features green grasses and sparse dry branches on a hillside.\n\nSearch keywords: mountains, fog, mist, landscape, green vegetation, grass, dry branches, nature, ridges, hazy",
+    "C3b_gemma31b_p5": "A misty mountain landscape features green foliage and thin, brownish branches in the foreground. Layered mountain ridges are visible in the distance through a thick blanket of fog under a pale, colorful sky.\n\nSearch keywords: nature, landscape, mountains, mountain ridges, mist, fog, green foliage, shrubs, pale sky"
+  },
+  {
+    "photo_id": "google_takeout:37164744cef8704c6585ef3c4c2ee3c90f5082c384ca6b09f36e32842f1c9ae3",
+    "type": "landscape",
+    "truth_note": "일반 — 도시 스카이라인 부감 풍경",
+    "image_path": "data/google_photos/staged/37164744cef8704c6585ef3c4c2ee3c90f5082c384ca6b09f36e32842f1c9ae3.jpg",
+    "C2_qwen8b_p3": "A multi-lane urban highway flows past dense green trees, with cars moving along the road and modern skyscrapers—including a prominent white high-rise labeled “101”—rising in the skyline under a bright, clear sky. The scene captures a vibrant city atmosphere with visible road signs and infrastructure.  \n\nSearch keywords: urban highway, moving vehicles, white high-rise 101, domed building, green trees, city skyline, road signs, sunny day.",
+    "C2b_qwen8b_p5": "The photo captures a multi-lane urban road with several vehicles—including silver, red, and black cars—traveling under a partly cloudy sky. Lush green trees line the road, while distant tall buildings are visible, including a white structure marked \"101\" and a dome-shaped building.  \n\nSearch keywords: urban road, multi-lane highway, vehicles, green trees, tall buildings, \"101\" building, dome-shaped building, traffic signs, partly cloudy sky, cityscape",
+    "C3_gemma31b_p4": "A high-angle view shows a multi-lane road with several cars traveling through a cityscape bordered by green trees. In the background, various high-rise buildings are visible, including a tall white tower with the number \"101\" and a white dome-shaped structure.\n\nSearch keywords: cityscape, urban view, multi-lane road, cars, green trees, white skyscraper, number 101, dome building, blue sky",
+    "C3b_gemma31b_p5": "A high-angle view shows a multi-lane city road with several cars, bordered by lush green trees. In the background, a city skyline features a prominent white building with the number \"101\" and a dome-shaped structure under a clear blue sky.\n\nSearch keywords: city, cityscape, skyline, road, cars, green trees, white building, 101, dome building, high-angle view, blue sky"
+  },
+  {
+    "photo_id": "google_takeout:6789a58aef9611284e96dd51f90379eb5e6e026da6d557dd677fefacabf73010",
+    "type": "landscape",
+    "truth_note": "일반 — 일몰/일출 도로 실루엣 풍경",
+    "image_path": "data/google_photos/staged/6789a58aef9611284e96dd51f90379eb5e6e026da6d557dd677fefacabf73010.jpg",
+    "C2_qwen8b_p3": "A quiet paved road lined with tall, slender trees and streetlights stretches into the distance under a soft blue sky with scattered clouds, capturing a tranquil moment during early morning or late afternoon light. The scene feels peaceful with minimal vehicle activity, as a truck sits parked on the left amid the surrounding greenery.  \nSearch keywords: road, trees, streetlights, clouds, sky, truck, dawn/dusk, quiet landscape, rural road, empty highway, road sign",
+    "C2b_qwen8b_p5": "A paved road with white lane markings stretches into the distance under a partly cloudy sky with soft sunlight near the horizon, flanked by trees and tall streetlights. A truck is visible on the left side of the road.  \n\nSearch keywords: road, white lane markings, trees, streetlights, partly cloudy sky, low sunlight, truck, horizon, paved",
+    "C3_gemma31b_p4": "A road stretches forward under a blue sky with scattered clouds, flanked by the silhouettes of trees and street lamps. The dim lighting creates a high-contrast scene where the landscape appears as dark shapes against the evening sky.\n\nSearch keywords: road, dusk, silhouettes, trees, street lamps, clouds, blue sky, lane markings",
+    "C3b_gemma31b_p5": "A road extends into the distance under a pale blue sky with scattered clouds during twilight. Silhouettes of tall street lamps and trees line both sides of the road.\n\nSearch keywords: road, twilight sky, clouds, street lamps, silhouettes, trees, nature, evening"
+  },
+  {
+    "photo_id": "google_takeout:a845ce2334f103fc142adefed09fab059371f77f55221b830fa1ac99618a750b",
+    "type": "landscape",
+    "truth_note": "일반 — 고가 보행로에서 본 도시 전망",
+    "image_path": "data/google_photos/staged/a845ce2334f103fc142adefed09fab059371f77f55221b830fa1ac99618a750b.jpg",
+    "C2_qwen8b_p3": "Two people walk along a modern elevated walkway with repeating rectangular frame structures, heading toward a distant city skyline under a bright, partly cloudy sky.  \n\nSearch keywords: elevated walkway, pedestrian bridge, structural frames, city skyline, partly cloudy sky, walking",
+    "C2b_qwen8b_p5": "Two silhouetted people walk along a modern pedestrian bridge with repeating rectangular structural frames, shaded on one side, under a partly cloudy blue sky. Distant city buildings and greenery are visible beyond the bridge’s metal railings.  \n\nSearch keywords: pedestrian bridge, rectangular frame structures, shaded walkway, people walking, blue sky, clouds, city buildings, greenery, metal railings",
+    "C3_gemma31b_p4": "Two people are walking away along a path with metal railings and a series of black rectangular overhead frames. The walkway overlooks a distant city skyline under a blue sky with light clouds.\n\nSearch keywords: walkway, people, silhouettes, black metal frames, railings, city skyline, blue sky, urban landscape",
+    "C3b_gemma31b_p5": "Two people are walking away from the camera along a covered walkway characterized by a series of dark rectangular frames. To the right, a railing overlooks a city skyline and a blue sky with light clouds.\n\nSearch keywords: covered walkway, overpass, silhouette, people, city skyline, buildings, blue sky, clouds, railing, urban."
+  },
+  {
+    "photo_id": "google_takeout:9a2995ba41d18552a356388528500d10d577391ad713384796f5189d152c93de",
+    "type": "document",
+    "truth_note": "일반 — 스프레드시트/데이터 그리드 스크린샷",
+    "image_path": "data/google_photos/staged/9a2995ba41d18552a356388528500d10d577391ad713384796f5189d152c93de.jpg",
+    "C2_qwen8b_p3": "A computer monitor displays a DBMS Viewer application with a data grid containing Korean text entries (e.g., \"일반국도\", \"지방도\", \"기타\") across rows numbered 0-9, accompanied by toolbars featuring options like \"Data Grid\" and \"Auto Trace\". Part of a white keyboard with a visible \"6\" key is seen to the right of the screen, suggesting active database management.  \n\nSearch keywords: computer screen, DBMS Viewer, Korean data grid, numbered rows 0-9, keyboard with 6 key, data management UI",
+    "C2b_qwen8b_p5": "A computer monitor displays a database software interface with a data grid containing Korean text labels (e.g., \"일반국도\", \"지방도\") and numerical rows, alongside toolbars featuring icons for file operations and data management. A white gaming controller with a visible \"6\" button is partially visible in the lower right corner of the photo.  \n\nSearch keywords: computer monitor, database software interface, Korean text labels, data grid, toolbars, Excel icon, PDF icon, gaming controller, \"6\" button",
+    "C3_gemma31b_p4": "A close-up photo of a computer screen displaying a software interface with a data grid table containing alphanumeric codes and Korean text. A portion of a white keyboard is visible on the right.\n\nSearch keywords: computer screen, monitor, software interface, data grid, table, Korean text, white keyboard",
+    "C3b_gemma31b_p5": "A close-up photo of a computer monitor displaying a software interface with a data table containing numbers and Korean text. A portion of a white keyboard is visible on the right side of the screen.\n\nSearch keywords: computer monitor, software interface, data table, Korean text, white keyboard, computer screen, database software"
+  },
+  {
+    "photo_id": "google_takeout:939e3252caf4b533f4bd27c85a9756340bddc10e263fcf5543007c21426c3647",
+    "type": "document",
+    "truth_note": "일반 — 한국어 텍스트·파일 메타데이터 스크린샷",
+    "image_path": "data/google_photos/staged/939e3252caf4b533f4bd27c85a9756340bddc10e263fcf5543007c21426c3647.jpg",
+    "C2_qwen8b_p3": "The image shows a Windows command prompt window displaying continuous ping results to www.google.com, with visible text including the IP address 173.194.38.84, packet sizes (32 bytes), response times (e.g., 36ms, 1270ms), and TTL=52 values in a mix of English and Korean text, set against a dark terminal background.  \n\nSearch keywords: Windows command prompt, ping test, network diagnostics, Google ping results, Korean text, IP address 173.194.38.84, terminal screen.",
+    "C2b_qwen8b_p5": "This is a screenshot of a Windows command prompt window showing a continuous ping test to www.google.com, displaying multiple response times from the IP address 173.194.38.84 along with Korean text indicating time intervals and TTL values. The screen features the Windows version 6.1.7601 and copyright notice at the top.  \n\nSearch keywords: Windows command prompt, ping test results, computer screen screenshot, Windows Version 6.1.7601, www.google.com, 173.194.38.84, Korean text, response times, TTL=52.",
+    "C3_gemma31b_p4": "A close-up photo of a computer monitor displaying a Windows command prompt window with white text on a black background. The screen shows the output of a \"ping\" command to \"www.google.com,\" listing several lines of network response times and an IP address.\n\nSearch keywords: computer screen, monitor, command prompt, Windows, ping command, network test, IP address, www.google.com, CLI, white text, black background",
+    "C3b_gemma31b_p5": "A close-up photo of a computer monitor displaying a Command Prompt window. The screen shows the output of a \"ping\" command to www.google.com, with lines of network response data written in English and Korean.\n\nSearch keywords: computer screen, monitor, Command Prompt, CMD, Windows, ping command, www.google.com, network test, text, Korean language"
+  },
+  {
+    "photo_id": "google_takeout:4ac85ef2116f71c53e2fe3c20d0febeda63ec55256028e69a921fda2b8651d50",
+    "type": "document",
+    "truth_note": "일반 — 노트북 화면(OS 부팅 화면) 스크린",
+    "image_path": "data/google_photos/staged/4ac85ef2116f71c53e2fe3c20d0febeda63ec55256028e69a921fda2b8651d50.jpg",
+    "C2_qwen8b_p3": "A dimly lit scene shows an LG laptop screen displaying the CentOS 6 boot splash, with the text \"CentOS 6\" and a loading spinner visible against a dark background. The screen's glow illuminates the surrounding cluttered area, though details remain indistinct due to low light.  \n\nSearch keywords: CentOS 6 boot screen, LG laptop, Linux boot process, dim lighting",
+    "C2b_qwen8b_p5": "A laptop screen displays the CentOS 6 boot logo with a spinning loader icon, and the device is an LG model in a dimly lit setting.  \nSearch keywords: laptop, CentOS 6, LG, boot screen, loading spinner",
+    "C3_gemma31b_p4": "A laptop with a black bezel and an \"LG\" logo displays a boot screen. The screen features a white geometric logo and the text \"CentOS 6\" along with a circular loading indicator.\n\nSearch keywords: laptop, computer, screen, CentOS 6, LG, boot screen, loading icon, white logo",
+    "C3b_gemma31b_p5": "A photo of an LG laptop screen displaying the CentOS 6 loading screen. The screen shows a white star-shaped logo and the text \"CentOS 6\" against a dark background.\n\nSearch keywords: laptop, screen, LG, CentOS 6, loading screen, logo"
+  },
+  {
+    "photo_id": "google_takeout:ba02232c8cc8dfcf9226aa2ad450d8ffb6e8ffed806cf4e1458e08de519d6cd9",
+    "type": "document",
+    "truth_note": "일반 — 한국어 웹페이지 고객서비스 양식 스크린샷",
+    "image_path": "data/google_photos/staged/ba02232c8cc8dfcf9226aa2ad450d8ffb6e8ffed806cf4e1458e08de519d6cd9.jpg",
+    "C2_qwen8b_p3": "The image shows a computer monitor displaying a Korean-language after-sales service (A/S) center information page, with a taskbar at the bottom containing browser and application icons. The screen lists service items, business hours, contact details, and a \"Door to Door\" service note, visible through the monitor’s typical LCD glow effects.  \n\nSearch keywords: computer monitor, A/S service center, Korean text, service hours, contact information, desktop taskbar, Door to Door service, phone number, address.",
+    "C2b_qwen8b_p5": "A computer monitor displays a Korean-language webpage for an A/S (after-sales service) center, detailing business hours (e.g., weekdays 10:00–19:00), contact information (phone: 02-711-7906-7, FAX: 02-716-7907), address (Seoul Yongsan-gu), and service offerings like camera repair. The screen includes a taskbar with visible application icons.  \n\nSearch keywords: computer monitor screenshot, Korean service center webpage, A/S center information, business hours 10:00–19:00, contact phone 02-711-7906-7, Seoul Yongsan-gu address, DOOT TO DOOT service, taskbar application icons.",
+    "C3_gemma31b_p4": "A close-up photograph of a computer screen displaying a Korean-language webpage with contact and operational details for a service center in Yongsan. The screen also shows a Windows taskbar with various application icons at the bottom.\n\nSearch keywords: computer screen, Korean text, website, service center information, Windows taskbar, monitor",
+    "C3b_gemma31b_p5": "A photo of a computer monitor displaying a Korean webpage with information for the Yongsan A/S Center in Seoul. The page includes details such as available repair services, business hours, phone numbers, and an address.\n\nSearch keywords: computer monitor, photo of screen, Korean text, Yongsan A/S Center, Seoul, service center, repair services, business hours, phone number, address, Windows taskbar"
+  },
+  {
+    "photo_id": "google_takeout:6f774034007c2992dd319c7c61704fabe9da4c658da3c88c415310de7d295b8b",
+    "type": "document",
+    "truth_note": "일반 — 터미널 CLI 출력 스크린샷",
+    "image_path": "data/google_photos/staged/6f774034007c2992dd319c7c61704fabe9da4c658da3c88c415310de7d295b8b.jpg",
+    "C2_qwen8b_p3": "A computer monitor shows a Linux terminal with Java application stack traces, process listings (including \"ps -ef | grep app.file\"), shell commands like \"kill -9 16046\", and Java version output (\"java version '1.6.0.02'\"), while blurred office items and a white game controller with a \"9\" button appear below the screen. The scene depicts a technical troubleshooting session in a workspace setting with text highlighting system errors and shell interactions.\n\nSearch keywords: computer monitor, Linux terminal, Java stack trace, terminal commands, game controller, office desk",
+    "C2b_qwen8b_p5": "A computer monitor displays a Linux terminal with Java-related error logs, shell commands like \"ps -ef | grep app.file\", and Java version details (1.6.0.02), while a white gaming controller with a visible \"9\" button appears partially in the lower portion of the frame.  \n\nSearch keywords: computer monitor, terminal output, Java stack trace, shell command ps -ef grep app.file, Java 1.6.0.02, gaming controller with number 9",
+    "C3_gemma31b_p4": "A close-up shot shows a computer monitor displaying a black terminal window with white and yellow text related to Java version 1.6.0.2 and system commands. A portion of a white keyboard with a gold-colored frame is visible in the foreground.\n\nSearch keywords: computer monitor, terminal, Java version 1.6.0.2, command line interface, programming, software debugging, keyboard.",
+    "C3b_gemma31b_p5": "A photo of a computer screen displaying a command-line terminal with text, including Java version information and shell commands. A white numeric keypad with buttons and Korean text is partially visible at the bottom of the frame.\n\nSearch keywords: computer screen, monitor, terminal, command line, Java, code, text, white keypad, numbers"
+  },
+  {
+    "photo_id": "google_takeout:a4ec0f2963f80dff422489ae8dcac2d639c04800ba966a9bf18aa11700fbf2a9",
+    "type": "store_product",
+    "truth_note": "일반 — 골목 상점가 거리 사진",
+    "image_path": "data/google_photos/staged/a4ec0f2963f80dff422489ae8dcac2d639c04800ba966a9bf18aa11700fbf2a9.jpg",
+    "C2_qwen8b_p3": "A narrow alleyway in a Korean neighborhood shows a man pushing a small cart, with stacked red plastic chairs and a table on the left, while overhead mesh canopies with blue and green stripes hang between buildings; Korean storefront signs and crisscrossing power lines frame the quiet, everyday scene under an overcast sky.  \nSearch keywords: Korean alley, market street, red plastic furniture, overhead mesh canopy, Korean storefront signs, power lines, man with cart.",
+    "C2b_qwen8b_p5": "A narrow urban street under a black mesh canopy with blue and green stripes, featuring red plastic chairs and a small table on the left, a man pushing a shopping cart on the right, and low-rise buildings with Korean-language signs (including “정파사” and “도마전파사”) and utility poles with crisscrossing overhead wires, under an overcast sky.  \n\nSearch keywords: narrow street, black mesh canopy (blue/green stripes), red plastic chairs, small table, shopping cart, Korean signs (정파사, 도마전파사), utility poles, overhead wires, asphalt road, overcast sky",
+    "C3_gemma31b_p4": "A man in a light-colored shirt and shorts pulls a black wheeled shopping trolley down a narrow paved street. Red plastic chairs and a table sit beside a white building on the left, while a yellow building with blue awnings and signs with Korean text stands on the right, all under a striped fabric canopy and a cloudy sky.\n\nSearch keywords: narrow street, alley, man, shopping trolley, red plastic chairs, red table, blue stool, yellow building, blue awning, Korean text, utility pole, striped fabric, cloudy sky",
+    "C3b_gemma31b_p5": "A man in a light-colored shirt and shorts pushes a small black cart down a narrow alleyway. In the foreground, red plastic chairs and a small red table sit under a dark, woven shade cloth, with Korean signs and utility poles lining the street.\n\nSearch keywords: alley, street, man, cart, red plastic chairs, red plastic table, blue plastic stool, woven shade cloth, Korean signs, utility poles, cloudy sky"
+  },
+  {
+    "photo_id": "google_takeout:fce1145afaba440a3cf1bd06b0b2c1248ca7273a0603e79e61da5f1e4c1c3b73",
+    "type": "store_product",
+    "truth_note": "일반 — 제품 패키지 박스 묶음(reskin 브랜드)",
+    "image_path": "data/google_photos/staged/fce1145afaba440a3cf1bd06b0b2c1248ca7273a0603e79e61da5f1e4c1c3b73.jpg",
+    "C2_qwen8b_p3": "An open cardboard box on a wooden floor is filled with multiple \"reskin\" and \"TS SOAP\" product packages, some featuring a black-and-white photograph of a person with styled hair. The scene depicts a casual arrangement of branded items in an indoor setting.  \nSearch keywords: reskin, TS SOAP, cardboard box, product packaging, black-and-white image, wooden floor, indoor setting",
+    "C2b_qwen8b_p5": "An open cardboard box rests on a wooden surface, filled with multiple product boxes that prominently display the brand name \"reskin\" and labels like \"TS SOAP\", along with a large box featuring a black - and - white portrait of a person and text reading \"Mild Hair Loss Shampoo\". Some boxes also show visible text such as \"reskin\" and \"TS SOAP\" on their packaging.  \n\nSearch keywords: cardboard box, open box, wooden floor, product packaging, reskin brand, TS SOAP, black - and - white portrait, hair loss shampoo, multiple boxes, product boxes.",
+    "C3_gemma31b_p4": "A cardboard box is filled with various small, rectangular grey and black boxes. Some of the boxes feature the text \"reskin\" and \"TS SOAP,\" while others show a black and white illustration of a man's face.\n\nSearch keywords: cardboard box, reskin, TS SOAP, hair loss shampoo, man's face illustration, grey boxes, black boxes, skincare products",
+    "C3b_gemma31b_p5": "A brown cardboard box is filled with several grey, white, and black product boxes. Many of these boxes feature the brand name \"reskin\" and labels for \"SOAP\" and \"Hair Loss Shampoo,\" with two boxes displaying a black and white portrait of a man.\n\nSearch keywords: cardboard box, reskin, soap, hair loss shampoo, packaging, man's portrait, skincare, haircare"
+  },
+  {
+    "photo_id": "google_takeout:dc2922554ebf62df7300c63c3700c336fd1a4a08c70576bd417a1d49dd19e852",
+    "type": "store_product",
+    "truth_note": "일반 — 맥주 병 제품 클로즈업",
+    "image_path": "data/google_photos/staged/dc2922554ebf62df7300c63c3700c336fd1a4a08c70576bd417a1d49dd19e852.jpg",
+    "C2_qwen8b_p3": "A green glass bottle of Jinro Gold soju (360mL, featuring red labeling with Korean characters and \"JINRO GOLD\") sits prominently on a white surface, surrounded by white disposable cups printed with \"Have a Good Time\" and a blue-capped water bottle, suggesting a casual social gathering.  \n\nSearch keywords: soju bottle, Jinro Gold, 360mL, Korean soju, disposable cups, \"Have a Good Time\", green glass bottle, social gathering.",
+    "C2b_qwen8b_p5": "A green glass bottle with a label reading \"JINRO GOLD\" and Korean text is prominently placed on a table, surrounded by white disposable cups (one displaying \"Have a Good Time\" text), a clear plastic bottle with a blue cap, and other indistinct objects. The background includes blurred people in a casual indoor setting.  \n\nSearch keywords: green glass bottle, JINRO GOLD label, Korean text, white disposable cups, \"Have a Good Time\" text, blue-capped plastic bottle, table setting",
+    "C3_gemma31b_p4": "A green glass bottle with a white and red label featuring the text \"JINRO GOLD\" and a clear plastic bottle with a blue cap lie on a white surface. White paper cups with printed illustrations are visible in the background.\n\nSearch keywords: green glass bottle, JINRO GOLD, clear plastic bottle, blue cap, white paper cups, table",
+    "C3b_gemma31b_p5": "This rotated photo shows a green glass bottle of Jinro Gold soju and a clear plastic bottle with a blue cap on a white table. Beside them are white paper cups with \"Have a Good Day\" printed on them, and a person wearing a black hat and glasses is partially visible in the background.\n\nSearch keywords: Jinro Gold, soju, green glass bottle, blue cap, water bottle, white paper cups, table, black hat, glasses"
+  },
+  {
+    "photo_id": "google_takeout:8690facea665488d4c73566d70955471423e75b29b027fa197403ecccee030cc",
+    "type": "store_product",
+    "truth_note": "일반 — 유리병 라벨·패키지 모음",
+    "image_path": "data/google_photos/staged/8690facea665488d4c73566d70955471423e75b29b027fa197403ecccee030cc.jpg",
+    "C2_qwen8b_p3": "A refrigerator drawer holds an assortment of green and dark-colored bottles, including what seem to be alcoholic drinks and condiments, with some labels featuring Korean text and partial English wording. The bottles are neatly arranged in molded compartments within the fridge’s interior.  \n\nSearch keywords: fridge drawer, green bottles, Korean labels, alcoholic beverages, condiment bottles, refrigerator storage",
+    "C2b_qwen8b_p5": "A refrigerator door shelf holds various bottles, including green glass containers with white labels, a bottle with a yellow cap, and a bottle wrapped in cloth with handwritten text. The right section features more bottles with green glass, a red-capped container, and dark-colored bottles.  \n\nSearch keywords: refrigerator door shelf, green glass bottles, yellow cap, cloth-wrapped bottle, Korean text labels, red cap bottle, dark-colored bottles, plastic divider.",
+    "C3_gemma31b_p4": "Several green and brown glass and plastic bottles are stored horizontally in white plastic refrigerator door shelves. The bottles have various colored caps in red, yellow, and black, and some feature labels with text and graphics.\n\nSearch keywords: refrigerator, fridge door, white plastic shelves, bottles, glass bottles, green bottles, brown bottles, red cap, yellow cap, black cap, labels, Korean text",
+    "C3b_gemma31b_p5": "Several green and brown glass bottles, some with Korean text on their labels, are stored horizontally in a white refrigerator door shelf.\n\nSearch keywords: refrigerator, fridge, door shelf, glass bottles, green bottles, brown bottles, Korean text, soju"
+  },
+  {
+    "photo_id": "google_takeout:05a3819da51c6f08bc75f0ceb771f53303e89cf2f765120abe0b76ef1fc22006",
+    "type": "store_product",
+    "truth_note": "일반 — 소매 진열대 과자·스낵 패키지",
+    "image_path": "data/google_photos/staged/05a3819da51c6f08bc75f0ceb771f53303e89cf2f765120abe0b76ef1fc22006.jpg",
+    "C2_qwen8b_p3": "A supermarket shelf features stacked packages of Valvitalia Sfoglie pastries (hazelnut and strawberry cream varieties), surrounded by other snacks like Deka Crepes and MarketO cookies, with Korean price tags showing 2,000 won. The bright, commercial setting highlights colorful packaging and clear product imagery.  \n\nSearch keywords: Sfoglie pastries, Valvitalia, hazelnut cream, strawberry cream, Korean supermarket shelf, snack packages, 2000 won price tags, Deka Crepes, MarketO cookies.",
+    "C2b_qwen8b_p5": "A store shelf displays multiple snack packages, including two boxes of Italiala Sfoglie pastries—one labeled \"20 puff pastry with hazelnut cream\" (featuring hazelnut images) and another \"20 puff pastry with strawberry cream\" (featuring strawberry images), both marked \"37% cream\" and \"NET WT. 3.85 OZ (110g)\", surrounded by other products like DeKo's Cremes and MarketO cookies, with Korean price stickers showing \"2,000 원\" attached to the packages.  \n\nSearch keywords: Sfoglie pastries, Italiala, hazelnut cream puff pastry, strawberry cream puff pastry, 3.85 oz (110g), 20 puff pastry, Korean price stickers (2,000 won), DeKo's Cremes, MarketO cookies, store snack shelf.",
+    "C3_gemma31b_p4": "White packages of Sfoglie puff pastry snacks are arranged on a black store shelf. The bags feature images of puff pastries alongside hazelnut and strawberry cream fillings.\n\nSearch keywords: store shelf, snack, puff pastry, Sfoglie, hazelnut cream, strawberry cream, packaging, price tags",
+    "C3b_gemma31b_p5": "Packages of Sfoglié puff pastry with hazelnut cream and strawberry cream are displayed on a black store shelf. Other packaged snacks, including brownies and cookies, are visible surrounding them.\n\nSearch keywords: Sfoglié, puff pastry, hazelnut cream, strawberry cream, snacks, grocery store, shelf, packaging, Market O, brownies"
+  }
+]

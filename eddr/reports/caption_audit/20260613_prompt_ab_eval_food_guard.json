@@ -1,0 +1,150 @@
+{
+  "summaries": [
+    {
+      "caption_model": "gemma4:e2b",
+      "prompt_name": "p3_hybrid",
+      "rows": 2,
+      "format_ok": 2,
+      "privacy_ok": 2,
+      "false_forbidden_keyword_hits": 1,
+      "positive_keyword_hits": 1
+    },
+    {
+      "caption_model": "gemma4:e2b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "rows": 2,
+      "format_ok": 2,
+      "privacy_ok": 2,
+      "false_forbidden_keyword_hits": 1,
+      "positive_keyword_hits": 1
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid",
+      "rows": 2,
+      "format_ok": 2,
+      "privacy_ok": 2,
+      "false_forbidden_keyword_hits": 0,
+      "positive_keyword_hits": 1
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "rows": 2,
+      "format_ok": 2,
+      "privacy_ok": 2,
+      "false_forbidden_keyword_hits": 0,
+      "positive_keyword_hits": 1
+    }
+  ],
+  "rows": [
+    {
+      "caption_model": "gemma4:e2b",
+      "prompt_name": "p3_hybrid",
+      "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+      "review_label": "wrong_object_sprouts_as_noodles",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 7,
+      "forbidden_keyword_hits": [
+        "noodles"
+      ],
+      "positive_keyword_hit": false
+    },
+    {
+      "caption_model": "gemma4:e2b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+      "review_label": "wrong_object_sprouts_as_noodles",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 11,
+      "forbidden_keyword_hits": [
+        "noodles"
+      ],
+      "positive_keyword_hit": false
+    },
+    {
+      "caption_model": "gemma4:e2b",
+      "prompt_name": "p3_hybrid",
+      "photo_id": "photos_library:C873DF6B-2B13-4415-8ED5-6F5ED2FA0C8B",
+      "review_label": "exact_dish_missing",
+      "visual_target": true,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 9,
+      "forbidden_keyword_hits": [
+        "noodles"
+      ],
+      "positive_keyword_hit": true
+    },
+    {
+      "caption_model": "gemma4:e2b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:C873DF6B-2B13-4415-8ED5-6F5ED2FA0C8B",
+      "review_label": "exact_dish_missing",
+      "visual_target": true,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 10,
+      "forbidden_keyword_hits": [
+        "noodles"
+      ],
+      "positive_keyword_hit": true
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid",
+      "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+      "review_label": "wrong_object_sprouts_as_noodles",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 9,
+      "forbidden_keyword_hits": [],
+      "positive_keyword_hit": false
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+      "review_label": "wrong_object_sprouts_as_noodles",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 12,
+      "forbidden_keyword_hits": [],
+      "positive_keyword_hit": false
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid",
+      "photo_id": "photos_library:C873DF6B-2B13-4415-8ED5-6F5ED2FA0C8B",
+      "review_label": "exact_dish_missing",
+      "visual_target": true,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 6,
+      "forbidden_keyword_hits": [
+        "noodles"
+      ],
+      "positive_keyword_hit": true
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:C873DF6B-2B13-4415-8ED5-6F5ED2FA0C8B",
+      "review_label": "exact_dish_missing",
+      "visual_target": true,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 9,
+      "forbidden_keyword_hits": [
+        "noodles"
+      ],
+      "positive_keyword_hit": true
+    }
+  ]
+}

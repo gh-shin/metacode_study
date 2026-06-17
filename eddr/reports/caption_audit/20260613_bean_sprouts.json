@@ -1,0 +1,523 @@
+{
+  "query": "콩나물",
+  "keywords": [
+    "bean sprouts",
+    "sprouts",
+    "food"
+  ],
+  "keyword_stats": {
+    "bean sprouts": {
+      "keyword": "bean sprouts",
+      "document_count": 6
+    },
+    "sprouts": {
+      "keyword": "sprouts",
+      "document_count": 6
+    },
+    "food": {
+      "keyword": "food",
+      "document_count": 1066
+    }
+  },
+  "hits": [
+    {
+      "photo_id": "photos_library:0EF790BF-9480-4D4D-A2E3-BB3AA98892CF",
+      "rank": 1,
+      "fused_score": 0.028309409888357256,
+      "vector_rank": 16,
+      "vector_distance": 1.296836495399475,
+      "vector_score": 0.013157894736842105,
+      "lexical_rank": 6,
+      "lexical_score": 0.015151515151515152,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "This is a close-up shot of a hearty bowl of savory Asian soup, featuring slices of meat, bean sprouts, and a perfectly cooked fried egg in a rich broth. The dish is presented in a white bowl and includes visible Korean text around the rim.",
+      "caption_keywords": [
+        "Korean soup",
+        "meat and egg",
+        "bean sprouts",
+        "savory stew",
+        "bowl food",
+        "close-up food photography",
+        "Korean cuisine"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "google_takeout:6d11c84819c0bedc41e43eb0e3d25fbc2991a1618858bf406588da36cd17879e",
+      "rank": 2,
+      "fused_score": 0.02293175334649989,
+      "vector_rank": 87,
+      "vector_distance": 1.3841707706451416,
+      "vector_score": 0.006802721088435374,
+      "lexical_rank": 2,
+      "lexical_score": 0.016129032258064516,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "A bowl of rich, reddish-brown soup is topped with long strips of bean sprouts and mixed vegetables, resting on a rustic wooden surface. The photo features a close-up view of the appetizing food presentation.",
+      "caption_keywords": [
+        "Food photography",
+        "soup",
+        "bean sprouts",
+        "curry",
+        "rustic wood background",
+        "homemade food",
+        "savory dish"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:48E4A0DA-21D5-460D-92BB-E7AEB4EC61FD",
+      "rank": 3,
+      "fused_score": 0.022557269752220666,
+      "vector_rank": 9,
+      "vector_distance": 1.2837557792663574,
+      "vector_score": 0.014492753623188406,
+      "lexical_rank": 64,
+      "lexical_score": 0.008064516129032258,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a bowl of savory noodles submerged in a rich brown broth. The dish features light-colored noodles mixed with yellow-green vegetables, and a metal spoon rests partially in the food.",
+      "caption_keywords": [
+        "Noodle soup",
+        "Asian food",
+        "savory noodles",
+        "broth",
+        "close-up food",
+        "vermicelli",
+        "bowl food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:3DB309A8-5D36-4D3A-9A07-2DB5C825BF4B",
+      "rank": 4,
+      "fused_score": 0.02227579556412729,
+      "vector_rank": 1,
+      "vector_distance": 1.2253891229629517,
+      "vector_score": 0.01639344262295082,
+      "lexical_rank": 110,
+      "lexical_score": 0.0058823529411764705,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A bowl of light-colored soup or broth is topped with chopped green onions, red spices, and sesame seeds, with steam visibly rising from the hot food.",
+      "caption_keywords": [
+        "Soup",
+        "broth",
+        "garnish",
+        "steam",
+        "sesame seeds",
+        "spices",
+        "Asian food",
+        "hot food",
+        "bowl."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:41B493AE-DA20-47D1-9E08-A8063B650F6C",
+      "rank": 5,
+      "fused_score": 0.020663454410674575,
+      "vector_rank": 92,
+      "vector_distance": 1.3899731636047363,
+      "vector_score": 0.006578947368421052,
+      "lexical_rank": 11,
+      "lexical_score": 0.014084507042253521,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a photograph of a savory bowl of Korean food, likely noodles or a stew, garnished with fresh green vegetables, presented attractively. The image is heavily annotated with Korean text, referencing \"Jeonbuk Pyeongyang Noodles\" and dates, suggesting it is promotional material for a specific regional food.",
+      "caption_keywords": [
+        "Korean food",
+        "Pyeongyang noodles",
+        "Jeonbuk food",
+        "food photography",
+        "bowl",
+        "chopsticks",
+        "Korean cuisine",
+        "regional food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:5694C019-B8C2-44C1-8D1B-800576955A73",
+      "rank": 6,
+      "fused_score": 0.02016922471467926,
+      "vector_rank": 61,
+      "vector_distance": 1.3619085550308228,
+      "vector_score": 0.008264462809917356,
+      "lexical_rank": 24,
+      "lexical_score": 0.011904761904761904,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a top-down photograph featuring two distinct food items presented on white paper on a wooden surface. On the left is a neat stack of dark, wrapped food, and on the right is a pile of reddish-orange, textured ingredients.",
+      "caption_keywords": [
+        "Food photography",
+        "Korean food",
+        "seaweed",
+        "seasoned vegetables",
+        "wooden table",
+        "meal setting",
+        "food pairing"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:30BB27FF-7270-433D-9035-6621CA6C10BE",
+      "rank": 7,
+      "fused_score": 0.020092460881934567,
+      "vector_rank": 14,
+      "vector_distance": 1.2909600734710693,
+      "vector_score": 0.013513513513513514,
+      "lexical_rank": 92,
+      "lexical_score": 0.006578947368421052,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot focusing on a bowl of creamy, light yellow porridge, likely congee, garnished with green onions, set on a reflective metal tray. In the background, another bowl of reddish-brown liquid is visible, suggesting a meal setting.",
+      "caption_keywords": [
+        "Porridge",
+        "Congee",
+        "Asian food",
+        "bowl food",
+        "green onions",
+        "food photography",
+        "meal setting",
+        "rustic food."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:2E8C2680-CC9C-40D0-BFAD-7A463F9A6FEC",
+      "rank": 8,
+      "fused_score": 0.018561872909698997,
+      "vector_rank": 70,
+      "vector_distance": 1.3718839883804321,
+      "vector_score": 0.007692307692307693,
+      "lexical_rank": 32,
+      "lexical_score": 0.010869565217391304,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up photo showing several packaged food items, likely snacks or rice products, arranged inside a white container. The packages feature visible ingredients, including seasoned grains, shredded cheese or seasoning, and green vegetables, along with prominent Korean text.",
+      "caption_keywords": [
+        "Packaged food",
+        "rice snacks",
+        "Korean food packaging",
+        "food in a box",
+        "seasoning",
+        "Hangul text",
+        "snack food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:884029F1-03D4-4384-A99E-92173C54AC73",
+      "rank": 9,
+      "fused_score": 0.017749777801014274,
+      "vector_rank": 2,
+      "vector_distance": 1.2372462749481201,
+      "vector_score": 0.016129032258064516,
+      "lexical_rank": 557,
+      "lexical_score": 0.0016207455429497568,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up photograph of a savory noodle dish served in a dark bowl. The dish features light-colored noodles submerged in broth, topped with dark ingredients and fresh green onion garnish.",
+      "caption_keywords": [
+        "Noodle soup",
+        "Asian food",
+        "bowl of noodles",
+        "savory broth",
+        "dark mushrooms",
+        "green onions",
+        "food close-up",
+        "Asian cuisine."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:27EBFC5A-50F8-4C72-BF01-D5301076B8ED",
+      "rank": 10,
+      "fused_score": 0.017701169437915325,
+      "vector_rank": 3,
+      "vector_distance": 1.2443702220916748,
+      "vector_score": 0.015873015873015872,
+      "lexical_rank": 487,
+      "lexical_score": 0.0018281535648994515,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A black bowl filled with a light broth contains noodles, dark green leafy vegetables, and a slice of pale food. The dish is set on a wooden surface, with a small plate of garnish visible in the background.",
+      "caption_keywords": [
+        "Asian noodles",
+        "soup",
+        "seaweed",
+        "greens",
+        "tofu",
+        "food photography",
+        "wooden table",
+        "bowl."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:22489640-DC61-4A68-A73A-E53AFCB44798",
+      "rank": 11,
+      "fused_score": 0.017043439716312055,
+      "vector_rank": 4,
+      "vector_distance": 1.256262183189392,
+      "vector_score": 0.015625,
+      "lexical_rank": 645,
+      "lexical_score": 0.0014184397163120568,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a light-colored noodle soup served in a white bowl, featuring thin white noodles submerged in broth. The dish is garnished with pieces of cooked green vegetables and reddish-orange chunky ingredients floating in the liquid.",
+      "caption_keywords": [
+        "Noodle soup",
+        "Asian food",
+        "bowl of noodles",
+        "broth",
+        "vegetable garnish",
+        "food photography",
+        "vermicelli"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:EB8271A3-08EE-4924-A697-ED0F0C83BEBF",
+      "rank": 12,
+      "fused_score": 0.016969890413873815,
+      "vector_rank": 18,
+      "vector_distance": 1.3013625144958496,
+      "vector_score": 0.01282051282051282,
+      "lexical_rank": 181,
+      "lexical_score": 0.004149377593360996,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A close-up shot features a steaming bowl of light-colored noodles generously topped with bright orange carrot slices, green broccoli, and dark mushrooms. The dish appears to be a savory Asian noodle preparation.",
+      "caption_keywords": [
+        "Noodle dish",
+        "Asian food",
+        "Carrot and broccoli",
+        "Mushroom",
+        "Steaming food",
+        "Close-up food photography",
+        "Vermicelli"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:ECF681A6-025F-486D-8CEC-576C752193DC",
+      "rank": 13,
+      "fused_score": 0.016905286343612335,
+      "vector_rank": 20,
+      "vector_distance": 1.3086109161376953,
+      "vector_score": 0.0125,
+      "lexical_rank": 167,
+      "lexical_score": 0.004405286343612335,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A close-up shot features a bowl of white noodles topped with savory, reddish-brown ingredients and fresh green vegetables. The dish is presented in a white bowl resting on a rustic wooden surface.",
+      "caption_keywords": [
+        "Noodles",
+        "Asian food",
+        "vermicelli",
+        "chili paste",
+        "savory topping",
+        "food photography",
+        "close-up",
+        "bowl food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:234B2DDC-0A68-45E9-94BE-5E5411E90F66",
+      "rank": 14,
+      "fused_score": 0.016510210803689064,
+      "vector_rank": 6,
+      "vector_distance": 1.262665033340454,
+      "vector_score": 0.015151515151515152,
+      "lexical_rank": 676,
+      "lexical_score": 0.001358695652173913,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A close-up shot captures a bowl of dark noodles submerged in a rich, savory sauce, garnished with strips of green vegetable and a white, oval ingredient. The dish is displayed on a wooden surface, with a smaller plate visible in the background.",
+      "caption_keywords": [
+        "Noodles",
+        "Asian food",
+        "savory dish",
+        "tofu",
+        "cucumber",
+        "food photography",
+        "wooden table",
+        "close-up meal."
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:7C871E95-D0A2-4FE2-ABFA-EBF402688DDA",
+      "rank": 15,
+      "fused_score": 0.01642687463582986,
+      "vector_rank": 7,
+      "vector_distance": 1.2785497903823853,
+      "vector_score": 0.014925373134328358,
+      "lexical_rank": 606,
+      "lexical_score": 0.0015015015015015015,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A close-up shot features a bowl of savory brown soup containing light-colored ingredients, likely tofu, and garnished with golden fried shallots and fresh green onions. A spoon is visible resting in the broth, highlighting the textures and colors of the dish.",
+      "caption_keywords": [
+        "Soup",
+        "Tofu",
+        "Fried shallots",
+        "Green onions",
+        "Asian food",
+        "Bowl food",
+        "Broth"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:6887BB3B-16D3-4CCA-A375-C35224AB4EDD",
+      "rank": 16,
+      "fused_score": 0.01639344262295082,
+      "vector_rank": null,
+      "vector_distance": null,
+      "vector_score": 0.0,
+      "lexical_rank": 1,
+      "lexical_score": 0.01639344262295082,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "A close-up shot features thinly sliced cooked meat and fresh bean sprouts arranged on a black platter. The food rests on a red surface, suggesting a casual dining setting.",
+      "caption_keywords": [
+        "Sliced beef",
+        "bean sprouts",
+        "platter",
+        "Asian food",
+        "grilled meat",
+        "food photography",
+        "BBQ"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:C9FFDD1D-10CE-45E0-9F3A-CFF3D29E0030",
+      "rank": 17,
+      "fused_score": 0.01615833874107722,
+      "vector_rank": 74,
+      "vector_distance": 1.3746585845947266,
+      "vector_score": 0.007462686567164179,
+      "lexical_rank": 55,
+      "lexical_score": 0.008695652173913044,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "A group of light brown, rectangular food pieces are visible submerged in dark liquid inside a metal pot. Wooden skewers rest across the food, and a spoon and a small bowl are also present in the frame.",
+      "caption_keywords": [
+        "Food cooking",
+        "fried tofu",
+        "skewers",
+        "cooking in pot",
+        "savory snack",
+        "utensils",
+        "food photography"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:0BC04254-6A3C-45C7-95E6-7CB9362317D4",
+      "rank": 18,
+      "fused_score": 0.016120576671035385,
+      "vector_rank": 10,
+      "vector_distance": 1.2850456237792969,
+      "vector_score": 0.014285714285714285,
+      "lexical_rank": 485,
+      "lexical_score": 0.001834862385321101,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up view of a savory stew or soup containing large pieces of cooked vegetables and dark, leafy ingredients, garnished with sesame seeds. The focus is on the rich textures and colors of the meal.",
+      "caption_keywords": [
+        "Food",
+        "stew",
+        "soup",
+        "vegetables",
+        "seaweed",
+        "sesame seeds",
+        "close-up",
+        "Asian food"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:818335FE-EEB7-4D5F-B5CC-A39D6A1C015E",
+      "rank": 19,
+      "fused_score": 0.015937409446537234,
+      "vector_rank": 8,
+      "vector_distance": 1.2828974723815918,
+      "vector_score": 0.014705882352941176,
+      "lexical_rank": 752,
+      "lexical_score": 0.0012315270935960591,
+      "matched_keywords": [
+        "food"
+      ],
+      "caption": "This is a close-up shot of a savory Asian-style dish served in a white container, featuring golden-brown fried items, large green leafy vegetables, and slices of cucumber. The ingredients are lightly coated in a sauce and appear to be a side dish.",
+      "caption_keywords": [
+        "Fried food",
+        "cucumber",
+        "green leaves",
+        "Asian cuisine",
+        "side dish",
+        "vegetable stir-fry",
+        "food close-up",
+        "tofu",
+        "greens"
+      ],
+      "bucket": "unlabeled"
+    },
+    {
+      "photo_id": "photos_library:F4F6774E-550F-4274-A5AE-01B0CEBABC2B",
+      "rank": 20,
+      "fused_score": 0.015873015873015872,
+      "vector_rank": null,
+      "vector_distance": null,
+      "vector_score": 0.0,
+      "lexical_rank": 3,
+      "lexical_score": 0.015873015873015872,
+      "matched_keywords": [
+        "bean sprouts",
+        "sprouts",
+        "food"
+      ],
+      "caption": "This photo captures a close-up view of a meal consisting of sliced beef and bean sprouts arranged on a black platter. The food is set against a vibrant red background, suggesting a dining setting.",
+      "caption_keywords": [
+        "Sliced beef",
+        "bean sprouts",
+        "stir-fry",
+        "meat platter",
+        "food photography",
+        "red background",
+        "Asian food."
+      ],
+      "bucket": "unlabeled"
+    }
+  ]
+}

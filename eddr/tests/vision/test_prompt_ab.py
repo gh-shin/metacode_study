@@ -83,3 +83,66 @@ def test_run_prompt_ab_uses_deterministic_stratified_photo_selection(tmp_path: P
     rows = [json.loads(line) for line in out.read_text(encoding="utf-8").splitlines()]
     assert report.processed == 2
     assert [row["photo_id"] for row in rows] == ["google_takeout:1", "local:0"]
+
+
+def test_run_prompt_ab_can_compare_selected_prompt_names(tmp_path: Path):
+    db = EddrDatabase(tmp_path / "eddr.sqlite")
+    db.initialize()
+    image = tmp_path / "food.jpg"
+    image.write_bytes(b"image")
+    db.upsert_photo(
+        PhotoRecord(
+            id="local:food",
+            source="local",
+            source_uri=str(image),
+            image_path=str(image),
+            indexing_status="meta_done",
+        )
+    )
+
+    out = tmp_path / "prompt_ab.jsonl"
+    report = run_prompt_ab(
+        db=db,
+        vision_client=FakePromptClient(),
+        limit=1,
+        output_path=out,
+        prompt_names=("p3_hybrid_food_guard",),
+    )
+
+    row = json.loads(out.read_text(encoding="utf-8").strip())
+    assert report.processed == 1
+    assert row["captions"] == {"p3_hybrid_food_guard": "Caption: p3_hybrid_food_guard for food.jpg"}
+
+
+def test_run_prompt_ab_can_target_explicit_photo_ids_even_if_already_captioned(tmp_path: Path):
+    db = EddrDatabase(tmp_path / "eddr.sqlite")
+    db.initialize()
+    first = tmp_path / "first.jpg"
+    second = tmp_path / "second.jpg"
+    first.write_bytes(b"image")
+    second.write_bytes(b"image")
+    for photo_id, image in (("local:first", first), ("local:second", second)):
+        db.upsert_photo(
+            PhotoRecord(
+                id=photo_id,
+                source="local",
+                source_uri=str(image),
+                image_path=str(image),
+                indexing_status="caption_done",
+            )
+        )
+        db.upsert_caption(photo_id, "gemma4:e2b", "en", "Existing caption.")
+
+    out = tmp_path / "prompt_ab.jsonl"
+    report = run_prompt_ab(
+        db=db,
+        vision_client=FakePromptClient(),
+        limit=30,
+        output_path=out,
+        prompt_names=("p3_hybrid_food_guard",),
+        photo_ids=("local:second", "missing", "local:first"),
+    )
+
+    rows = [json.loads(line) for line in out.read_text(encoding="utf-8").splitlines()]
+    assert report.processed == 2
+    assert [row["photo_id"] for row in rows] == ["local:second", "local:first"]

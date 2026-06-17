@@ -1,0 +1,127 @@
+{
+  "summaries": [
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "rows": 7,
+      "format_ok": 7,
+      "privacy_ok": 7,
+      "negative_rows": 4,
+      "positive_rows": 3,
+      "false_forbidden_keyword_hits": 1,
+      "positive_keyword_hits": 3,
+      "positive_recall": 1.0,
+      "false_forbidden_rate": 0.25,
+      "format_pass": true,
+      "privacy_pass": true,
+      "false_forbidden_pass": false,
+      "positive_recall_pass": true,
+      "passes_gates": false
+    }
+  ],
+  "rows": [
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "google_takeout:0bad0955b5530470a6e309192633caddda4d537f06f8263f834f437b43b85823",
+      "review_label": "product_text_false_positive",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 10,
+      "forbidden_keyword_hits": [],
+      "positive_keyword_hit": false,
+      "error": null
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "google_takeout:2725af21d4d6177853d01cff740ab4bcdd260658ca812572c1d41ed4d787173c",
+      "review_label": "shredded_garnish_as_noodles",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 10,
+      "forbidden_keyword_hits": [],
+      "positive_keyword_hit": false,
+      "error": null
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "google_takeout:dcfc5107634cb328ce5be480a282b67376a442221cc3399f766e6e0cd2a8b81c",
+      "review_label": "ricecake_or_fishcake_as_noodles",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 9,
+      "forbidden_keyword_hits": [],
+      "positive_keyword_hit": false,
+      "error": null
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:1E269100-63CE-469F-ABCF-3474FAD9258E",
+      "review_label": "exact_dish_missing_duplicate",
+      "visual_target": true,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 10,
+      "forbidden_keyword_hits": [
+        "noodle",
+        "noodles"
+      ],
+      "positive_keyword_hit": true,
+      "error": null
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:22A9902C-4951-4345-9BF5-8124EAC8519E",
+      "review_label": "exact_dish_missing_hedged",
+      "visual_target": true,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 10,
+      "forbidden_keyword_hits": [
+        "noodle",
+        "noodles"
+      ],
+      "positive_keyword_hit": true,
+      "error": null
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:3289758F-826E-4FCC-9954-4EAC4FBB0A96",
+      "review_label": "exact_dish_missing_hedged",
+      "visual_target": true,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 9,
+      "forbidden_keyword_hits": [
+        "noodle",
+        "noodles"
+      ],
+      "positive_keyword_hit": true,
+      "error": null
+    },
+    {
+      "caption_model": "qwen3-vl:8b",
+      "prompt_name": "p3_hybrid_food_guard",
+      "photo_id": "photos_library:41B493AE-DA20-47D1-9E08-A8063B650F6C",
+      "review_label": "text_poster_only",
+      "visual_target": false,
+      "format_ok": true,
+      "privacy_ok": true,
+      "keyword_count": 14,
+      "forbidden_keyword_hits": [
+        "noodle",
+        "noodles"
+      ],
+      "positive_keyword_hit": false,
+      "error": null
+    }
+  ]
+}

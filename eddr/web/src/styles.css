@@ -1,0 +1,1137 @@
+/* EDDR SPA — 지도 셸(D26 M2). 모바일 퍼스트, 프레임워크 없이 CSS 변수 + 시스템 폰트. */
+
+@import 'maplibre-gl/dist/maplibre-gl.css';
+
+:root {
+  --bg: #f5f6f8;
+  --surface: #ffffff;
+  --text: #1c2025;
+  --muted: #68707b;
+  --accent: #2563eb;
+  --accent-text: #ffffff;
+  --border: #e1e4e9;
+  --error: #b3261e;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #101418;
+    --surface: #1b2129;
+    --text: #e8eaee;
+    --muted: #9aa3ae;
+    --accent: #3b82f6;
+    --border: #2a323d;
+    --error: #ff8a80;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.5;
+}
+
+/* 지도 전폭 — max-width 해제(구 채팅 레이아웃의 760px 제약 제거). */
+.app {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* ── 지도 ─────────────────────────────────────── */
+
+.map {
+  position: absolute;
+  inset: 0;
+  /* long-press(M4) 시 iOS 시스템 콜아웃·선택 개입 차단. */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* MapLibre 컨트롤 — 플로팅 상단 바(배지) 아래로 내리고 다크모드와 조화. */
+.maplibregl-ctrl-top-right {
+  top: calc(48px + env(safe-area-inset-top));
+}
+
+.maplibregl-ctrl-group {
+  background: var(--surface);
+}
+
+@media (prefers-color-scheme: dark) {
+  .maplibregl-ctrl-group button .maplibregl-ctrl-icon {
+    filter: invert(1); /* 흑백 아이콘 반전 — 다크 surface 위 가독 확보. */
+  }
+}
+
+/* 현위치 파란 점. */
+.geo-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1a73e8;
+  border: 2.5px solid #ffffff;
+  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.35);
+}
+
+/* 고줌 썸네일 마커 — 40px 원형. */
+.thumb-marker {
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  overflow: hidden;
+  background: var(--surface);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.thumb-marker img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0; /* 로드 전 placeholder = 버튼의 서피스 원 — onload에 fade-in */
+  transition:
+    opacity 0.12s ease,
+    transform 0.12s ease;
+}
+
+.thumb-marker img.loaded {
+  opacity: 1;
+}
+
+/* 탭 피드백 — 마커 element의 transform은 MapLibre가 위치 지정에 쓰므로
+   img 쪽만 줄인다(마커 자체 transform을 덮으면 위치가 깨진다). */
+.thumb-marker:active img {
+  transform: scale(0.88);
+}
+
+/* ── 상단 바(플로팅) ───────────────────────────── */
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px 16px;
+}
+
+.topbar.floating {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+  padding-top: calc(10px + env(safe-area-inset-top));
+  pointer-events: none; /* 지도 제스처를 막지 않게 — 자식만 받게 한다. */
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  pointer-events: auto;
+}
+
+.badge {
+  font-size: 12.5px;
+  color: var(--text);
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  pointer-events: auto;
+}
+
+button.badge {
+  border: 0;
+  cursor: pointer;
+  min-height: 40px; /* 모바일 터치 표적 하한 */
+}
+
+button.badge:active {
+  filter: brightness(0.9);
+}
+
+button.ghost {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  min-height: 40px; /* 모바일 터치 표적 하한 */
+  padding: 6px 14px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+button.ghost:active {
+  background: var(--border);
+}
+
+/* ── 날짜 상세 시트(bottom sheet) ──────────────── */
+
+.sheet {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+  height: 55%;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.25);
+  padding-bottom: env(safe-area-inset-bottom);
+  animation: sheet-up 0.32s cubic-bezier(0.21, 0.9, 0.32, 1);
+}
+
+.sheet.closing {
+  animation: sheet-down 0.22s ease-in forwards;
+}
+
+@keyframes sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes sheet-down {
+  to {
+    transform: translateY(100%);
+  }
+}
+
+/* 드래그 dismiss 시작 영역(핸들+헤더) — touch-action: none으로 브라우저
+   스크롤 개입을 막아 pointermove가 끊기지 않게 한다. 바디 그리드 스크롤과는
+   영역으로 분리(드래그는 여기서만 시작). */
+.sheet-grab {
+  flex: 0 0 auto;
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.sheet-handle {
+  width: 40px;
+  height: 5px;
+  margin: 8px auto 4px;
+  border-radius: 999px;
+  background: var(--border);
+}
+
+.sheet-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 10px;
+  border-bottom: 1px solid var(--border);
+  flex: 0 0 auto;
+}
+
+.sheet-header > div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.sheet-header strong {
+  font-size: 16px;
+}
+
+.sheet-place {
+  color: var(--muted);
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sheet-count {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 13px;
+  flex: 0 0 auto;
+}
+
+.sheet-body {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding: 12px;
+  /* 상시 검색바(하단 플로팅)가 마지막 행을 가리지 않게 여유를 둔다. */
+  padding-bottom: calc(76px + env(safe-area-inset-bottom));
+}
+
+.sheet-empty {
+  color: var(--muted);
+  text-align: center;
+  margin-top: 24px;
+}
+
+.sheet-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap: 4px;
+}
+
+@media (min-width: 600px) {
+  .sheet-grid {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+}
+
+/* ── 클러스터 시트 날짜 섹션 ───────────────────── */
+
+.cluster-section {
+  margin-bottom: 18px;
+  /* 대형 클러스터(섹션 수십 개) — 화면 밖 섹션은 렌더 생략. */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 240px;
+}
+
+.cluster-section-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  padding: 4px 4px 8px;
+  border: 0;
+  background: none;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.cluster-section-header strong {
+  font-size: 14.5px;
+}
+
+.cluster-section-header span {
+  color: var(--accent);
+  font-size: 12.5px;
+}
+
+/* ── 사진 셀(시트·lane 공용) ───────────────────── */
+
+.cell {
+  padding: 0;
+  border: 0;
+  background: var(--surface);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.cell img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.12s ease;
+}
+
+.cell:active img {
+  transform: scale(0.94); /* 탭 피드백 */
+}
+
+/* ── 날짜 lane(M3 검색 결과 — ResultLanes) ───────── */
+
+.lanes {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* header(날짜 미상)·button(탭 → 날짜 상세) 겸용 — 버튼 기본 스타일 리셋 포함. */
+.lane-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  padding: 0 12px 6px;
+  font-size: 14px;
+  font-family: inherit;
+  text-align: left;
+  border: 0;
+  background: none;
+  color: var(--text);
+}
+
+button.lane-header {
+  cursor: pointer;
+}
+
+.lane-header .lane-place {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.lane-header .lane-count {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.lane {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 0 12px 6px;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lane .cell {
+  flex: 0 0 112px;
+  scroll-snap-align: start;
+}
+
+@media (min-width: 600px) {
+  .lane .cell {
+    flex-basis: 140px;
+  }
+}
+
+.lane-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  color: var(--accent);
+  font-size: 17px;
+  font-weight: 700;
+  border: 1px dashed var(--border);
+  background: transparent;
+}
+
+.lane-more small {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+}
+
+/* ── 빈상태 안내(U1) ───────────────────────────── */
+
+/* 지도 팬·줌을 막지 않게 배경은 pointer-events:none, 카드만 auto. */
+.empty-state {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(76px + env(safe-area-inset-bottom) + 16px); /* 검색바 위 */
+  z-index: 15; /* 시트(20) 아래, topbar(10) 위 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  pointer-events: none; /* 배경 레이어는 지도 제스처 통과 */
+}
+
+.empty-state-hint {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  pointer-events: none;
+}
+
+/* 칩 줄 자체는 터치 받아야 하므로 auto 복원. */
+.empty-state .chips {
+  pointer-events: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 0;
+}
+
+/* ── 검색바(하단 플로팅, M3) ───────────────────── */
+
+.searchbar {
+  position: absolute;
+  left: 12px;
+  right: 12px;
+  bottom: calc(12px + env(safe-area-inset-bottom));
+  z-index: 30; /* 시트(20) 위 — 어디서든 재검색 가능 */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 6px 4px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 92%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+}
+
+.searchbar input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: none;
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px; /* iOS 포커스 자동 줌 방지 하한 */
+  padding: 9px 0;
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.searchbar input::placeholder {
+  color: var(--muted);
+}
+
+.searchbar button {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px; /* 모바일 터치 표적 하한 */
+  border: 0;
+  border-radius: 50%;
+  background: var(--accent);
+  color: var(--accent-text);
+  cursor: pointer;
+}
+
+.searchbar button:active {
+  filter: brightness(0.85);
+}
+
+.searchbar .spinner {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin: 9px;
+  border-radius: 50%;
+  border: 2.5px solid var(--border);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+/* 오류 토스트 — 검색바 바로 위, 503 detail(한국어)을 그대로 보여 준다. */
+.toast {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: calc(72px + env(safe-area-inset-bottom));
+  z-index: 40;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: var(--error);
+  color: #ffffff;
+  font-size: 13.5px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* 성공 토스트(M4 위치 저장) — 오류(빨강)와 구분되는 accent + 안내 줄. */
+.toast.toast-info {
+  background: var(--accent);
+}
+
+.toast small {
+  display: block;
+  font-size: 11.5px;
+  opacity: 0.85;
+}
+
+/* ── 검색 결과 시트 헤더(제목 + 해석 칩 줄) ────────── */
+
+.sheet-header > div.results-head {
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 6px;
+}
+
+.results-title {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+
+.chips {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 2px;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+.chips::-webkit-scrollbar {
+  display: none;
+}
+
+.chip {
+  flex: 0 0 auto;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 3px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--surface));
+  border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+}
+
+button.chip {
+  cursor: pointer;
+  min-height: 40px; /* 모바일 터치 표적 하한 */
+}
+
+button.chip:active {
+  filter: brightness(0.88);
+}
+
+/* keywords_en — 회색 칩(추출 키워드, 지명·날짜보다 약한 신호). */
+.chip-muted {
+  color: var(--muted);
+  background: var(--bg);
+  border-color: var(--border);
+}
+
+/* fallback=true — 추출 실패로 임베딩-only 강등 경고. */
+.chip-warn {
+  color: var(--error);
+  background: color-mix(in srgb, var(--error) 10%, var(--surface));
+  border-color: color-mix(in srgb, var(--error) 35%, transparent);
+}
+
+/* ── 위치 미상 배지·드로어·지오코드 플로우(M4) ───── */
+
+/* 상단 우측 묶음(상태 배지 + 빨간 느낌표) — topbar의 pointer-events:none 계승. */
+.topbar-side {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.noloc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 40px; /* 모바일 터치 표적 하한 */
+  padding: 5px 12px;
+  border: 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--surface) 88%, transparent);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  color: var(--text);
+  font-size: 12.5px;
+  font-weight: 700;
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+.noloc-badge:active {
+  filter: brightness(0.9);
+}
+
+.noloc-bang {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+/* 일별 그룹 카드 — 대표 썸네일 4 + 날짜·N장·trip 칩·진행 카운트. */
+.noloc-card {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+  /* 521장 카드 — 화면 밖은 렌더 생략(클러스터 섹션 패턴). */
+  content-visibility: auto;
+  contain-intrinsic-size: auto 132px;
+}
+
+.noloc-card:active {
+  background: var(--bg);
+}
+
+.noloc-card-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.noloc-card-thumbs img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.noloc-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.noloc-card-meta .chip {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.noloc-card-count {
+  color: var(--muted);
+}
+
+.noloc-card-index {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11.5px;
+  flex: 0 0 auto;
+}
+
+/* 지오코드 플로우 — 지도를 넓게 남기는 낮은 시트. */
+.sheet.sheet-low {
+  height: 42%;
+}
+
+.geocode-search {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+
+.geocode-search input {
+  flex: 1 1 auto;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: inherit;
+  font-size: 16px; /* iOS 포커스 자동 줌 방지 하한 */
+  outline: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.geocode-search button {
+  flex: 0 0 auto;
+  min-width: 64px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--accent);
+  color: var(--accent-text);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.geocode-search button:disabled {
+  opacity: 0.6;
+}
+
+.geocode-hint {
+  margin: 0 2px 8px;
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.geocode-candidates {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.geocode-candidate {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 12px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}
+
+.geocode-candidate strong {
+  font-size: 14px;
+}
+
+.geocode-candidate span {
+  color: var(--muted);
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.geocode-candidate.selected {
+  border-color: #ef4444;
+  background: color-mix(in srgb, #ef4444 8%, var(--surface));
+}
+
+.geocode-apply {
+  width: 100%;
+  min-height: 48px;
+  border: 0;
+  border-radius: 12px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.geocode-apply:disabled {
+  background: var(--border);
+  color: var(--muted);
+  cursor: default;
+}
+
+/* 확인 모달 — 중앙 카드(시트·검색바 위). */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.modal-card {
+  width: min(360px, 100%);
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--surface);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+}
+
+.modal-title {
+  display: block;
+  font-size: 15.5px;
+  margin-bottom: 12px;
+}
+
+.modal-thumbs {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+
+.modal-thumbs img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+  background: var(--bg);
+}
+
+.modal-address {
+  margin: 12px 2px;
+  font-size: 13.5px;
+  line-height: 1.45;
+}
+
+.modal-muted {
+  color: var(--muted);
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.modal-primary {
+  min-height: 40px;
+  padding: 6px 18px;
+  border: 0;
+  border-radius: 999px;
+  background: #ef4444;
+  color: #ffffff;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.modal-primary:disabled,
+.modal-actions .ghost:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+/* ── 라이트박스 ───────────────────────────────── */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+}
+
+.lightbox figure {
+  position: relative;
+  margin: 0;
+  max-width: 100%;
+  touch-action: pinch-zoom; /* 가로 스와이프는 JS, 핀치줌은 브라우저 네이티브 */
+}
+
+.lightbox img {
+  display: block;
+  max-width: 100vw;
+  max-height: calc(100dvh - 140px);
+  object-fit: contain;
+  transition: max-height 0.2s ease; /* 메모 입력 포커스 시 축소 전환(M5) */
+}
+
+.lightbox figcaption {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  color: #d6dae0;
+  font-size: 13px;
+  padding: 8px 4px;
+}
+
+.lightbox-actions {
+  position: relative;
+  display: flex;
+  gap: 16px;
+  padding-bottom: calc(12px + env(safe-area-inset-bottom));
+}
+
+.lightbox-actions button,
+.lightbox-actions a {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 999px;
+  min-height: 40px; /* 모바일 터치 표적 하한 */
+  padding: 8px 18px;
+  font-size: 14px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.lightbox-actions button:active,
+.lightbox-actions a:active {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+/* ── 라이트박스 메모(S5, M5) ─────────────────── */
+
+.lightbox-note {
+  position: relative;
+  width: min(100vw - 32px, 480px);
+  padding: 2px 0 10px;
+}
+
+.lightbox-note .note-view {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  width: 100%;
+  max-height: 30vh; /* 긴 메모가 라이트박스 패널을 밀지 않게(M5 리뷰 I4) */
+  overflow-y: auto;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  color: #e8eaed;
+  padding: 10px 12px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.lightbox-note .note-text {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.lightbox-note .note-edit-hint {
+  font-size: 11px;
+  color: #9aa0a6;
+}
+
+.lightbox-note .note-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lightbox-note textarea {
+  width: 100%;
+  resize: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  color: #e8eaed;
+  padding: 10px 12px;
+  font-size: 16px; /* iOS 포커스 자동 확대 방지 하한 */
+  line-height: 1.5;
+  font-family: inherit;
+}
+
+.lightbox-note .note-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.lightbox-note .note-actions button {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  border-radius: 999px;
+  min-height: 36px;
+  padding: 6px 16px;
+  font-size: 13.5px;
+  cursor: pointer;
+}
+
+.lightbox-note .note-actions button:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+.lightbox-note .note-delete {
+  border-color: rgba(255, 99, 99, 0.5);
+  color: #ff8a80;
+}
+
+/* 모바일 키보드가 열리면(메모 입력 포커스) 이미지를 줄여 입력칸 가림을 최소화. */
+.lightbox:has(.lightbox-note textarea:focus) img {
+  max-height: 34dvh;
+}
+
+/* ── 상태 시트(U6) ───────────────────────────── */
+
+.status-sheet-body {
+  padding: 0 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.status-summary {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.status-ready {
+  color: var(--accent);
+}
+
+.status-total {
+  color: var(--muted);
+}
+
+.status-desc {
+  margin: 0;
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.status-warn {
+  margin: 0;
+  font-size: 13px;
+  color: var(--error);
+}
+
+.status-stages {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.status-stages th,
+.status-stages td {
+  padding: 6px 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--border);
+}
+
+.status-stages th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.status-stages td:last-child {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}

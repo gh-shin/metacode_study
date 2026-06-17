@@ -8,3 +8,5 @@ screenshots/
 *.pyc
 __pycache__/
 data/
+
+node_modules/
