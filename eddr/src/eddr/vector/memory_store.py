@@ -24,6 +24,7 @@ class MemoryVectorStore:
     """
 
     def __init__(self):
+        """빈 인메모리 스토어를 만든다."""
         self._items: dict[str, _MemoryVector] = {}
 
     def upsert(

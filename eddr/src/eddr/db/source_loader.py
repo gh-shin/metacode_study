@@ -4,7 +4,9 @@ from __future__ import annotations
 
 import hashlib
 import json
-from dataclasses import dataclass
+import re
+from dataclasses import dataclass, field
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any
 
@@ -17,6 +19,13 @@ from eddr.db.repository import EddrDatabase, PhotoRecord
 VIDEO_EXTENSIONS = frozenset(
     {".mov", ".mp4", ".m4v", ".avi", ".mpg", ".mpeg", ".wmv", ".3gp", ".webm", ".mkv", ".mts"}
 )
+
+# EXIF DateTimeOriginal 형식(`YYYY:MM:DD HH:MM:SS`) — SQLite 날짜 함수가 못 읽으므로 ISO로 정규화.
+_EXIF_DATETIME = re.compile(r"^\d{4}:\d{2}:\d{2} \d{2}:\d{2}:\d{2}$")
+
+# 모든 taken_at의 단일 기준 시간대 — KST(UTC+9). 소스별 포맷 혼재(aware UTC·naive local)를
+# 이 한 표현으로 수렴시켜 SQLite datetime() 비교가 인스턴트 일관성을 갖게 한다 (D26 M1).
+_KST = timezone(timedelta(hours=9))
 
 
 @dataclass(frozen=True)
@@ -32,6 +41,23 @@ class SourceLoadReport:
     loaded: int = 0
     skipped: int = 0
     errors: int = 0
+
+
+@dataclass(frozen=True)
+class NormalizeTakenAtReport:
+    """taken_at KST 정규화 백필 결과 요약 (D26 M1).
+
+    Attributes:
+        raw_snapshotted: taken_at_raw에 원본을 새로 복사한 행 수.
+        changed_by_source: 정규화로 taken_at 값이 바뀐 행 수(소스별).
+        calendar_day_changed_by_source: 달력일(앞 10자)이 바뀐 행 수(소스별).
+        remaining_without_kst: 정규화 후에도 +09:00이 안 붙은 잔존 행 수(기대 0).
+    """
+
+    raw_snapshotted: int = 0
+    changed_by_source: dict[str, int] = field(default_factory=dict)
+    calendar_day_changed_by_source: dict[str, int] = field(default_factory=dict)
+    remaining_without_kst: int = 0
 
 
 def load_available_sources(
@@ -91,6 +117,62 @@ def load_available_sources(
             loaded += 1
 
     return SourceLoadReport(loaded=loaded, skipped=skipped, errors=errors)
+
+
+def normalize_taken_at_backfill(db: EddrDatabase) -> NormalizeTakenAtReport:
+    """photos.taken_at을 KST로 일괄 정규화하고 원본을 taken_at_raw에 스냅샷한다 (D26 M1).
+
+    1) taken_at_raw가 비고 taken_at이 있는 행에 원본을 1회성으로 복사한다(재실행해도
+       기존 스냅샷은 덮지 않는다).
+    2) 모든 행에 ``normalize_taken_at_kst``를 적용하되 값이 실제로 바뀐 행만 UPDATE한다
+       — 이미 +09:00인 값은 변환이 항등이라 재실행이 멱등하다.
+
+    값 변환은 SQLite가 못 하는 시간대 연산이라 Python에서 행별로 수행한다.
+    NULL taken_at은 건드리지 않는다.
+
+    Args:
+        db: 대상 EddrDatabase 인스턴스(백업·잠금 검사는 호출 측 책임).
+
+    Returns:
+        스냅샷·변환·달력일 변경 건수와 잔존 비-KST 행 수를 담은 리포트.
+    """
+    changed: dict[str, int] = {}
+    day_changed: dict[str, int] = {}
+    with db.connect() as conn:
+        snapshotted = int(
+            conn.execute(
+                "UPDATE photos SET taken_at_raw = taken_at"
+                " WHERE taken_at_raw IS NULL AND taken_at IS NOT NULL"
+            ).rowcount
+        )
+        rows = conn.execute(
+            "SELECT id, source, taken_at FROM photos WHERE taken_at IS NOT NULL"
+        ).fetchall()
+        for row in rows:
+            original = row["taken_at"]
+            normalized = normalize_taken_at_kst(original)
+            if normalized == original:
+                continue
+            conn.execute(
+                "UPDATE photos SET taken_at = ?, updated_at = CURRENT_TIMESTAMP WHERE id = ?",
+                (normalized, row["id"]),
+            )
+            source = row["source"]
+            changed[source] = changed.get(source, 0) + 1
+            if (normalized or "")[:10] != (original or "")[:10]:
+                day_changed[source] = day_changed.get(source, 0) + 1
+        remaining = int(
+            conn.execute(
+                "SELECT COUNT(*) FROM photos"
+                " WHERE taken_at IS NOT NULL AND taken_at NOT LIKE '%+09:00'"
+            ).fetchone()[0]
+        )
+    return NormalizeTakenAtReport(
+        raw_snapshotted=snapshotted,
+        changed_by_source=changed,
+        calendar_day_changed_by_source=day_changed,
+        remaining_without_kst=remaining,
+    )
 
 
 def _records_from_vision_manifest(path: Path, has_takeout_manifest: bool):
@@ -234,8 +316,49 @@ def _iso_or_none(value: Any) -> str | None:
     if value is None or pd.isna(value):
         return None
     if hasattr(value, "isoformat"):
-        return value.isoformat()
-    return str(value)
+        return normalize_taken_at_kst(value.isoformat())
+    return normalize_taken_at_kst(_normalize_exif_datetime(str(value)))
+
+
+def normalize_taken_at_kst(value: str | None) -> str | None:
+    """taken_at ISO 문자열을 KST(+09:00) 단일 표현으로 정규화한다 (D26 M1).
+
+    - tzinfo가 있는 값(``+00:00``·``Z``·기타 오프셋): 인스턴트를 보존한 채 KST로
+      변환한다(``astimezone``) — 마이크로초도 보존된다.
+    - naive 값(오프셋 없음, local 소스): 시각을 바꾸지 않고 ``+09:00`` 라벨만 부여한다
+      (벽시계 보존, ``replace(tzinfo)``).
+    - 이미 ``+09:00``인 값: astimezone이 항등이라 그대로 — 재실행이 멱등하다.
+    - 파싱 불가 문자열: 원문을 그대로 반환한다(방어 — EXIF 비표준 등).
+
+    Args:
+        value: ISO 8601 형식의 촬영 일시 문자열, 또는 None.
+
+    Returns:
+        KST로 정규화된 isoformat 문자열. 입력이 None이면 None, 파싱 불가면 원문.
+    """
+    if value is None:
+        return None
+    try:
+        dt = datetime.fromisoformat(value)
+    except ValueError:
+        return value
+    if dt.tzinfo is None:
+        return dt.replace(tzinfo=_KST).isoformat()
+    return dt.astimezone(_KST).isoformat()
+
+
+def _normalize_exif_datetime(text: str) -> str | None:
+    """EXIF `YYYY:MM:DD HH:MM:SS` 문자열을 ISO 8601로 정규화한다.
+
+    EXIF 패턴이 아니면 원문을 그대로 반환하고, EXIF 패턴이지만 무효한
+    일시(예: ``0000:00:00 00:00:00``)면 None을 반환한다.
+    """
+    if not _EXIF_DATETIME.match(text):
+        return text
+    try:
+        return datetime.strptime(text, "%Y:%m:%d %H:%M:%S").isoformat()
+    except ValueError:
+        return None
 
 
 def _float_or_none(value: Any) -> float | None:

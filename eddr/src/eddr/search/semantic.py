@@ -12,13 +12,17 @@ from eddr.types import Embedding, MetadataFilter
 class QueryEmbeddingClient(Protocol):
     """텍스트 목록을 임베딩 벡터로 변환하는 클라이언트 프로토콜."""
 
-    def embed_texts(self, texts: list[str]) -> list[Embedding]: ...
+    def embed_texts(self, texts: list[str]) -> list[Embedding]:
+        """텍스트 목록을 같은 순서의 임베딩 목록으로 변환한다."""
+        ...
 
 
 class VectorSearchStore(Protocol):
     """임베딩으로 가까운 문서를 조회하는 벡터 스토어 프로토콜."""
 
-    def query(self, embedding: Embedding, k: int, where: MetadataFilter | None = None): ...
+    def query(self, embedding: Embedding, k: int, where: MetadataFilter | None = None):
+        """임베딩과 가까운 순서로 최대 k개의 VectorHit을 돌려준다."""
+        ...
 
 
 @dataclass(frozen=True)
@@ -57,6 +61,7 @@ def semantic_search(
     """
     embedding = embedding_client.embed_texts([query])[0]
     hits = vector_store.query(embedding=embedding, k=k, where=where)
+    caption_by_id = db.get_latest_captions_for_ids([hit.photo_id for hit in hits])
     results: list[SemanticSearchResult] = []
     for hit in hits:
         photo = db.get_photo(hit.photo_id)
@@ -69,7 +74,7 @@ def semantic_search(
                 source_uri=photo.source_uri,
                 image_path=photo.image_path,
                 taken_at=photo.taken_at,
-                caption=db.get_latest_caption(hit.photo_id) or hit.document,
+                caption=caption_by_id.get(hit.photo_id) or hit.document,
                 distance=hit.distance,
             )
         )

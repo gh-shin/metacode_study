@@ -6,11 +6,48 @@ from eddr.db.repository import PhotoRecord
 
 P3_HYBRID_PROMPT_NAME = "p3_hybrid"
 P3_HYBRID_V2_PROMPT_NAME = "p3_hybrid_v2"
-PROMPT_NAMES = (P3_HYBRID_PROMPT_NAME, P3_HYBRID_V2_PROMPT_NAME)
+P3_HYBRID_FOOD_GUARD_PROMPT_NAME = "p3_hybrid_food_guard"
+P4_GROUNDED_PROMPT_NAME = "p4_grounded"
+P5_GROUNDED_PROMPT_NAME = "p5_grounded"
+PROMPT_NAMES = (
+    P3_HYBRID_PROMPT_NAME,
+    P3_HYBRID_V2_PROMPT_NAME,
+    P3_HYBRID_FOOD_GUARD_PROMPT_NAME,
+    P4_GROUNDED_PROMPT_NAME,
+    P5_GROUNDED_PROMPT_NAME,
+)
 
 P3_HYBRID_PROMPT = """Describe this photo in English for personal photo search.
 Write 1-2 natural sentences about the visible scene, then add a concise "Search keywords:" list.
 Focus on objects, activity, setting, mood, text visible in the image, and visually grounded details.
+Do not guess private identity.
+"""
+
+P4_GROUNDED_PROMPT = """Describe this photo in English for personal photo search.
+Write 1-2 natural sentences about the visible scene, then add a concise "Search keywords:" list.
+
+Grounding rules:
+- Describe only what is clearly visible. Do not assert anything you cannot actually see.
+- Before naming a category or a specific thing, first identify the concrete visible features that justify it (shapes, colors, ingredients, materials, text). Name the visible parts, then the category.
+- Do not invent specific proper names — exact dish names (for example naengmyeon, ramen, pasta), brand names, place names, or a person's identity — unless the image clearly supports them through visible features or readable text.
+- When unsure between similar-looking things (for example noodles vs. bean sprouts vs. shredded vegetables, or a sign vs. a menu), use the more general term or describe the visible features instead of guessing the specific one.
+- In Search keywords, include both general terms and the specific visible elements you actually observed; do not add keywords for things that are not visible.
+
+Do not guess private identity.
+"""
+
+P5_GROUNDED_PROMPT = """Describe this photo in English for personal photo search.
+Write 1-2 natural sentences about the visible scene, then add a concise "Search keywords:" list.
+
+Grounding rules:
+- Describe only what is clearly visible. Do not assert anything you cannot actually see.
+- Before naming a category or a specific thing, first identify the concrete visible features that justify it (shapes, colors, ingredients, materials, text), then name it.
+- Name things as specifically as the visible evidence allows. If a food, object, brand, or place is clearly recognizable (for example salmon, grilled pork, a readable brand name), name it specifically. Only fall back to a general term when the specific identity is genuinely ambiguous.
+- Do not invent specific proper names the image does not support — exact dish names, brand names, place names, or a person's identity — when the visible features do not clearly justify them.
+- When two similar things are easy to confuse (for example noodles vs. bean sprouts vs. shredded vegetables, soju vs. beer, a sign vs. a menu), look at the concrete visible features and choose the one the evidence supports; if still unclear, describe the visible features instead of guessing.
+- Note the medium or framing when it matters: for example a photo of a computer screen or monitor, a screenshot, or an upside-down or rotated photo.
+- In Search keywords, include both general terms and the specific visible elements you actually observed; do not add keywords for things that are not visible.
+
 Do not guess private identity.
 """
 
@@ -32,10 +69,27 @@ def build_prompt_for_photo(photo: PhotoRecord, prompt_name: str) -> str:
         return P3_HYBRID_PROMPT
     if prompt_name == P3_HYBRID_V2_PROMPT_NAME:
         return build_caption_prompt(photo)
+    if prompt_name == P3_HYBRID_FOOD_GUARD_PROMPT_NAME:
+        return build_caption_prompt(photo) + FOOD_GUARD_RULES
+    if prompt_name == P4_GROUNDED_PROMPT_NAME:
+        return P4_GROUNDED_PROMPT
+    if prompt_name == P5_GROUNDED_PROMPT_NAME:
+        return P5_GROUNDED_PROMPT
     raise ValueError(f"unknown vision prompt: {prompt_name}")
 
 
+FOOD_GUARD_RULES = """
+Food-specific rules:
+- If food is visible, name concrete visible ingredients before naming a dish.
+- Distinguish noodles, pasta, ramen, and rice noodles from bean sprouts, mung bean sprouts, radish strips, onion, shredded vegetables, and other thin pale toppings.
+- Use "noodles" only when actual noodle strands are visible. If the image shows sprouts or shredded vegetables, use those words instead.
+- Do not invent exact dish names such as naengmyeon, ramen, pasta, pho, curry, or bibimbap unless the image strongly supports them through visible ingredients, shape, table context, or readable text.
+- In Search keywords, include generic food terms plus specific visible ingredients. Avoid unsupported food-family keywords.
+"""
+
+
 def build_caption_prompt(photo: PhotoRecord) -> str:
+    """사진 메타데이터 힌트를 끼워 넣은 v2 캡션 프롬프트를 만든다 (P3_HYBRID_V2)."""
     metadata = "\n".join(f"- {line}" for line in _metadata_lines(photo))
     return f"""Describe this photo in English for personal photo search.
 
