@@ -5,9 +5,9 @@ from eddr.vision.ollama_client import OllamaVisionClient
 from eddr.vision.prompt import P3_HYBRID_PROMPT_NAME, P3_HYBRID_V2_PROMPT_NAME
 
 __all__ = [
-    "OllamaVisionClient",
     "P3_HYBRID_PROMPT_NAME",
     "P3_HYBRID_V2_PROMPT_NAME",
+    "OllamaVisionClient",
     "VisionBatchReport",
     "run_caption_text_batch",
 ]

@@ -39,9 +39,11 @@ class ChromaVectorStore:
     """
 
     def __init__(self, path: Path | str, collection_name: str = "eddr_caption_text_v1"):
-        """Args:
-        path: ChromaDB 데이터 디렉터리 경로. 없으면 자동 생성된다.
-        collection_name: 사용할 컬렉션 이름. 없으면 새로 생성된다.
+        """영구 클라이언트를 열고 컬렉션을 확보한다.
+
+        Args:
+            path: ChromaDB 데이터 디렉터리 경로. 없으면 자동 생성된다.
+            collection_name: 사용할 컬렉션 이름. 없으면 새로 생성된다.
         """
         self.path = Path(path)
         self.path.mkdir(parents=True, exist_ok=True)
@@ -119,6 +121,18 @@ class ChromaVectorStore:
                 )
             )
         return hits
+
+    def delete(self, ids: list[str]) -> None:
+        """id 목록의 벡터를 컬렉션에서 삭제한다 — 메모 삭제 경로 (D26 M5).
+
+        ids가 비어 있으면 아무 작업도 하지 않는다.
+
+        Args:
+            ids: 삭제할 벡터의 고유 식별자 목록.
+        """
+        if not ids:
+            return
+        self.collection.delete(ids=ids)
 
     def count(self) -> int:
         """컬렉션에 저장된 벡터 수를 반환한다.

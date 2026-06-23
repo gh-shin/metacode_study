@@ -10,6 +10,8 @@ from typing import NamedTuple
 
 import ollama
 
+from eddr.constants import CAPTION_MODEL as _CAPTION_MODEL
+from eddr.constants import EMBEDDING_MODEL as _EMBEDDING_MODEL
 from eddr.db.repository import PhotoRecord
 from eddr.types import Embedding
 from eddr.vision.prompt import (
@@ -74,11 +76,12 @@ class OllamaVisionClient:
 
     def __init__(
         self,
-        caption_model: str = "gemma4:e2b",
-        embedding_model: str = "qwen3-embedding:8b",
+        caption_model: str = _CAPTION_MODEL,
+        embedding_model: str = _EMBEDDING_MODEL,
         prompt: str | None = None,
         prompt_name: str = P3_HYBRID_PROMPT_NAME,
         host: str | None = None,
+        request_timeout: float = 600.0,
     ):
         """클라이언트를 초기화한다.
 
@@ -89,13 +92,17 @@ class OllamaVisionClient:
                 ``caption_photo``에서 ``prompt_name``을 명시적으로 전달하면 무시).
             prompt_name: 사용할 프롬프트 이름(``prompt``가 None일 때 사용).
             host: Ollama 서버 URL. None이면 기본 로컬 호스트를 사용한다.
+            request_timeout: ollama HTTP 요청 제한 시간(초). 기본 600초 — 정상 캡션
+                생성(30-60초)은 통과하고 무한 hang만 차단한다.
         """
         self.caption_model = caption_model
         self.embedding_model = embedding_model
         self.prompt = prompt
         self.prompt_name = prompt_name
         self.host = host
-        self._client = ollama.Client(host=host) if host else None
+        # host=None이어도 모듈 레벨 ollama.chat/embed(timeout=None 싱글턴)를 쓰지
+        # 않고 Client 인스턴스를 생성해 timeout을 일관 적용한다.
+        self._client = ollama.Client(host=host, timeout=request_timeout)
 
     def caption_image(self, image_path: Path) -> str:
         """파일 경로로 직접 캡션을 생성한다(PhotoRecord 없이 호출하는 편의 메서드).
@@ -166,14 +173,10 @@ class OllamaVisionClient:
         return [list(vec) for vec in response.embeddings]
 
     def _chat(self, **kwargs):
-        if self._client is not None:
-            return self._client.chat(**kwargs)
-        return ollama.chat(**kwargs)
+        return self._client.chat(**kwargs)
 
     def _embed(self, **kwargs):
-        if self._client is not None:
-            return self._client.embed(**kwargs)
-        return ollama.embed(**kwargs)
+        return self._client.embed(**kwargs)
 
     def _prompt_for_photo(self, photo: PhotoRecord, prompt_name: str | None) -> str:
         """고정 프롬프트 우선순위를 적용해 최종 프롬프트 문자열을 반환한다."""
