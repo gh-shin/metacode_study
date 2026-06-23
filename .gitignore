@@ -2,3 +2,8 @@
 .metacode_study/
 .egg-info/
 *.egg-info/
+__pycache__/
+*.pyc
+node_modules/
+graphify-out/
+screenshots/
